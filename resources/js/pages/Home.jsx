@@ -1,0 +1,257 @@
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+// import Highlight from "../assets/images/shapes/1.png";
+// import Highlight2 from "../assets/images/shapes/6.png";
+import Slider1 from "../components/Slider1";
+import Slider2 from "../components/Slider2";
+// import Pattern from "../assets/images/patterns/1.png";
+// import Pattern2 from "../assets/images/patterns/2.png";
+// import Img1 from "../assets/images/home/3.png";
+// import Img2 from "../assets/images/home/6.png";
+import { HiArrowNarrowDown } from "react-icons/hi";
+import { HiArrowNarrowRight } from "react-icons/hi";
+import { BiPlay } from "react-icons/bi";
+import { companies, newsHome } from "../components/Data";
+import Slider3 from "../components/Slider3";
+// import Light from "../assets/images/svg/light.png";
+import VideoPopup from "../components/VideoPopup";
+
+const Home = () => {
+  const [showVideo, setShowVideo] = useState(false);
+  return (
+    <>
+      <section className="relative pt-40 pb-12">
+        <img className="-z-10 absolute top-0 right-0" src="/assets/images/patterns/1.png" alt="" />
+        <div className="wrapper flex items-center justify-between lg:flex-row flex-col">
+          <div className="lg:w-2/5 lg:mr-10 lg:mb-0 mb-10">
+            <div className="relative 2xl:text-7xl xl:text-6xl sm:text-5xl text-4xl bold w-fit">
+              <img
+                className="absolute -left-14 top-1/2 -translate-y-1/2 "
+                src="/assets/images/shapes/1.png"
+                alt=""
+              />
+              <span className="relative">Craft multiple Solutions</span>
+            </div>
+            <div className="highlight-title nun-bold relative sm:px-20 px-14 whitespace-nowrap w-fit text-custom-dark xl:text-5xl text-4xl sm:my-14 my-10">
+              <img
+                className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
+                src="/assets/images/shapes/1.png"
+                alt=""
+              />
+              <span className="relative">Ray eleven</span>
+            </div>
+            <p className="opacity-30 ">
+              The driving force of all speeches, we believe that creation should
+              be the point around which any communication strategy revolves.
+            </p>
+            <div className="flex justify-start items-center mt-10 mb-8">
+              <Link to="/about">
+                <button className="px-8 h-10 text-custom-dark bg-custom-yellow bold rounded-full transition-all duration-300 hover:bg-white">
+                  About us
+                </button>
+              </Link>
+              <button
+                onClick={() => setShowVideo(true)}
+                className="ml-5 flex items-center justify-center text-custom-yellow underline bold group"
+              >
+                <div
+                  className="flex items-center justify-center rounded-full mr-3 bg-custom-dark w-10 h-10 transition-all duration-300 group-hover:text-custom-dark group-hover:bg-custom-yellow"
+                  style={{ boxShadow: "0 0  8px -2px #F8D532" }}
+                >
+                  <BiPlay className="w-5 h-5" />
+                </div>
+                <span>Watch video</span>
+              </button>
+            </div>
+            <a
+              href="#footer"
+              className="w-fit flex items-center justify-center border border-solid border-custom-yellow bold text-custom-yellow h-12 px-7 rounded-full transition-all duration-300 hover:text-white hover:border-white"
+            >
+              <span>Get in touch</span>
+              <HiArrowNarrowDown className="w-6 h-6 ml-2" />
+            </a>
+          </div>
+          <div className="lg:w-3/5 w-full">
+            <Slider1 />
+          </div>
+        </div>
+      </section>
+      <section className="py-10 wrapper">
+        <div className="flex md:items-center items-start justify-start mb-10 flex-col md:flex-row">
+          <div className="bold lg:text-4xl text-2xl">Our Companies</div>
+          <div className="h-12 w-0.5 bg-white rounded mx-6 md:inline-block hidden"></div>
+          <p className="opacity-30 max-w-2xl">
+            From banking and insurance to wealth management and on securities
+            distribution, we dedicated financial services them the teams serve
+            all major sectors. of the industry.
+          </p>
+        </div>
+        <div className="flex items-start 2xl:justify-between justify-center flex-wrap 2xl:flex-nowrap -m-2">
+          {companies.map((item, index) => {
+            return (
+              <div
+                key={index}
+                className={`group h-80 2xl:w-1/5 max-w-sm border border-solid border-custom-slate-900 py-8 px-6 m-2 transition-all duration-300 companyBox cBox-${item.color}`}
+                style={{
+                  borderTopLeftRadius: "10px",
+                  borderBottomRightRadius: "69px",
+                }}
+              >
+                <img className="h-10" src={item.logo} alt="" />
+                <p className="opacity-30 group-hover:opacity-80 h-24 my-5 mb-10 overflow-hidden text-sm !text-white transition-all duration-300">
+                  {item.para}
+                </p>
+                <Link
+                  to={item.link}
+                  className={`flex items-center justify-center border border-solid border-custom-slate-900 bold text-custom-slate-900 sm:h-12 h-10 w-fit sm:px-7 px-4 rounded-full transition-all duration-300  sm:text-base text-sm  whitespace-nowrap`}
+                >
+                  <span className="transition-all duration-300">
+                    Learn more
+                  </span>
+                  <HiArrowNarrowRight className="w-6 h-6 " />
+                </Link>
+              </div>
+            );
+          })}
+        </div>
+      </section>
+      <section>
+        <Slider2 />
+      </section>
+      <section className="py-10 wrapper flex items-center justify-between flex-col lg:flex-row overflow-hidden">
+        <div className="lg:max-w-sm  ">
+          <div className="xl:text-7xl sm:text-5xl text-3xl bold mb-7 ">
+            Don't miss any news
+          </div>
+          <Link
+            to="/news"
+            className={`flex items-center justify-center border border-solid border-custom-yellow bold text-custom-yellow sm:h-10 h-10 w-fit sm:px-6 px-4 rounded-full transition-all duration-300  sm:text-base text-sm  whitespace-nowrap`}
+          >
+            <span>Check all</span>
+            <HiArrowNarrowRight className="w-6 h-6 m-2" />
+          </Link>
+        </div>
+        <div className="relative w-fit lg:mx-5 my-10 ">
+          <img src="/assets/images/home/3.png" alt="" />
+          <img
+            className="-z-10 absolute -right-10 top-1/2 -translate-y-1/2 max-w-none"
+            src="/assets/images/patterns/2.png"
+            alt=""
+          />
+          <div className="w-12 h-12 absolute -left-5 -bottom-5 border-custom-yellow border-l-4 border-b-4 border-solid"></div>
+          <div className="w-12 h-12 absolute -right-5 -top-5 border-custom-yellow border-t-4 border-r-4 border-solid"></div>
+        </div>
+        <div className="lg:max-w-lg">
+          {newsHome.map((item, index) => {
+            return (
+              <Link
+                key={index}
+                to="/"
+                className="flex items-center justify-start p-5 border-b border-custom-slate-900 hover:bg-custom-slate-900 rounded transition-all"
+              >
+                <div className="sm:w-36 sm:h-36 w-28 h-28 rounded mr-3 overflow-hidden shrink-0">
+                  <img
+                    className="w-full h-full object-cover"
+                    src={item.img}
+                    alt=""
+                  />
+                </div>
+                <div>
+                  <div className="bold">{item.title}</div>
+                  <p className="opacity-30 text-sm my-2">Date: {item.date}</p>
+                  <p className="opacity-30 h-16 overflow-hidden sm:text-base text-sm">
+                    {item.para}
+                  </p>
+                </div>
+              </Link>
+            );
+          })}
+        </div>
+      </section>
+      <section className="py-10">
+        <Slider3 />
+      </section>
+      <section className="py-20 wrapper group relative flex items-center justify-start">
+        <img className="w-1/3" src="/assets/images/home/6.png" alt="" />
+        <div className="xl:max-w-md max-w-sm bold xl:text-6xl sm:text-4xl text-2xl leading-tight text-right">
+          <span className="opacity-10 group-hover:opacity-100 transition-all duration-500">
+            Professional Technics for Rent
+          </span>
+          <Link
+            to="/"
+            className={`flex items-center justify-center border border-solid border-custom-yellow bold text-custom-yellow sm:h-10 h-10 w-fit sm:px-6 px-4 rounded-full transition-all duration-300  sm:text-base text-sm  whitespace-nowrap mx-auto mr-0 mt-5`}
+          >
+            <span>See what we got</span>
+            <HiArrowNarrowRight className="w-6 h-6 m-2" />
+          </Link>
+        </div>
+        <svg
+          className="lg:block hidden absolute top-1/2 -translate-y-1/2 right-0 w-full -z-10"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1454.159 720.922"
+        >
+          <defs>
+            <linearGradient
+              id="linear-gradient"
+              x1="1"
+              y1="0.486"
+              x2="0.21"
+              y2="0.5"
+              gradientUnits="objectBoundingBox"
+            >
+              <stop offset="0" stopColor="#fffbd5" />
+              <stop offset="0.532" stopColor="#fff2b8" stopOpacity="0.29" />
+              <stop offset="1" stopColor="#ffefae" stopOpacity="0" />
+            </linearGradient>
+            <clipPath id="clip-path">
+              <path
+                id="Path_1009"
+                dataname="Path 1009"
+                d="M939.911,6185.617v122.029L-404.032,6608.358V5887.437Z"
+                transform="translate(773.873 -2477.535)"
+                fill="url(#linear-gradient)"
+                style={{ mixBlendMode: "screen", isolation: "isolate" }}
+              />
+            </clipPath>
+          </defs>
+          <g
+            id="Group_1793"
+            dataname="Group 1793"
+            transform="translate(-369.841 -3409.902)"
+          >
+            <image
+              id="Untitled-2"
+              width="341"
+              height="463.308"
+              transform="translate(1483 3657.692)"
+              xlinkHref="/assets/images/svg/light.png"
+            />
+            <g
+              id="Component_20_2"
+              dataname="Component 20 – 2"
+              transform="translate(369.841 3409.902)"
+            >
+              <path
+                className="opacity-0 group-hover:opacity-100 transition-all duration-500"
+                id="Path_1008"
+                dataname="Path 1008"
+                d="M938.636,6185.12l1.275,121.653L-404.032,6608.358V5887.437Z"
+                transform="translate(404.032 -5887.437)"
+                fill="url(#linear-gradient)"
+                style={{ mixBlendMode: "screen", isolation: "isolate" }}
+              />
+            </g>
+          </g>
+        </svg>
+      </section>
+
+      <VideoPopup
+        open={showVideo}
+        closeVideo={() => setShowVideo(false)}
+        src="https://www.youtube.com/embed/xYrPGIJ2qoo"
+      />
+    </>
+  );
+};
+
+export default Home;
