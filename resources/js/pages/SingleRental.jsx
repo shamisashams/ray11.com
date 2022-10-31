@@ -1,19 +1,19 @@
 import React from "react";
-import bg from "../assets/images/bgs/3.png";
-import Img1 from "../assets/images/rental/10.png";
-import Img2 from "../assets/images/rental/7.png";
+// import bg from "../assets/images/bgs/3.png";
+// import Img1 from "../assets/images/rental/10.png";
+// import Img2 from "../assets/images/rental/7.png";
 import { HiArrowNarrowRight } from "react-icons/hi";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
 const SingleRental = () => {
-  const imgs = [Img1, Img2];
+  const imgs = ["/assets/images/rental/10.png", "/assets/images/rental/7.png"];
   const [imgIndex, setImgIndex] = useState(0);
 
   return (
     <div
       className="bg-cover bg-center bg-no-repeat text-custom-dark"
-      style={{ backgroundImage: `url(${bg})` }}
+      style={{ backgroundImage: `url('/assets/images/bgs/3.png')` }}
     >
       <div className="wrapper flex items-start justify-between py-40 flex-col lg:flex-row">
         <div className=" lg:w-1/2 mb-20">

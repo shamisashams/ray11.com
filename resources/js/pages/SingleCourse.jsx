@@ -1,11 +1,11 @@
 import React from "react";
-import bg from "../assets/images/bgs/2.png";
-import Img1 from "../assets/images/raypages/17.png";
-import Img2 from "../assets/images/raypages/10.png";
-import Img3 from "../assets/images/raypages/11.png";
-import Img4 from "../assets/images/raypages/12.png";
+// import bg from "../assets/images/bgs/2.png";
+// import Img1 from "../assets/images/raypages/17.png";
+// import Img2 from "../assets/images/raypages/10.png";
+// import Img3 from "../assets/images/raypages/11.png";
+// import Img4 from "../assets/images/raypages/12.png";
 import { BiCheck, BiCalendar } from "react-icons/bi";
-import PlayIcon from "../assets/images/svg/play.svg";
+// import PlayIcon from "../assets/images/svg/play.svg";
 import { HiArrowNarrowRight } from "react-icons/hi";
 import { Link } from "react-router-dom";
 import VideoPopup from "../components/VideoPopup";
@@ -28,17 +28,17 @@ const SingleCourse = () => {
   ];
   const otherCourses = [
     {
-      img: Img2,
+      img: "/assets/images/raypages/10.png",
       name: "Name of the course",
       para: "From banking and insurance to wealth serve all major sectors. of the industry.",
     },
     {
-      img: Img3,
+      img: "/assets/images/raypages/11.png",
       name: "Name of the course",
       para: "From banking and insurance to wealth serve all major sectors. of the industry.",
     },
     {
-      img: Img4,
+      img: "/assets/images/raypages/12.png",
       name: "Name of the course",
       para: "From banking and insurance to wealth serve all major sectors. of the industry.",
     },
@@ -48,7 +48,7 @@ const SingleCourse = () => {
     <div className="bg-white text-custom-dark singleCourse pb-20">
       <section
         className="sm:h-80 h-52 bg-cover bg-no-repeat bg-center mb-10"
-        style={{ backgroundImage: `url(${bg})` }}
+        style={{ backgroundImage: `url('/assets/images/bgs/2.png')` }}
       ></section>
       <section className="wrapper flex justify-start items-start lg:flex-row flex-col">
         <div className="lg:w-1/2 lg:mr-10 mb-20">
@@ -91,10 +91,10 @@ const SingleCourse = () => {
               onClick={() => setShowVideo(true)}
               className="relative w-full h-80 grayscale cursor-pointer group"
             >
-              <img src={Img1} alt="" className="w-full h-full object-cover" />
+              <img src={"/assets/images/raypages/17.png"} alt="" className="w-full h-full object-cover" />
               <img
                 className="absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2 group-hover:animate-pulse"
-                src={PlayIcon}
+                src="/assets/images/svg/play.svg"
                 alt=""
               />
             </div>

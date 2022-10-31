@@ -86,42 +86,42 @@ export const companies = [
 
 export const eventSlider = [
   {
-    img: News1,
+    img: "/assets/images/news/1.png",
     location: "Tbilisi, Georgia",
     title: "New Project Presentation",
     para: "Upcoming event on blockchain this Sunday, Don't miss!",
     link: "/",
   },
   {
-    img: News2,
+    img: "/assets/images/news/2.png",
     location: "Tbilisi, Georgia",
     title: "New Project Presentation",
     para: "Upcoming event on blockchain this Sunday, Don't miss!",
     link: "/",
   },
   {
-    img: News3,
+    img: "/assets/images/news/3.png",
     location: "Tbilisi, Georgia",
     title: "New Project Presentation",
     para: "Upcoming event on blockchain this Sunday, Don't miss!",
     link: "/",
   },
   {
-    img: News4,
+    img: "/assets/images/news/4.png",
     location: "Tbilisi, Georgia",
     title: "New Project Presentation",
     para: "Upcoming event on blockchain this Sunday, Don't miss!",
     link: "/",
   },
   {
-    img: News5,
+    img: "/assets/images/news/5.png",
     location: "Tbilisi, Georgia",
     title: "New Project Presentation",
     para: "Upcoming event on blockchain this Sunday, Don't miss!",
     link: "/",
   },
   {
-    img: News6,
+    img: "/assets/images/news/6.png",
     location: "Tbilisi, Georgia",
     title: "New Project Presentation",
     para: "Upcoming event on blockchain this Sunday, Don't miss!",
@@ -131,21 +131,21 @@ export const eventSlider = [
 
 export const newsHome = [
   {
-    img: News6,
+    img: "/assets/images/news/6.png",
     title: "New Project Presentation",
     date: "10.02.2022",
     para: "From banking and insurance to wealth management and on securities distribution, we dedicated financial services them the teams serve all major sectors. of the industry.",
     link: "/single-news",
   },
   {
-    img: News7,
+    img: "/assets/images/news/7.png",
     title: "New Project Presentation",
     date: "10.02.2022",
     para: "From banking and insurance to wealth management and on securities distribution, we dedicated financial services them the teams serve all major sectors. of the industry.",
     link: "/single-news",
   },
   {
-    img: News8,
+    img: "/assets/images/news/8.png",
     title: "New Project Presentation",
     date: "10.02.2022",
     para: "From banking and insurance to wealth management and on securities distribution, we dedicated financial services them the teams serve all major sectors. of the industry.",
@@ -155,7 +155,7 @@ export const newsHome = [
 
 export const companySlide = [
   {
-    logo: Logo3,
+    logo: "/assets/images/logo/3.png",
     img: "/assets/images/home/4.png",
     title: "Let your mind explore new world",
     para: "From banking and insurance to wealth management and on securities distribution, we dedicated financial services them the teams serve all major sectors. of the industry.",
@@ -163,7 +163,7 @@ export const companySlide = [
     link: "/",
   },
   {
-    logo: Logo6,
+    logo: "/assets/images/logo/6.png",
     img: "/assets/images/home/5.png",
     title: "New NFTs Collection for sale ",
     para: "From banking and insurance to wealth management and on securities distribution, we dedicated financial services them the teams serve all major sectors. of the industry.",
@@ -174,45 +174,45 @@ export const companySlide = [
 
 export const projectSlider = [
   {
-    img: Img3,
+    img: "/assets/images/raypages/10.png",
     name: "Name of Project",
   },
   {
-    img: Img4,
+    img: "/assets/images/raypages/11.png",
     name: "Name of Project",
   },
   {
-    img: Img5,
+    img: "/assets/images/raypages/12.png",
     name: "Name of Project",
   },
   {
-    img: Img6,
+    img: "/assets/images/raypages/13.png",
     name: "Name of Project",
   },
   {
-    img: Img4,
+    img: "/assets/images/raypages/11.png",
     name: "Name of Project",
   },
 ];
 
 export const videoGrid = [
   {
-    img: Img3,
+    img: "/assets/images/raypages/10.png",
     name: "Name of Artwork",
     video: "",
   },
   {
-    img: Img4,
+    img: "/assets/images/raypages/11.png",
     name: "Name of Artwork",
     video: "",
   },
   {
-    img: Img5,
+    img: "/assets/images/raypages/12.png",
     name: "Name of Artwork",
     video: "",
   },
   {
-    img: Img6,
+    img: "/assets/images/raypages/12.png",
     name: "Name of Artwork",
     video: "",
   },
@@ -222,16 +222,16 @@ export const academySlider = [
   {
     title1: "Motion designer course",
     title2: "Let your mind explore new world",
-    img1: Img7,
-    img2: Img9,
+    img1: "/assets/images/raypages/17.png",
+    img2: "/assets/images/raypages/19.png",
     para: "From banking and insurance to wealth management and on securities distribution, we dedicated financial services them the teams serve all major sectors. of the industry.",
     link: "/single-course",
   },
   {
     title1: "3D modeling & Texture course",
     title2: "Create your own character with us",
-    img1: Img7,
-    img2: Img8,
+    img1: "/assets/images/raypages/17.png",
+    img2: "/assets/images/raypages/18.png",
     para: "From banking and insurance to wealth management and on securities distribution, we dedicated financial services them the teams serve all major sectors. of the industry.",
     link: "/single-course",
   },
@@ -239,55 +239,55 @@ export const academySlider = [
 
 export const rentalGrid = [
   {
-    img: Rental1,
+    img: "/assets/images/rental/1.png",
     name: "Name of a product",
     model: "Model number",
     link: "/single-rental",
   },
   {
-    img: Rental2,
+    img: "/assets/images/rental/2.png",
     name: "Name of a product",
     model: "Model number",
     link: "/single-rental",
   },
   {
-    img: Rental3,
+    img: "/assets/images/rental/3.png",
     name: "Name of a product",
     model: "Model number",
     link: "/single-rental",
   },
   {
-    img: Rental4,
+    img: "/assets/images/rental/4.png",
     name: "Name of a product",
     model: "Model number",
     link: "/single-rental",
   },
   {
-    img: Rental5,
+    img: "/assets/images/rental/5.png",
     name: "Name of a product",
     model: "Model number",
     link: "/single-rental",
   },
   {
-    img: Rental6,
+    img: "/assets/images/rental/6.png",
     name: "Name of a product",
     model: "Model number",
     link: "/single-rental",
   },
   {
-    img: Rental7,
+    img: "/assets/images/rental/7.png",
     name: "Name of a product",
     model: "Model number",
     link: "/single-rental",
   },
   {
-    img: Rental8,
+    img: "/assets/images/rental/8.png",
     name: "Name of a product",
     model: "Model number",
     link: "/single-rental",
   },
   {
-    img: Rental9,
+    img: "/assets/images/rental/9.png",
     name: "Name of a product",
     model: "Model number",
     link: "/single-rental",
@@ -296,56 +296,56 @@ export const rentalGrid = [
 
 export const newsGrid = [
   {
-    img: News1,
+    img: "/assets/images/news/1.png",
     name: "News name",
     para: "The driving force of all speeches,hould be the point around which any communication strategy revolves.",
     date: "10.12.2022",
     link: "/single-news",
   },
   {
-    img: News2,
+    img: "/assets/images/news/2.png",
     name: "News name",
     para: "The driving force of all speeches,hould be the point around which any communication strategy revolves.",
     date: "10.12.2022",
     link: "/single-news",
   },
   {
-    img: News3,
+    img: "/assets/images/news/3.png",
     name: "News name",
     para: "The driving force of all speeches,hould be the point around which any communication strategy revolves.",
     date: "10.12.2022",
     link: "/single-news",
   },
   {
-    img: News4,
+    img: "/assets/images/news/4.png",
     name: "News name",
     para: "The driving force of all speeches,hould be the point around which any communication strategy revolves.",
     date: "10.12.2022",
     link: "/single-news",
   },
   {
-    img: News5,
+    img: "/assets/images/news/5.png",
     name: "News name",
     para: "The driving force of all speeches,hould be the point around which any communication strategy revolves.",
     date: "10.12.2022",
     link: "/single-news",
   },
   {
-    img: News6,
+    img: "/assets/images/news/6.png",
     name: "News name",
     para: "The driving force of all speeches,hould be the point around which any communication strategy revolves.",
     date: "10.12.2022",
     link: "/single-news",
   },
   {
-    img: News7,
+    img: "/assets/images/news/7.png",
     name: "News name",
     para: "The driving force of all speeches,hould be the point around which any communication strategy revolves.",
     date: "10.12.2022",
     link: "/single-news",
   },
   {
-    img: News8,
+    img: "/assets/images/news/8.png",
     name: "News name",
     para: "The driving force of all speeches,hould be the point around which any communication strategy revolves.",
     date: "10.12.2022",

@@ -1,6 +1,6 @@
 import React from "react";
-import bg from "../assets/images/bgs/3.png";
-import Img1 from "../assets/images/other/1.png";
+// import bg from "../assets/images/bgs/3.png";
+// import Img1 from "../assets/images/other/1.png";
 import { rentalGrid } from "../components/Data";
 import { HiArrowNarrowRight } from "react-icons/hi";
 import { Link } from "react-router-dom";
@@ -9,11 +9,11 @@ const Rental = () => {
   return (
     <div
       className="bg-cover bg-center bg-no-repeat text-custom-dark"
-      style={{ backgroundImage: `url(${bg})` }}
+      style={{ backgroundImage: `url('/assets/images/bgs/3.png')` }}
     >
       <div className="wrapper">
         <div className="flex items-center justify-between py-32 md:flex-row flex-col">
-          <img className=" md:w-1/2" src={Img1} alt="" />
+          <img className=" md:w-1/2" src="/assets/images/other/1.png" alt="" />
           <div className=" md:w-1/2">
             <div className="2xl:text-7xl xl:text-6xl sm:text-5xl text-4xl bold mb-10">
               Rent modern professional technics for best price

@@ -1,20 +1,20 @@
 import React, { useState } from "react";
-import sm1 from "../assets/images/icons/1.png";
-import sm2 from "../assets/images/icons/2.png";
-import sm3 from "../assets/images/icons/3.png";
+// import sm1 from "../assets/images/icons/1.png";
+// import sm2 from "../assets/images/icons/2.png";
+// import sm3 from "../assets/images/icons/3.png";
 import { BiChevronDown } from "react-icons/bi";
 
 export const SocialMedia = () => {
   return (
     <div className="flex items-center justify-center">
       <a href="#">
-        <img src={sm1} alt="" />
+        <img src="/assets/images/icons/1.png" alt="" />
       </a>
       <a href="#" className="mx-5">
-        <img src={sm2} alt="" />
+        <img src="/assets/images/icons/2.png" alt="" />
       </a>
       <a href="#">
-        <img src={sm3} alt="" />
+        <img src="/assets/images/icons/3.png" alt="" />
       </a>
     </div>
   );

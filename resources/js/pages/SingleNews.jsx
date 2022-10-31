@@ -1,15 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import bg from "../assets/images/bgs/4.png";
-import Img1 from "../assets/images/other/3.png";
-import Img2 from "../assets/images/other/4.png";
+// import bg from "../assets/images/bgs/4.png";
+// import Img1 from "../assets/images/other/3.png";
+// import Img2 from "../assets/images/other/4.png";
 import { SocialMedia } from "../components/SmallComps";
 import { HiArrowNarrowLeft } from "react-icons/hi";
 
 const SingleNews = () => {
   return (
     <div className="relative py-40">
-      <img className="-z-10 absolute top-0 right-0" src={bg} alt="" />
+      <img className="-z-10 absolute top-0 right-0" src="/assets/images/bgs/4.png" alt="" />
       <div className="wrapper">
         <Link
           to="/contact"
@@ -25,7 +25,7 @@ const SingleNews = () => {
           <p className="my-5">
             Date: <span className="opacity-50">10.12.2022</span>
           </p>
-          <img className="mb-8" src={Img1} alt="" />
+          <img className="mb-8" src="/assets/images/other/3.png" alt="" />
           <p className="mb-8 text-justify">
             From banking and insurance to wealth management and on securities
             distribution, we dedicated financial services them the teams serve
@@ -50,7 +50,7 @@ const SingleNews = () => {
             financial services them the teams serve all major sectors. of the
             industry.
           </p>
-          <img className="mb-8" src={Img2} alt="" />
+          <img className="mb-8" src="/assets/images/other/4.png" alt="" />
           <p className="mb-8 text-justify">
             From banking and insurance to wealth management and on securities
             distribution, we dedicated financial services them the teams serve

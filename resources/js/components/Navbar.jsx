@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import Logo1 from "../assets/images/logo/1.png";
-import Logo2 from "../assets/images/logo/2.png";
-import Logo3 from "../assets/images/logo/3.png";
-import Logo4 from "../assets/images/logo/4.png";
-import Logo6 from "../assets/images/logo/6.png";
-import Logo7 from "../assets/images/logo/7.png";
-import Logo8 from "../assets/images/logo/8.png";
+// import Logo1 from "../assets/images/logo/1.png";
+// import Logo2 from "../assets/images/logo/2.png";
+// import Logo3 from "../assets/images/logo/3.png";
+// import Logo4 from "../assets/images/logo/4.png";
+// import Logo6 from "../assets/images/logo/6.png";
+// import Logo7 from "../assets/images/logo/7.png";
+// import Logo8 from "../assets/images/logo/8.png";
 import { companies } from "./Data";
 import { HiArrowNarrowRight } from "react-icons/hi";
 
@@ -14,22 +14,22 @@ const Navbar = () => {
   const [menu, setMenu] = useState(false);
   const { pathname } = useLocation();
   let dark = false;
-  let logoImg = Logo1;
+  let logoImg = "/assets/images/logo/1.png";
 
   if (pathname === "/ray-production") {
-    logoImg = Logo2;
+    logoImg = "/assets/images/logo/2.png";
   }
   if (pathname === "/ray-animation") {
-    logoImg = Logo3;
+    logoImg = "/assets/images/logo/3.png";
   }
   if (pathname === "/ray-academy") {
-    logoImg = Logo4;
+    logoImg = "/assets/images/logo/4.png";
   }
   if (pathname === "/ray-crypto") {
-    logoImg = Logo6;
+    logoImg = "/assets/images/logo/5.png";
   }
   if (pathname === "/single-course") {
-    logoImg = Logo7;
+    logoImg = "/assets/images/logo/7.png";
   }
   if (
     pathname === "/rental" ||

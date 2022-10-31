@@ -1,46 +1,46 @@
 import React from "react";
-import Highlight from "../assets/images/shapes/8.png";
-import Highlight2 from "../assets/images/shapes/2.png";
+// import Highlight from "../assets/images/shapes/8.png";
+// import Highlight2 from "../assets/images/shapes/2.png";
 import { SocialMedia } from "../components/SmallComps";
-import Img1 from "../assets/images/raypages/1.png";
-import Img2 from "../assets/images/raypages/3.png";
+// import Img1 from "../assets/images/raypages/1.png";
+// import Img2 from "../assets/images/raypages/3.png";
 import RaySection from "../components/RaySection";
-import Icon1 from "../assets/images/icons/4.png";
-import Icon2 from "../assets/images/icons/5.png";
+// import Icon1 from "../assets/images/icons/4.png";
+// import Icon2 from "../assets/images/icons/5.png";
 import { Link } from "react-router-dom";
-import Gridimg1 from "../assets/images/raypages/4.png";
-import Gridimg2 from "../assets/images/raypages/5.png";
-import Gridimg3 from "../assets/images/raypages/6.png";
-import Gridimg4 from "../assets/images/raypages/7.png";
-import Gridimg5 from "../assets/images/raypages/8.png";
-import Gridimg6 from "../assets/images/raypages/9.png";
+// import Gridimg1 from "../assets/images/raypages/4.png";
+// import Gridimg2 from "../assets/images/raypages/5.png";
+// import Gridimg3 from "../assets/images/raypages/6.png";
+// import Gridimg4 from "../assets/images/raypages/7.png";
+// import Gridimg5 from "../assets/images/raypages/8.png";
+// import Gridimg6 from "../assets/images/raypages/9.png";
 import { SiAppstore } from "react-icons/si";
 import { IoLogoGooglePlaystore } from "react-icons/io5";
 
 const RayCrypto = () => {
   const nftGrid = [
     {
-      img: Gridimg1,
+      img: "/assets/images/raypages/4.png",
       name: "Name of Artwork",
     },
     {
-      img: Gridimg2,
+      img: "/assets/images/raypages/5.png",
       name: "Name of Artwork",
     },
     {
-      img: Gridimg3,
+      img: "/assets/images/raypages/6.png",
       name: "Name of Artwork",
     },
     {
-      img: Gridimg4,
+      img: "/assets/images/raypages/7.png",
       name: "Name of Artwork",
     },
     {
-      img: Gridimg5,
+      img: "/assets/images/raypages/8.png",
       name: "Name of Artwork",
     },
     {
-      img: Gridimg6,
+      img: "/assets/images/raypages/9.png",
       name: "Name of Artwork",
     },
   ];
@@ -53,7 +53,7 @@ const RayCrypto = () => {
             <div className="relative 2xl:text-7xl xl:text-6xl sm:text-5xl text-4xl bold w-fit">
               <img
                 className="absolute -left-14 top-1/2 -translate-y-1/2 "
-                src={Highlight}
+                src="/assets/images/shapes/8.png"
                 alt=""
               />
               <span className="relative">Just another way to make it</span>
@@ -61,7 +61,7 @@ const RayCrypto = () => {
             <div className="highlight-title nun-bold relative sm:px-20 px-14 whitespace-nowrap w-fit text-custom-dark xl:text-5xl text-4xl sm:my-14 my-10">
               <img
                 className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
-                src={Highlight2}
+                src="/assets/images/shapes/8.png"
                 alt=""
               />
               <span className="relative">Ray crypto</span>
