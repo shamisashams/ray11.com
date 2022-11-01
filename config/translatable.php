@@ -2,6 +2,7 @@
  return array (
   'locales' => 
   array (
+    'ქართული' => 'ge',
     'English' => 'en',
   ),
   'locale_separator' => '-',

@@ -16,7 +16,7 @@ class NewsController extends Controller
         // $news = News::where("status", 1)->with(['file', 'translations'])->paginate(3);
         //        dd(1);
         $page = Page::where('key', 'home')->firstOrFail();
-        $news = News::with(['file', 'translations', 'latestImage'])->paginate(4);
+        $news = News::with(['file', 'translations', 'latestImage'])->paginate(8);
 
 
         // return Inertia::render('News', ["seo" => [
@@ -68,7 +68,6 @@ class NewsController extends Controller
     public function show(string $locale, $slug)
     {
         $news = News::where("id", $slug)->with(['file', 'translations', 'latestImage'])->firstOrFail();
-        // dd($news);
         // $lastNews = News::where("status", 1)->where('slug', '<>', $slug)->latest()->with(["file", "translations"])->take(3)->get();
         $page = Page::where('key', 'home')->firstOrFail();
 

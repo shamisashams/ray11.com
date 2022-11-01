@@ -8,11 +8,27 @@
             "slug": "page"
         },
         {
-            "url": "translation.index",
-            "name": "Translations",
-            "i18n": "translation",
-            "icon": "g_translate",
-            "slug": "translation"
+            "url": "javascript:void(0)",
+            "name": "4. ენის პარამეტრები",
+            "i18n": "user",
+            "icon": "brightness_low",
+            "slug": "user",
+            "submenu": [
+                {
+                    "url": "language.index",
+                    "name": "ენები",
+                    "i18n": "language",
+                    "icon": "language",
+                    "slug": "language"
+                },
+                {
+                    "url": "translation.index",
+                    "name": "თარგმნა",
+                    "i18n": "translation",
+                    "icon": "g_translate",
+                    "slug": "translation"
+                }
+            ]
         },
         {
             "url": "setting.index",

@@ -6,7 +6,7 @@ import { newsGrid } from "../components/Data";
 import { Link } from '@inertiajs/inertia-react'
 import Layout from "../Layouts/Layout";
 
-const News = ({seo}) => {
+const News = ({seo,news}) => {
   return (
     <Layout seo={seo}>
     <div className="relative py-32">
@@ -22,21 +22,36 @@ const News = ({seo}) => {
           </p>
         </div>
         <div className="grid xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 2xl:gap-x-20 gap-10 2xl:gap-y-14">
-          {newsGrid.map((item, index) => {
+          {news.data.map((item, index) => {
+            const date = () => {
+                let z = item.created_at.split("-");
+                z[2] = z[2].split(":");
+                z[2] = z[2][0].slice(0, z[2][0].search("T"));
+                return z;
+            }
             return (
-              <Link key={index} href={item.link} className="group">
+              <Link key={index} href={route("client.news.show",item.id)} className="group">
                 <div className="relative h-96 w-full overflow-hidden mb-6 ">
                   <img
                     className="w-full h-full object-cover"
-                    src={item.img}
+                    src={
+                        item.latest_image != null
+                        ? "/" +
+                        item.latest_image.path +
+                        "/" +
+                        item.latest_image.title
+                        : null
+                    }
                     alt=""
                   />
                   <div className="absolute w-full h-full left-0 top-0 bg-white opacity-0 group-hover:opacity-40 transition-all duration-500"></div>
                 </div>
-                <p>{item.name}</p>
-                <p className="opacity-50 my-3">{item.para}</p>
+                <p>{item.title}</p>
+                <p className="opacity-50 my-3">
+                    {item.short_description}
+                </p>
                 <p className="text-sm">
-                  Date: <span className="opacity-50">{item.date}</span>
+                  Date: <span className="opacity-50">{`${date()[2]}.${date()[1]}.${date()[0]}`}</span>
                 </p>
               </Link>
             );
