@@ -32,11 +32,14 @@ class CreateProductsTable extends Migration
             $table->id();
             $table->string('title');
             $table->longText('description');
-            $table->string('brand_id');
-            $table->string('category_id');
-            $table->string('width');
-            $table->string('height');
-            $table->string('madein');
+            $table->longText('specifications');
+            $table->text('modelnumber');
+            $table->boolean('status')->default(true);
+            // $table->string('brand_id');
+            // $table->string('category_id');
+            // $table->string('width');
+            // $table->string('height');
+            // $table->string('madein');
             $table->timestamps();
         });
     }

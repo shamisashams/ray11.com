@@ -7,7 +7,8 @@ import { HiArrowNarrowRight } from "react-icons/hi";
 import { Link } from '@inertiajs/inertia-react'
 import Layout from "../Layouts/Layout";
 
-const Rental = ({seo}) => {
+const Rental = ({seo, products}) => {
+    console.log(products.data);
   return (
     <Layout seo={seo}>
     <div
@@ -31,23 +32,30 @@ const Rental = ({seo}) => {
         <div className="pb-20">
           <div className="bold text-3xl">Products</div>
           <div className="grid xl:grid-cols-3 md:grid-cols-2 mt-10 border-t-2 border-l-2  border-custom-dark">
-            {rentalGrid.map((item, index) => {
+            {products.data.map((item, index) => {
               return (
                 <Link
                   key={index}
-                  href={item.link}
+                  href={route("client.rental.show",item.id)}
                   className="flex items-start justify-center 2xl:p-10 p-6 border-r-2 border-b-2 border-custom-dark group"
                 >
                   <div className="w-1/2 h-40 mr-5 ">
                     <img
                       className="w-full h-full object-contain"
-                      src={item.img}
+                      src={
+                        item.files != null && item.files[0]
+                        ? "/" +
+                        item.files[0].path +
+                        "/" +
+                        item.files[0].title
+                        : null
+                      }
                       alt=""
                     />
                   </div>
                   <div>
-                    <div className="bold">{item.name}</div>
-                    <p className="text-sm py-2 mb-5">{item.model}</p>
+                    <div className="bold">{item.title}</div>
+                    <p className="text-sm py-2 mb-5">{item.modelnumber}</p>
                     <div
                       className={` opacity-0 group-hover:opacity-100 border border-solid border-custom-dark bold sm:px-5 px-4 rounded-full transition-all duration-300 block w-fit`}
                     >

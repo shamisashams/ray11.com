@@ -59,6 +59,20 @@
             "slug": "page"
         },
         {
+            "url": "product.index",
+            "name": "კატალოგი",
+            "i18n": "product",
+            "icon": "language",
+            "slug": "product"
+        },
+        {
+            "url": "slider.index",
+            "name": "სლაიდერი",
+            "i18n": "slider",
+            "icon": "language",
+            "slug": "slider"
+        },
+        {
             "url": "team.index",
             "name": "Team",
             "i18n": "page",

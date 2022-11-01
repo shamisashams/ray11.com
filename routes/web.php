@@ -139,6 +139,7 @@ Route::prefix('{locale?}')
 
             //rental routes
             Route::get("/rental", [\App\Http\Controllers\Client\ProductController::class, 'index'])->name('client.rental.index');
+            Route::get("/rental/{rental}", [\App\Http\Controllers\Client\ProductController::class, 'show'])->name('client.rental.show');
 
             //portfolio
             Route::get('/projects', [\App\Http\Controllers\PortfolioController::class, 'index'])->name('client.project.index');

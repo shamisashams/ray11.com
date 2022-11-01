@@ -33,11 +33,8 @@ class ProductController extends Controller
     public function index(string $locale, Request $request)
     {
         $page = Page::where('key', 'home')->firstOrFail();
-        // $products = Product::with(['latestImage'])->whereHas('categories', function (Builder $query) {
-        //     $query->where('status', 1);
-        // })->orderby('updated_at', 'desc')->paginate(16);
+        $products = Product::with(['latestImage', 'files', 'file'])->orderby('updated_at', 'desc')->paginate(9);
 
-        //dd($products);
         $images = [];
         foreach ($page->sections as $sections) {
             if ($sections->file) {
@@ -49,7 +46,7 @@ class ProductController extends Controller
 
         //dd($products);
         return Inertia::render('Rental', [
-            // 'products' => $products,
+            'products' => $products,
             'images' => $images,
             'page' => $page,
             "seo" => [
@@ -81,93 +78,15 @@ class ProductController extends Controller
     {
         //\Illuminate\Support\Facades\DB::enableQueryLog();
 
-        $product = Product::where(['status' => true, 'slug' => $slug])->whereHas('categories', function (Builder $query) {
-            $query->where('status', 1);
-        })->firstOrFail();
+        $product = Product::where(['id' => $slug])->where('status', 1)->firstOrFail();
 
         $productImages = $product->files()->orderBy('id', 'desc')->get();
 
-        //dd($productImages);
-
-        //dd(last($product->categories));
-        $categories = $product->categories;
 
 
-        $path = [];
-        $arr = [];
-        foreach ($categories as $key => $item) {
-
-
-            $ancestors = $item->ancestors;
-            if (count($ancestors)) {
-                foreach ($ancestors as $ancestor) {
-                    $arr[count($ancestors)]['ancestors'][] = $ancestor;
-                    $arr[count($ancestors)]['current'] = $item;
-                }
-            } else {
-                $arr[0]['ancestors'] = [];
-                $arr[0]['current'] = $item;
-            }
-
-
-
-            /*if($item->isLeaf()){
-
-                $ancestors = $item->ancestors;
-
-                $k = 0;
-                foreach ($ancestors as $ancestor){
-                    $path[$k]['id'] = $ancestor->id;
-                    $path[$k]['slug'] = $ancestor->slug;
-                    $path[$k]['title'] = $ancestor->title;
-                    $k++;
-                }
-
-                $path[$k]['id'] = $item->id;
-                $path[$k]['slug'] = $item->slug;
-                $path[$k]['title'] = $item->title;
-                break;
-            } else {
-
-            }*/
-        }
-
-        $max = max(array_keys($arr));
-
-        $k = 0;
-        foreach ($arr[$max]['ancestors'] as $ancestor) {
-            $path[$k]['id'] = $ancestor->id;
-            $path[$k]['slug'] = $ancestor->slug;
-            $path[$k]['title'] = $ancestor->title;
-            $k++;
-        }
-
-        $path[$k]['id'] = $arr[$max]['current']->id;
-        $path[$k]['slug'] = $arr[$max]['current']->slug;
-        $path[$k]['title'] = $arr[$max]['current']->title;
-        //dd($path);
-
-
-        $similar_products = Product::where(['status' => 1, 'product_categories.category_id' => $path[0]['id']])
-            ->where('products.id', '!=', $product->id)
-            ->leftJoin('product_categories', 'product_categories.product_id', '=', 'products.id')
-            ->inRandomOrder()
-            ->with('latestImage')
-            ->paginate(8);
-        //dd($category);
-        //$result = [];
-        //$result['id'] = $category[0]['id'];
-        //$result['title'] = $category[0]['title'];
-        //dd(\Illuminate\Support\Facades\DB::getQueryLog());
-
-        /*return view('client.pages.product.show', [
-            'product' => $product
-        ]);*/
-        return Inertia::render('SingleProduct/SingleProduct', [
+        return Inertia::render('SingleRental', [
             'product' => $product,
             'product_images' => $productImages,
-            'category_path' => $path,
-            'similar_products' => $similar_products,
             "seo" => [
                 "title" => $product->meta_title,
                 "description" => $product->meta_description,

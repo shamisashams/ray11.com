@@ -83,11 +83,8 @@ class Product extends Model implements Searchable
     public $translatedAttributes = [
         'title',
         'description',
-        'brand_id',
-        // 'category_id',
-        'width',
-        'height',
-        'madein',
+        "modelnumber",
+        "specifications"
     ];
 
     //protected $with = ['translation'];

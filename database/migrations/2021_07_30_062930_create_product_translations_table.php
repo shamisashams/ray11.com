@@ -28,11 +28,9 @@ class CreateProductTranslationsTable extends Migration
 
             $table->string('title')->nullable();
             $table->longText('description')->nullable();
-            $table->string('brand_id')->nullable();
-            $table->string('category_id')->nullable();
-            $table->string('width')->nullable();
-            $table->string('height')->nullable();
-            $table->string('madein')->nullable();
+            $table->longText('specifications')->nullable();
+            $table->text('modelnumber')->nullable();
+
 
             $table->unique(['product_id', 'locale']);
             $table->foreign('product_id')

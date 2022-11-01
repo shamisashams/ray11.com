@@ -5,12 +5,21 @@ import React from "react";
 import { HiArrowNarrowRight } from "react-icons/hi";
 import { Link } from '@inertiajs/inertia-react'
 import { useState } from "react";
+import Layout from "../Layouts/Layout";
 
-const SingleRental = () => {
-  const imgs = ["/assets/images/rental/10.png", "/assets/images/rental/7.png"];
+const SingleRental = ({seo,product,product_images}) => {
+    const renderHTML = (rawHTML) => React.createElement("div", { dangerouslySetInnerHTML: { __html: rawHTML } });
+//   const imgs = ["/assets/images/rental/10.png", "/assets/images/rental/7.png"];
+let imgs = new Array();
+// console.log(product_images, 'esa');
+product_images.map((e,i)=>{
+    imgs.push("/"+e.path+"/"+e.title)
+})
+
   const [imgIndex, setImgIndex] = useState(0);
 
   return (
+    <Layout seo={seo}>
     <div
       className="bg-cover bg-center bg-no-repeat text-custom-dark"
       style={{ backgroundImage: `url('/assets/images/bgs/3.png')` }}
@@ -38,44 +47,28 @@ const SingleRental = () => {
         </div>
         <div className=" lg:w-1/2  lg:ml-10">
           <div className=" xl:text-6xl sm:text-5xl text-4xl bold ">
-            ALEXA LF
+            {product.title}
           </div>
           <p className="my-10">
-            The driving force of all speeches, we believe that creation should
-            be the point around which any communication strategy revolves.
+            {product.description}
           </p>
           <div className="bold text-2xl mb-6">Specification</div>
           <div className="sm:columns-2">
             <div className="mb-6">
-              processor <br />
+              {/* processor <br />
               • Processor model: Intel Core i3-12100 <br />
               • Number of cores: 4 <br />
               • Number of streams: 8 <br />
               • Frequency: 3.30 GHz <br />
               • Maximum frequency: 4.40 GHz <br />
-              • Cache memory: 12 MB <br />
+              • Cache memory: 12 MB <br /> */}
+              {/* {product.specifications} */}
+              {renderHTML(product.specifications)}
             </div>
-            <div className="mb-6">
-              RAM <br />
-              Memory capacity: 8GB (1x 8GB DIMM) <br />
-              • Memory type: DDR4 <br />
-              • RAM frequency: 3200MHz <br />
-            </div>
-            <div className="mb-6">
-              Hard drive <br />
-              • Type: SSD <br />
-              • Capacity: 256 GB M.2 <br />
-            </div>
-            <div className="mb-6">
-              Video board <br />
-              • Type of video board: integrated <br />
-              • Manufacturer: Intel <br />
-              • Model: Intel UHD Graphics 730 <br />
-            </div>
-            <div className="mb-6">
-              disk drive <br />
-              • ODD: DVD-RW (Reads and Writes to DVD/CD) <br />
-            </div>
+
+
+
+
           </div>
           <div className="flex justify-end items-center mt-10">
             <p>For order:</p>
@@ -90,6 +83,7 @@ const SingleRental = () => {
         </div>
       </div>
     </div>
+    </Layout>
   );
 };
 
