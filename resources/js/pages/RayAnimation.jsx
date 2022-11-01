@@ -1,14 +1,14 @@
 import React, { useState } from "react";
-import Highlight from "../assets/images/shapes/11.png";
-import Highlight2 from "../assets/images/shapes/4.png";
+// import Highlight from "../assets/images/shapes/11.png";
+// import Highlight2 from "../assets/images/shapes/4.png";
 import { SocialMedia } from "../components/SmallComps";
-import Img1 from "../assets/images/raypages/16.png";
-import Img2 from "../assets/images/raypages/14.png";
-import Img3 from "../assets/images/raypages/15.png";
+// import Img1 from "../assets/images/raypages/16.png";
+// import Img2 from "../assets/images/raypages/14.png";
+// import Img3 from "../assets/images/raypages/15.png";
 import Slider4 from "../components/Slider4";
 import RaySection from "../components/RaySection";
 import { videoGrid } from "../components/Data";
-import PlayIcon from "../assets/images/svg/play.svg";
+// import PlayIcon from "../assets/images/svg/play.svg";
 import VideoPopup from "../components/VideoPopup";
 
 const RayAnimation = () => {
@@ -21,7 +21,7 @@ const RayAnimation = () => {
             <div className="relative 2xl:text-7xl xl:text-6xl sm:text-5xl text-4xl bold w-fit">
               <img
                 className="absolute -left-14 top-1/2 -translate-y-1/2 "
-                src={Highlight}
+                src="/assets/images/shapes/11.png"
                 alt=""
               />
               <span className="relative">Animate your ideas with us</span>
@@ -29,7 +29,7 @@ const RayAnimation = () => {
             <div className="highlight-title nun-bold relative sm:px-20 px-14 whitespace-nowrap w-fit text-custom-dark xl:text-5xl sm:text-4xl text-3xl sm:my-14 my-10">
               <img
                 className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
-                src={Highlight2}
+                src="/assets/images/shapes/4.png"
                 alt=""
               />
               <span className="relative">Ray animation</span>
@@ -45,7 +45,7 @@ const RayAnimation = () => {
             </div>
           </div>
           <div className="lg:w-1/2">
-            <img src={Img1} alt="" />
+            <img src="/assets/images/raypages/16.png" alt="" />
           </div>
         </div>
       </section>
@@ -80,7 +80,7 @@ const RayAnimation = () => {
                 recommendations below.
               </p>
             </div>
-            <img className="mx-auto" src={Img2} alt="" />
+            <img className="mx-auto" src="/assets/images/raypages/14.png" alt="" />
           </div>
         </RaySection>
         <RaySection color="#3FA0CD" title="Grapgics & commercial">
@@ -157,7 +157,7 @@ const RayAnimation = () => {
                 recommendations below.
               </p>
             </div>
-            <img className="mx-auto lg:w-1/2" src={Img3} alt="" />
+            <img className="mx-auto lg:w-1/2" src="/assets/images/raypages/14.png" alt="" />
           </div>
         </RaySection>
       </section>

@@ -137,6 +137,8 @@ Route::prefix('{locale?}')
             Route::get('/news', [\App\Http\Controllers\Client\NewsController::class, 'index'])->name('client.news.index');
             Route::get('/news/{news}', [\App\Http\Controllers\Client\NewsController::class, 'show'])->name('client.news.show');
 
+            //rental routes
+            Route::get("/rental", [\App\Http\Controllers\Client\ProductController::class, 'index'])->name('client.rental.index');
 
             //portfolio
             Route::get('/projects', [\App\Http\Controllers\PortfolioController::class, 'index'])->name('client.project.index');

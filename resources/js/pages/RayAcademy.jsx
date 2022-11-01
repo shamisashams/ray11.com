@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import Highlight from "../assets/images/shapes/10.png";
-import Highlight2 from "../assets/images/shapes/5.png";
+// import Highlight from "../assets/images/shapes/10.png";
+// import Highlight2 from "../assets/images/shapes/5.png";
 import { Question, SocialMedia } from "../components/SmallComps";
-import bg from "../assets/images/bgs/1.png";
-import Img1 from "../assets/images/raypages/20.png";
+// import bg from "../assets/images/bgs/1.png";
+// import Img1 from "../assets/images/raypages/20.png";
 import Slider5 from "../components/Slider5";
 
 const RayAcademy = () => {
@@ -30,14 +30,14 @@ const RayAcademy = () => {
     <>
       <section
         className="relative pt-40 pb-12 h-screen bg-cover bg-center"
-        style={{ backgroundImage: `url(${bg})` }}
+        style={{ backgroundImage: `url('/assets/images/bgs/1.png')` }}
       >
         <div className="wrapper flex items-center justify-between lg:flex-row flex-col">
           <div className="lg:w-2/5 lg:mr-10 lg:mb-0 mb-10">
             <div className="relative 2xl:text-7xl xl:text-6xl sm:text-5xl text-4xl bold w-fit">
               <img
                 className="absolute -left-14 top-1/2 -translate-y-1/2 "
-                src={Highlight}
+                src="/assets/images/shapes/10.png"
                 alt=""
               />
               <span className="relative">We share our knowledge</span>
@@ -45,7 +45,7 @@ const RayAcademy = () => {
             <div className="highlight-title nun-bold relative sm:px-20 px-14 whitespace-nowrap w-fit text-custom-dark xl:text-5xl sm:text-4xl text-3xl sm:my-14 my-10">
               <img
                 className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
-                src={Highlight2}
+                src="/assets/images/shapes/5.png"
                 alt=""
               />
               <span className="relative">Ray academy</span>
@@ -66,7 +66,7 @@ const RayAcademy = () => {
         <Slider5 />
       </section>
       <section className="wrapper flex items-start justify-between lg:py-24 py-20 flex-col lg:flex-row">
-        <img className="mt-20 mx-auto " src={Img1} alt="" />
+        <img className="mt-20 mx-auto " src="/assets/images/raypages/20.png" alt="" />
         <div className="lg:w-2/3 lg:mr-10 mt-10 lg:mt-0">
           <div className="bold text-2xl text-center mb-10">Academy FAQ's</div>
           {questions.map((item, index) => {

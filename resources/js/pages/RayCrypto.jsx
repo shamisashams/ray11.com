@@ -7,7 +7,7 @@ import { SocialMedia } from "../components/SmallComps";
 import RaySection from "../components/RaySection";
 // import Icon1 from "../assets/images/icons/4.png";
 // import Icon2 from "../assets/images/icons/5.png";
-import { Link } from "react-router-dom";
+import { Link } from '@inertiajs/inertia-react'
 // import Gridimg1 from "../assets/images/raypages/4.png";
 // import Gridimg2 from "../assets/images/raypages/5.png";
 // import Gridimg3 from "../assets/images/raypages/6.png";
@@ -115,7 +115,7 @@ const RayCrypto = () => {
                   </a>
                 </div>
                 <Link
-                  to="/"
+                  href="/"
                   className="bold py-3 px-8 border border-custom-purple border solid rounded-full my-5"
                 >
                   Open on market
@@ -173,14 +173,14 @@ const RayCrypto = () => {
               <div>
                 <div className="opacity-50">Get on:</div>
                 <Link
-                  to="/"
+                  href="/"
                   className="bold text-sm leading-loose mt-3 block py-1 px-4 border border-custom-purple border solid rounded-full  whitespace-nowrap"
                 >
                   <SiAppstore className="inline-block  mr-2" />
                   Appstore
                 </Link>
                 <Link
-                  to="/"
+                  href="/"
                   className="bold text-sm leading-loose block py-1 mt-3 px-4 border border-custom-purple border solid rounded-full  whitespace-nowrap"
                 >
                   <IoLogoGooglePlaystore className="inline-block  mr-2" />

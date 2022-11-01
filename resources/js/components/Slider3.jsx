@@ -9,7 +9,8 @@ import {
   HiOutlineArrowCircleLeft,
 } from "react-icons/hi";
 import { companySlide } from "./Data";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
+import { Link } from '@inertiajs/inertia-react'
 
 const Slider3 = () => {
   const prevRef = useRef(null);
@@ -50,7 +51,7 @@ const Slider3 = () => {
                   <p className="opacity-30 mb-5">{item.para}</p>
                   <div className="companyBox">
                     <Link
-                      to="/news"
+                      href="/news"
                       className={`flex items-center justify-center border border-solid bold  sm:h-12 h-10 w-fit sm:px-7 px-4 rounded-full transition-all duration-300  sm:text-base text-sm  whitespace-nowrap`}
                       style={{ color: item.color, borderColor: item.color }}
                     >

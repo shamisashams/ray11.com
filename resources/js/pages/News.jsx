@@ -1,16 +1,19 @@
 import React from "react";
-import Pattern from "../assets/images/patterns/1.png";
-import img1 from "../assets/images/other/2.png";
+// import Pattern from "../assets/images/patterns/1.png";
+// import img1 from "../assets/images/other/2.png";
 import { newsGrid } from "../components/Data";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
+import { Link } from '@inertiajs/inertia-react'
+import Layout from "../Layouts/Layout";
 
-const News = () => {
+const News = ({seo}) => {
   return (
+    <Layout seo={seo}>
     <div className="relative py-32">
-      <img className="-z-10 absolute top-0 right-0" src={Pattern} alt="" />
+      <img className="-z-10 absolute top-0 right-0" src="/assets/images/patterns/1.png" alt="" />
       <div className="wrapper">
         <div className="flex justify-start items-center mb-10 flex-col md:flex-row ">
-          <img src={img1} alt="" />
+          <img src="/assets/images/other/2.png" alt="" />
           <p className="opacity-50 md:max-w-lg md:ml-5">
             From banking and insurance to wealth management and on securities
             distribution, we dedicated financial services them the teams serve
@@ -21,7 +24,7 @@ const News = () => {
         <div className="grid xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 2xl:gap-x-20 gap-10 2xl:gap-y-14">
           {newsGrid.map((item, index) => {
             return (
-              <Link key={index} to={item.link} className="group">
+              <Link key={index} href={item.link} className="group">
                 <div className="relative h-96 w-full overflow-hidden mb-6 ">
                   <img
                     className="w-full h-full object-cover"
@@ -41,6 +44,7 @@ const News = () => {
         </div>
       </div>
     </div>
+    </Layout>
   );
 };
 

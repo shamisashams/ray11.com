@@ -33,9 +33,9 @@ class ProductController extends Controller
     public function index(string $locale, Request $request)
     {
         $page = Page::where('key', 'home')->firstOrFail();
-        $products = Product::with(['latestImage'])->whereHas('categories', function (Builder $query) {
-            $query->where('status', 1);
-        })->orderby('updated_at', 'desc')->paginate(16);
+        // $products = Product::with(['latestImage'])->whereHas('categories', function (Builder $query) {
+        //     $query->where('status', 1);
+        // })->orderby('updated_at', 'desc')->paginate(16);
 
         //dd($products);
         $images = [];
@@ -48,8 +48,8 @@ class ProductController extends Controller
         }
 
         //dd($products);
-        return Inertia::render('Products/Products', [
-            'products' => $products,
+        return Inertia::render('Rental', [
+            // 'products' => $products,
             'images' => $images,
             'page' => $page,
             "seo" => [

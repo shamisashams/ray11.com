@@ -9,7 +9,7 @@ import {
   HiOutlineArrowCircleLeft,
 } from "react-icons/hi";
 import { academySlider } from "./Data";
-import { Link } from "react-router-dom";
+import { Link } from '@inertiajs/inertia-react'
 
 const Slider5 = () => {
   const prevRef = useRef(null);
@@ -54,7 +54,7 @@ const Slider5 = () => {
                         </div>
                         <p className="opacity-30 sm:my-10 my-2">{item.para}</p>
                         <Link
-                          to={item.link}
+                          href={item.link}
                           className={`flex items-center justify-center border border-solid border-custom-slate-900 bold text-custom-slate-900 sm:h-12 h-10 w-fit sm:px-7 px-4 rounded-full transition-all duration-300  sm:text-base text-sm  whitespace-nowrap`}
                         >
                           <span className="transition-all duration-300">

@@ -1,20 +1,22 @@
 import React from "react";
 import Form from "../components/Form";
-import bg1 from "../assets/images/bgs/5.png";
-import bg2 from "../assets/images/bgs/6.png";
+// import bg1 from "../assets/images/bgs/5.png";
+// import bg2 from "../assets/images/bgs/6.png";
 import { SocialMedia } from "../components/SmallComps";
+import Layout from "../Layouts/Layout";
 
-const Contact = () => {
+const Contact = ({seo}) => {
   return (
+    <Layout seo={seo}>
     <div className="min-h-screen relative contact">
       <img
         className="absolute -z-10 lg:w-1/2 w-full lg:h-full h-80 top-0 left-0 object-cover grayscale opacity-50 lg:opacity-100"
-        src={bg1}
+        src="/assets/images/bgs/5.png"
         alt=""
       />
       <img
         className="absolute -z-10 w-1/2 h-full top-0 right-0  object-cover"
-        src={bg2}
+        src="/assets/images/bgs/6.png"
         alt=""
       />
       <div className="wrapper flex justify-between items-start pt-40 pb-20 lg:flex-row flex-col">
@@ -51,6 +53,7 @@ const Contact = () => {
         </div>
       </div>
     </div>
+    </Layout>
   );
 };
 

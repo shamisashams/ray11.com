@@ -1,29 +1,31 @@
 import React, { useState } from "react";
-import Img1 from "../assets/images/other/5.png";
-import Img2 from "../assets/images/other/6.png";
-import Img3 from "../assets/images/other/7.png";
-import Img4 from "../assets/images/other/8.png";
+// import Img1 from "../assets/images/other/5.png";
+// import Img2 from "../assets/images/other/6.png";
+// import Img3 from "../assets/images/other/7.png";
+// import Img4 from "../assets/images/other/8.png";
 import ImageLayout from "../components/ImageLayout";
-import PlayIcon from "../assets/images/svg/play.svg";
+// import PlayIcon from "../assets/images/svg/play.svg";
 import VideoPopup from "../components/VideoPopup";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
+import { Link } from '@inertiajs/inertia-react'
 import { HiArrowNarrowRight } from "react-icons/hi";
 import { companies } from "../components/Data";
+import Layout from "../Layouts/Layout";
 
-const About = () => {
+const About = ({seo}) => {
   const [showVideo, setShowVideo] = useState(false);
   return (
-    <>
+    <Layout seo={seo}>
       <section className="relative pt-60">
-        <img className="absolute left-0 top-10 -z-10" src={Img1} alt="" />
+        <img className="absolute left-0 top-10 -z-10" src="/assets/images/other/5.png" alt="" />
         <img
           className="absolute right-0 top-0 -z-10 md:w-1/2 w-2/3"
-          src={Img3}
+          src="/assets/images/other/7.png"
           alt=""
         />
         <div className="wrapper relative">
           {" "}
-          <img className="absolute left-32 -top-20 z-10" src={Img2} alt="" />
+          <img className="absolute left-32 -top-20 z-10" src="/assets/images/other/6.png" alt="" />
           <div className="bold opacity-50 text-2xl relative w-fit">
             About us
           </div>
@@ -62,10 +64,10 @@ const About = () => {
         onClick={() => setShowVideo(true)}
         className="relative h-fit cursor-pointer group"
       >
-        <img className="max-h-screen" src={Img4} alt="" />
+        <img className="max-h-screen" src="/assets/images/other/8.png" alt="" />
         <img
           className="absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2 group-hover:animate-pulse"
-          src={PlayIcon}
+          src="/assets/images/svg/play.svg"
           alt=""
         />
       </section>
@@ -95,7 +97,7 @@ const About = () => {
                   {item.para}
                 </p>
                 <Link
-                  to={item.link}
+                  href={item.link}
                   className={`flex items-center justify-center border border-solid border-custom-slate-900 bold text-custom-slate-900 sm:h-12 h-10 w-fit sm:px-7 px-4 rounded-full transition-all duration-300  sm:text-base text-sm  whitespace-nowrap`}
                 >
                   <span className="transition-all duration-300">
@@ -113,7 +115,7 @@ const About = () => {
         closeVideo={() => setShowVideo(false)}
         src="https://www.youtube.com/embed/xYrPGIJ2qoo"
       />
-    </>
+    </Layout>
   );
 };
 

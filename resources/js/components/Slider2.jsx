@@ -8,7 +8,8 @@ import { HiOutlineArrowCircleRight, HiArrowNarrowRight } from "react-icons/hi";
 import { MdOutlineLocationOn } from "react-icons/md";
 import { eventSlider } from "./Data";
 // import Shade from "../assets/images/shapes/7.png";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
+import { Link } from '@inertiajs/inertia-react'
 
 const Slider2 = () => {
   const nextRef = useRef(null);
@@ -66,7 +67,7 @@ const Slider2 = () => {
                     </div>
                     <div className="nun-bold mb-2 mt-1"># {item.title}</div>
                     <p className="mb-2 ">{item.para}</p>
-                    <Link to="/" className="bold">
+                    <Link href="/" className="bold">
                       Learn more{" "}
                       <HiArrowNarrowRight className="inline-block w-6 h-6 ml-1" />
                     </Link>

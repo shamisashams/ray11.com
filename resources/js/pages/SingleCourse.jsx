@@ -7,7 +7,7 @@ import React from "react";
 import { BiCheck, BiCalendar } from "react-icons/bi";
 // import PlayIcon from "../assets/images/svg/play.svg";
 import { HiArrowNarrowRight } from "react-icons/hi";
-import { Link } from "react-router-dom";
+import { Link } from '@inertiajs/inertia-react'
 import VideoPopup from "../components/VideoPopup";
 import { useState } from "react";
 
@@ -125,7 +125,7 @@ const SingleCourse = () => {
               return (
                 <Link
                   key={index}
-                  to="/"
+                  href="/"
                   className="p-4 hover:bg-custom-slate-200 flex items-center justify-start transition"
                 >
                   <div className="w-20 h-20 rounded-lg overflow-hidden mr-4 shrink-0">

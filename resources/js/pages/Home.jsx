@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link } from '@inertiajs/inertia-react'
 // import Highlight from "../assets/images/shapes/1.png";
 // import Highlight2 from "../assets/images/shapes/6.png";
 import Slider1 from "../components/Slider1";
@@ -15,11 +15,13 @@ import { companies, newsHome } from "../components/Data";
 import Slider3 from "../components/Slider3";
 // import Light from "../assets/images/svg/light.png";
 import VideoPopup from "../components/VideoPopup";
+import Layout from "../Layouts/Layout";
 
-const Home = () => {
+const Home = ({seo}) => {
   const [showVideo, setShowVideo] = useState(false);
   return (
     <>
+    <Layout seo={seo}>
       <section className="relative pt-40 pb-12">
         <img className="-z-10 absolute top-0 right-0" src="/assets/images/patterns/1.png" alt="" />
         <div className="wrapper flex items-center justify-between lg:flex-row flex-col">
@@ -45,7 +47,7 @@ const Home = () => {
               be the point around which any communication strategy revolves.
             </p>
             <div className="flex justify-start items-center mt-10 mb-8">
-              <Link to="/about">
+              <Link href="/about">
                 <button className="px-8 h-10 text-custom-dark bg-custom-yellow bold rounded-full transition-all duration-300 hover:bg-white">
                   About us
                 </button>
@@ -102,7 +104,7 @@ const Home = () => {
                   {item.para}
                 </p>
                 <Link
-                  to={item.link}
+                  href={item.link}
                   className={`flex items-center justify-center border border-solid border-custom-slate-900 bold text-custom-slate-900 sm:h-12 h-10 w-fit sm:px-7 px-4 rounded-full transition-all duration-300  sm:text-base text-sm  whitespace-nowrap`}
                 >
                   <span className="transition-all duration-300">
@@ -124,7 +126,7 @@ const Home = () => {
             Don't miss any news
           </div>
           <Link
-            to="/news"
+            href="/news"
             className={`flex items-center justify-center border border-solid border-custom-yellow bold text-custom-yellow sm:h-10 h-10 w-fit sm:px-6 px-4 rounded-full transition-all duration-300  sm:text-base text-sm  whitespace-nowrap`}
           >
             <span>Check all</span>
@@ -146,7 +148,7 @@ const Home = () => {
             return (
               <Link
                 key={index}
-                to="/"
+                href="/"
                 className="flex items-center justify-start p-5 border-b border-custom-slate-900 hover:bg-custom-slate-900 rounded transition-all"
               >
                 <div className="sm:w-36 sm:h-36 w-28 h-28 rounded mr-3 overflow-hidden shrink-0">
@@ -250,6 +252,7 @@ const Home = () => {
         closeVideo={() => setShowVideo(false)}
         src="https://www.youtube.com/embed/xYrPGIJ2qoo"
       />
+      </Layout>
     </>
   );
 };

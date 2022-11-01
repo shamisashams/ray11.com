@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link } from '@inertiajs/inertia-react'
 // import bg from "../assets/images/bgs/4.png";
 // import Img1 from "../assets/images/other/3.png";
 // import Img2 from "../assets/images/other/4.png";
@@ -12,7 +12,7 @@ const SingleNews = () => {
       <img className="-z-10 absolute top-0 right-0" src="/assets/images/bgs/4.png" alt="" />
       <div className="wrapper">
         <Link
-          to="/contact"
+          href="/contact"
           className={`flex items-center justify-center border border-solid border-white bold text-white sm:h-10 h-10 w-fit sm:px-6 px-4 rounded-full   sm:text-base text-sm  whitespace-nowrap`}
         >
           <span>Back to news</span>

@@ -1,5 +1,6 @@
 import React from "react";
-import { Link, useLocation } from "react-router-dom";
+// import {  useLocation } from "react-router-dom";
+import { Link, usePage } from "@inertiajs/inertia-react";
 import { SocialMedia } from "./SmallComps";
 // import Logo from "../assets/images/logo/1.png";
 import Form from "./Form";
@@ -7,7 +8,8 @@ import Form from "./Form";
 // import Pattern2 from "../assets/images/patterns/4.png";
 
 const Footer = () => {
-  const { pathname } = useLocation();
+//   const { pathname } = useLocation();
+const { pathname } = usePage().props;
   let hide = false;
   if (pathname === "/contact") {
     hide = true;
@@ -44,19 +46,19 @@ const Footer = () => {
         <div className="py-10 border-t border-solid border-black sm:text-base text-sm">
           <ul className="mb-10">
             <li className="inline-block bold sm:mx-4 mx-2">
-              <Link to="/">Home</Link>
+              <Link href="/">Home</Link>
             </li>
             <li className="inline-block bold sm:mx-4 mx-2">
-              <Link to="/">About Ray 11</Link>
+              <Link href="/">About Ray 11</Link>
             </li>
             <li className="inline-block bold sm:mx-4 mx-2">
-              <Link to="/">News</Link>
+              <Link href="/">News</Link>
             </li>
             <li className="inline-block bold sm:mx-4 mx-2">
-              <Link to="/">Contact</Link>
+              <Link href="/">Contact</Link>
             </li>
           </ul>
-          <Link className=" w-fit" to="/">
+          <Link className=" w-fit" href="/">
             <img className="mx-auto w-32" src="/assets/images/logo/1.png" alt="" />
           </Link>
         </div>

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+// import {  useLocation } from "react-router-dom";
+import { Link, usePage } from "@inertiajs/inertia-react";
 // import Logo1 from "../assets/images/logo/1.png";
 // import Logo2 from "../assets/images/logo/2.png";
 // import Logo3 from "../assets/images/logo/3.png";
@@ -12,7 +13,8 @@ import { HiArrowNarrowRight } from "react-icons/hi";
 
 const Navbar = () => {
   const [menu, setMenu] = useState(false);
-  const { pathname } = useLocation();
+//   const { pathname } = useLocation();
+const { pathname } = usePage().props;
   let dark = false;
   let logoImg = "/assets/images/logo/1.png";
 
@@ -49,23 +51,23 @@ const Navbar = () => {
   const navs = [
     {
       text: "Home",
-      link: "/",
+      link: route("client.home.index"),
     },
     {
       text: "About Ray 11",
-      link: "/about",
+      link: route("client.aboutus"),
     },
     {
       text: "Rental",
-      link: "/rental",
+      link: route("client.rental.index"),
     },
     {
       text: "News",
-      link: "/news",
+      link: route("client.news.index"),
     },
     {
       text: "Contact",
-      link: "/contact",
+      link: route("client.contact.index"),
     },
   ];
 
@@ -100,7 +102,7 @@ const Navbar = () => {
                     </p>
                   </div>
                   <Link
-                    to={item.link}
+                    href={item.link}
                     className={`flex items-center justify-center border border-solid border-white bold text-white sm:h-10 h-10 w-fit sm:px-6 px-4 rounded-full transition-all duration-300  sm:text-base text-sm  whitespace-nowrap mx-auto`}
                   >
                     <span>Learn more</span>
@@ -114,7 +116,7 @@ const Navbar = () => {
             {navs.map((nav, index) => {
               return (
                 <li className="block mb-5 md:text-xl" key={index}>
-                  <Link className="bold relative navLink" to={nav.link}>
+                  <Link className="bold relative navLink" href={nav.link}>
                     {nav.text}
                   </Link>
                 </li>
@@ -124,7 +126,7 @@ const Navbar = () => {
           <div className="lg:hidden text-center w-fit mx-auto">
             {companies.map((logo, index) => {
               return (
-                <Link key={index} to={logo.link} className="inline-block m-3">
+                <Link key={index} href={logo.link} className="inline-block m-3">
                   <img src={logo.logo} alt="" className="md:h-12 h-8" />
                 </Link>
               );
@@ -139,7 +141,7 @@ const Navbar = () => {
         } top-0 left-0 w-full py-4 z-50`}
       >
         <div className="relative wrapper flex items-center justify-between">
-          <Link to="/">
+          <Link href="/">
             <img className="sm:w-48 w-32" src={logoImg} alt="" />
           </Link>
           <div className="flex items-center justify-end">
@@ -151,7 +153,7 @@ const Navbar = () => {
                       className={`bold relative navLink ${
                         nav.link === pathname ? "active" : ""
                       } `}
-                      to={nav.link}
+                      href={nav.link}
                     >
                       {nav.text}
                     </Link>

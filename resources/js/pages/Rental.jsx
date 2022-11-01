@@ -3,10 +3,13 @@ import React from "react";
 // import Img1 from "../assets/images/other/1.png";
 import { rentalGrid } from "../components/Data";
 import { HiArrowNarrowRight } from "react-icons/hi";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
+import { Link } from '@inertiajs/inertia-react'
+import Layout from "../Layouts/Layout";
 
-const Rental = () => {
+const Rental = ({seo}) => {
   return (
+    <Layout seo={seo}>
     <div
       className="bg-cover bg-center bg-no-repeat text-custom-dark"
       style={{ backgroundImage: `url('/assets/images/bgs/3.png')` }}
@@ -32,7 +35,7 @@ const Rental = () => {
               return (
                 <Link
                   key={index}
-                  to={item.link}
+                  href={item.link}
                   className="flex items-start justify-center 2xl:p-10 p-6 border-r-2 border-b-2 border-custom-dark group"
                 >
                   <div className="w-1/2 h-40 mr-5 ">
@@ -64,6 +67,7 @@ const Rental = () => {
         </div>
       </div>
     </div>
+    </Layout>
   );
 };
 

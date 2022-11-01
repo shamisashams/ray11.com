@@ -3,7 +3,7 @@ import React from "react";
 // import Img1 from "../assets/images/rental/10.png";
 // import Img2 from "../assets/images/rental/7.png";
 import { HiArrowNarrowRight } from "react-icons/hi";
-import { Link } from "react-router-dom";
+import { Link } from '@inertiajs/inertia-react'
 import { useState } from "react";
 
 const SingleRental = () => {
@@ -80,7 +80,7 @@ const SingleRental = () => {
           <div className="flex justify-end items-center mt-10">
             <p>For order:</p>
             <Link
-              to="/contact"
+              href="/contact"
               className={`flex items-center justify-center border border-solid border-custom-dark bold text-custom-dark sm:h-10 h-10 w-fit sm:px-6 px-4 rounded-full   sm:text-base text-sm  whitespace-nowrap ml-5`}
             >
               <span>Contact us</span>
