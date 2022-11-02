@@ -21,7 +21,7 @@ class PageSeeder extends Seeder
                 'key' => 'home'
             ],
             [
-                'key' => 'aboutus'
+                'key' => 'aboutus',
             ],
             [
                 'key' => 'contact'

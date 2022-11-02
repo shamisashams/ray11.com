@@ -160,20 +160,21 @@ class LoginPageController extends Controller
         //dd($products);
 
         return Inertia::render('About', [
+            "page" => $page,
             "category" => Category::with('translations')->get(),
-            "partners" => Staff::with('latestImage')->get(),
-            "team" => Team::with('latestImage')->paginate(9),
+            // "partners" => Staff::with('latestImage')->get(),
+            // "team" => Team::with('latestImage')->paginate(9),
             'success' => $request->session()->get('success'),
-            "sliders" => $sliders->get(), "page" => $page, "seo" => [
-                "title" => $page->meta_title,
-                "description" => $page->meta_description,
-                "keywords" => $page->meta_keyword,
-                "og_title" => $page->meta_og_title,
-                "og_description" => $page->meta_og_description,
+            // "sliders" => $sliders->get(), "page" => $page, "seo" => [
+            //     "title" => $page->meta_title,
+            //     "description" => $page->meta_description,
+            //     "keywords" => $page->meta_keyword,
+            //     "og_title" => $page->meta_og_title,
+            //     "og_description" => $page->meta_og_description,
 
-                //            "image" => "imgg",
-                //            "locale" => App::getLocale()
-            ],
+            //     //            "image" => "imgg",
+            //     //            "locale" => App::getLocale()
+            // ],
             // 'popular_products' => $products,
             'images' => $images
         ])->withViewData([

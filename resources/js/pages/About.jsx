@@ -12,7 +12,9 @@ import { HiArrowNarrowRight } from "react-icons/hi";
 import { companies } from "../components/Data";
 import Layout from "../Layouts/Layout";
 
-const About = ({seo}) => {
+const About = ({seo,images,page}) => {
+
+    console.log( images ,'esaa');
   const [showVideo, setShowVideo] = useState(false);
   return (
     <Layout seo={seo}>
@@ -36,7 +38,40 @@ const About = ({seo}) => {
         </div>
       </section>
       <section className="lg:mt-40 mt-20">
-        <ImageLayout />
+        {/* <ImageLayout /> */}
+        <div className="imageLayout wrapper flex items-center justify-center">
+      <div className="column w-1/5 lg:mx-2 mx-1">
+        <div className="img medium overflow-hidden lg:my-4 my-2 border  border-solid sm:rounded-xl rounded-md border-custom-yellow">
+          <img className="w-full h-full object-cover" src="/assets/images/news/1.png" alt="" />
+        </div>
+      </div>
+      <div className="column w-1/5 lg:mx-2 mx-1">
+        <div className="img short overflow-hidden lg:my-4 my-2 border  border-solid sm:rounded-xl rounded-md border-custom-yellow">
+          <img className="w-full h-full object-cover" src="/assets/images/news/2.png" alt="" />
+        </div>
+        <div className="img medium overflow-hidden lg:my-4 my-2 border  border-solid sm:rounded-xl rounded-md border-custom-yellow">
+          <img className="w-full h-full object-cover" src="/assets/images/news/3.png" alt="" />
+        </div>
+      </div>
+      <div className="column w-1/5 lg:mx-2 mx-1">
+        <div className="img long overflow-hidden lg:my-4 my-2 border  border-solid sm:rounded-xl rounded-md border-custom-yellow">
+          <img className="w-full h-full object-cover" src="/assets/images/news/7.png" alt="" />
+        </div>
+      </div>
+      <div className="column w-1/5 lg:mx-2 mx-1">
+        <div className="img medium overflow-hidden lg:my-4 my-2 border  border-solid sm:rounded-xl rounded-md border-custom-yellow">
+          <img className="w-full h-full object-cover" src="/assets/images/news/5.png" alt="" />
+        </div>
+        <div className="img short overflow-hidden lg:my-4 my-2 border  border-solid sm:rounded-xl rounded-md border-custom-yellow">
+          <img className="w-full h-full object-cover" src="/assets/images/news/6.png" alt="" />
+        </div>
+      </div>
+      <div className="column medium w-1/5 lg:mx-2 mx-1">
+        <div className="img medium overflow-hidden lg:my-4 my-2 border  border-solid sm:rounded-xl rounded-md border-custom-yellow">
+          <img className="w-full h-full object-cover" src="/assets/images/news/4.png" alt="" />
+        </div>
+      </div>
+    </div>
       </section>
       <section className="wrapper text-center py-20">
         <div className="bold text-2xl opacity-30 mb-10">History</div>
@@ -113,7 +148,9 @@ const About = ({seo}) => {
       <VideoPopup
         open={showVideo}
         closeVideo={() => setShowVideo(false)}
-        src="https://www.youtube.com/embed/xYrPGIJ2qoo"
+        // src="https://www.youtube.com/embed/xYrPGIJ2qoo"
+        src={(page.url?page.url : "https://www.youtube.com/embed/tl6T2nwRers")}
+        // src="https://www.youtube.com/embed/tl6T2nwRers"
       />
     </Layout>
   );

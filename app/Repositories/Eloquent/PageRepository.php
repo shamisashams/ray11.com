@@ -1,4 +1,5 @@
 <?php
+
 /**
  *  app/Repositories/Eloquent/ProductRepository.php
  *
@@ -32,7 +33,6 @@ class PageRepository extends BaseRepository implements PageRepositoryInterface
         $this->model = $this->findOrFail($id);
 
         if ($request->hasFile('files')) {
-            //dd($request->file('files'));
             // Get Name Of model
             $reflection = new ReflectionClass(get_class($this->model));
             $modelName = $reflection->getShortName();
@@ -40,7 +40,7 @@ class PageRepository extends BaseRepository implements PageRepositoryInterface
             foreach ($request->file('files') as $key => $file) {
 
                 $imagename = date('Ymhs') . str_replace(' ', '', $file->getClientOriginalName());
-                $destination = base_path() . '/storage/app/public/' . $modelName . '/' . $this->model->id .'/files';
+                $destination = base_path() . '/storage/app/public/' . $modelName . '/' . $this->model->id . '/files';
                 $request->file('files')[$key]->move($destination, $imagename);
                 $this->model->files()->create([
                     'title' => $imagename,
@@ -53,5 +53,4 @@ class PageRepository extends BaseRepository implements PageRepositoryInterface
 
         return $this->model;
     }
-
 }

@@ -199,6 +199,9 @@
 
                                     @endforeach
 
+
+
+
                                 </div>
                             </div>
                         </div>
@@ -212,7 +215,22 @@
         <div class="col-lg-6 col-md-12">
             <div class="card">
                 <div class="card-body">
+                    @if (\Request::route()->parameters['page']->id == 2)
+                    <div class="form-group">
+                        <label class="form-label">@lang('admin.url')</label>
+                        <input type="text" name="url" class="form-control" placeholder="@lang('admin.url')" value="{{$page->url ?? ''}}">
 
+                    </div>
+                    @error('.url')
+                    <small class="text-danger">
+                        <div class="error">
+                            {{$message}}
+                        </div>
+                    </small>
+                    @enderror
+                @else
+                   <p></p>
+                @endif
 
 
 

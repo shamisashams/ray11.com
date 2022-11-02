@@ -17,6 +17,7 @@ class CreateSlidersTable extends Migration
             $table->id();
             $table->boolean("status")->default(true);
             $table->string('youtube_url')->nullable();
+            $table->string('reddirect_url')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

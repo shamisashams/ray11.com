@@ -21,7 +21,8 @@ class Page extends Model
 
     protected $fillable = [
         'key',
-        'images'
+        'images',
+        'url'
     ];
 
     //protected $with = 'sections';

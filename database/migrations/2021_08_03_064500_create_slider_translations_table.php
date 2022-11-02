@@ -19,10 +19,11 @@ class CreateSliderTranslationsTable extends Migration
             $table->string('locale')->index();
 
             $table->string('title')->nullable();
+            $table->longText('short_description')->nullable();
             $table->longText('description')->nullable();
             $table->timestamps();
 
-            $table->unique(['slider_id','locale']);
+            $table->unique(['slider_id', 'locale']);
             $table->foreign('slider_id')
                 ->references('id')
                 ->on('sliders')

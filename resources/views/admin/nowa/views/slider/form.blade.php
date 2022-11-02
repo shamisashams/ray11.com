@@ -97,6 +97,20 @@
                                                 </small>
                                                 @enderror
                                             </div>--}}
+                                            <div class="form-group">
+                                                <label class="form-label" for="short_description">@lang('admin.short_description')</label>
+                                                <input type='text' class="form-control" id="short_description-{{$locale}}"
+                                                          name="{{$locale}}[short_description]'">
+                                                {!! $slider->translate($locale)->short_description ?? '' !!}
+                                            </input>
+                                                @error($locale.'.short_description')
+                                                <small class="text-danger">
+                                                    <div class="error">
+                                                        {{$message}}
+                                                    </div>
+                                                </small>
+                                                @enderror
+                                            </div>
 
 
                                             <div class="form-group">
@@ -133,6 +147,18 @@
                 <div class="card-body">
 
 
+                    <div class="form-group">
+                        {!! Form::label("reddirect_url",__('admin.btn_reddirect_url'),['class' => 'form-label']) !!}
+                        {!! Form::text("reddirect_url",$slider->reddirect_url ?? '',['class' => 'form-control']) !!}
+
+                        @error($locale.'.reddirect_url')
+                        <small class="text-danger">
+                            <div class="error">
+                                {{$message}}
+                            </div>
+                        </small>
+                        @enderror
+                    </div>
                     <div class="form-group">
                         {!! Form::label("youtube_url",__('admin.btn_link'),['class' => 'form-label']) !!}
                         {!! Form::text("youtube_url",$slider->youtube_url ?? '',['class' => 'form-control']) !!}
