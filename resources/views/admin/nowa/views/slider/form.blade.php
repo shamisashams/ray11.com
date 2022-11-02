@@ -177,7 +177,7 @@
                             <span>{{__('admin.status')}}</span>
                         </label>
                     </div>
-
+{{-- @dd($slider) --}}
                     <div class="form-group mb-0 mt-3 justify-content-end">
                         <div>
                             {!! Form::submit($slider->created_at ? __('admin.update') : __('admin.create'),['class' => 'btn btn-primary']) !!}

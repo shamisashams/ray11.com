@@ -113,10 +113,9 @@ class UpcomingEventsController extends Controller
      *
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
-    public function edit(string $locale, UpcomingEvent $slider, $code)
+    public function edit(string $locale, UpcomingEvent $event, $code)
     {
-        // dd($code);
-        $url = locale_route('slider.update', $code, false);
+        $url = locale_route('upcomingevents.update', $code, false);
         $method = 'PUT';
 
         /*return view('admin.pages.slider.form', [
@@ -126,7 +125,7 @@ class UpcomingEventsController extends Controller
         ]);*/
 
         return view('admin.nowa.views.upcomingevents.form', [
-            'slider' => $slider,
+            'slider' => $event->find($code),
             'url' => $url,
             'method' => $method,
         ]);
@@ -143,6 +142,7 @@ class UpcomingEventsController extends Controller
      */
     public function update(SliderRequest $request, string $locale, UpcomingEvent $slider, $code)
     {
+        // dd('asdasd');
         $saveData = Arr::except($request->except('_token'), []);
         $saveData['status'] = isset($saveData['status']) && (bool)$saveData['status'];
 
