@@ -60,14 +60,21 @@
         },
         {
             "url": "product.index",
-            "name": "კატალოგი",
+            "name": "rentals",
             "i18n": "product",
             "icon": "language",
             "slug": "product"
         },
         {
             "url": "slider.index",
-            "name": "სლაიდერი",
+            "name": "slider",
+            "i18n": "slider",
+            "icon": "language",
+            "slug": "slider"
+        },
+        {
+            "url": "upcomingevents.index",
+            "name": "upcomingEvents",
             "i18n": "slider",
             "icon": "language",
             "slug": "slider"

@@ -98,12 +98,12 @@
                                                 @enderror
                                             </div>--}}
                                             <div class="form-group">
-                                                <label class="form-label" for="short_description">@lang('admin.short_description')</label>
-                                                <input type='text' class="form-control" id="short_description-{{$locale}}"
-                                                          name="{{$locale}}[short_description]'">
-                                                {!! $slider->translate($locale)->short_description ?? '' !!}
+                                                <label class="form-label" for="locations">@lang('admin.locations')</label>
+                                                <input type='text' class="form-control" id="locations-{{$locale}}"
+                                                          name="{{$locale}}[locations]'">
+                                                {!! $slider->translate($locale)->locations ?? '' !!}
                                             </input>
-                                                @error($locale.'.short_description')
+                                                @error($locale.'.locations')
                                                 <small class="text-danger">
                                                     <div class="error">
                                                         {{$message}}
@@ -158,7 +158,7 @@
                         </small>
                         @enderror
                     </div>
-                    <div class="form-group">
+                    {{-- <div class="form-group">
                         {!! Form::label("youtube_url",__('admin.btn_link'),['class' => 'form-label']) !!}
                         {!! Form::text("youtube_url",$slider->youtube_url ?? '',['class' => 'form-control']) !!}
 
@@ -169,7 +169,7 @@
                             </div>
                         </small>
                         @enderror
-                    </div>
+                    </div> --}}
                     <div class="form-group">
                         <label class="ckbox">
                             <input type="checkbox" name="status"

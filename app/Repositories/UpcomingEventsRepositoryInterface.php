@@ -11,10 +11,10 @@
 namespace App\Repositories;
 
 
-use App\Http\Requests\Admin\SlideRequest;
+use App\Http\Requests\Admin\UpcomingEventsRequest;
 use Illuminate\Http\Request;
 
-interface SliderRepositoryInterface
+interface UpcomingEventsRepositoryInterface
 {
 
     /**
