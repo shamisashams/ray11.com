@@ -100,7 +100,7 @@
                                             </small>
                                             @enderror
 
-                                            <div class="form-group">
+                                            {{-- <div class="form-group">
                                                 <label class="form-label">@lang('admin.description')</label>
                                                 <input type="text" name="{{$locale.'[description]'}}" class="form-control" placeholder="@lang('admin.description')" value="{{$team->translate($locale)->description ?? ''}}">
 
@@ -111,10 +111,25 @@
                                                     {{$message}}
                                                 </div>
                                             </small>
-                                            @enderror
-
+                                            @enderror --}}
 
                                             <div class="form-group">
+                                                <label class="form-label" for="description">@lang('admin.description')</label>
+                                                <textarea class="form-control" id="description-{{$locale}}"
+                                                          name="{{$locale}}[description]'">
+                                                {!! $team->translate($locale)->description ?? '' !!}
+                                            </textarea>
+                                                @error($locale.'.description')
+                                                <small class="text-danger">
+                                                    <div class="error">
+                                                        {{$message}}
+                                                    </div>
+                                                </small>
+                                                @enderror
+                                            </div>
+
+
+                                            {{-- <div class="form-group">
                                                 <label class="form-label">@lang('admin.whattolearn')</label>
                                                 <input type="text" name="{{$locale.'[whattolearn]'}}" class="form-control" placeholder="@lang('admin.whattolearn')" value="{{$team->translate($locale)->whattolearn ?? ''}}">
 
@@ -125,9 +140,23 @@
                                                     {{$message}}
                                                 </div>
                                             </small>
-                                            @enderror
-
+                                            @enderror --}}
                                             <div class="form-group">
+                                                <label class="form-label" for="whattolearn">@lang('admin.whattolearn')</label>
+                                                <textarea class="form-control" id="whattolearn-{{$locale}}"
+                                                          name="{{$locale}}[whattolearn]'">
+                                                {!! $team->translate($locale)->whattolearn ?? '' !!}
+                                            </textarea>
+                                                @error($locale.'.whattolearn')
+                                                <small class="text-danger">
+                                                    <div class="error">
+                                                        {{$message}}
+                                                    </div>
+                                                </small>
+                                                @enderror
+                                            </div>
+
+                                            {{-- <div class="form-group">
                                                 <label class="form-label">@lang('admin.course_includes')</label>
                                                 <input type="text" name="{{$locale.'[course_includes]'}}" class="form-control" placeholder="@lang('admin.course_includes')" value="{{$team->translate($locale)->course_includes ?? ''}}">
 
@@ -138,7 +167,22 @@
                                                     {{$message}}
                                                 </div>
                                             </small>
-                                            @enderror
+                                            @enderror --}}
+
+                                            <div class="form-group">
+                                                <label class="form-label" for="course_includes">@lang('admin.course_includes')</label>
+                                                <textarea class="form-control" id="course_includes-{{$locale}}"
+                                                          name="{{$locale}}[course_includes]'">
+                                                {!! $team->translate($locale)->course_includes ?? '' !!}
+                                            </textarea>
+                                                @error($locale.'.course_includes')
+                                                <small class="text-danger">
+                                                    <div class="error">
+                                                        {{$message}}
+                                                    </div>
+                                                </small>
+                                                @enderror
+                                            </div>
 
                                             <div class="form-group">
                                                 <label class="form-label">@lang('admin.starts')</label>
@@ -285,7 +329,6 @@
     <script src="{{asset('assets/plugins/telephoneinput/inttelephoneinput.js')}}"></script>
 
     <script src="{{asset('uploader/image-uploader.js')}}"></script>
-
     <script>
         let oldImages = $('#old_images').val();
         if (oldImages) {
@@ -313,6 +356,27 @@
         } else {
             $('.input-images').imageUploader();
         }
+    </script>
+ <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
+      <script>
+        @foreach(config('translatable.locales') as $locale)
+        CKEDITOR.replace('description-{{$locale}}', {
+            filebrowserUploadUrl: "{{route('upload', ['_token' => csrf_token() ])}}",
+            filebrowserUploadMethod: 'form'
+        });
+        @endforeach
+        @foreach(config('translatable.locales') as $locale)
+        CKEDITOR.replace('whattolearn-{{$locale}}', {
+            filebrowserUploadUrl: "{{route('upload', ['_token' => csrf_token() ])}}",
+            filebrowserUploadMethod: 'form'
+        });
+        @endforeach
+        @foreach(config('translatable.locales') as $locale)
+        CKEDITOR.replace('course_includes-{{$locale}}', {
+            filebrowserUploadUrl: "{{route('upload', ['_token' => csrf_token() ])}}",
+            filebrowserUploadMethod: 'form'
+        });
+        @endforeach
     </script>
 
 @endsection
