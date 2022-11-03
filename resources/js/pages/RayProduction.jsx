@@ -8,11 +8,12 @@ import { SocialMedia } from "../components/SmallComps";
 import Slider4 from "../components/Slider4";
 import RaySection from "../components/RaySection";
 import { videoGrid } from "../components/Data";
+import Layout from "../Layouts/Layout";
 // import PlayIcon from "../assets/images/svg/play.svg";
 
-const RayProduction = () => {
+const RayProduction = ({seo}) => {
   return (
-    <>
+    <Layout seo={seo}>
       <section className="relative pt-40 pb-12">
         <div className="wrapper flex items-center justify-between lg:flex-row flex-col">
           <div className="lg:w-2/5 lg:mr-10 lg:mb-0 mb-10">
@@ -155,7 +156,7 @@ const RayProduction = () => {
           </div>
         </RaySection>
       </section>
-    </>
+    </Layout>
   );
 };
 

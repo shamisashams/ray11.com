@@ -92,17 +92,18 @@
                     "i18n": "page",
                     "icon": "language",
                     "slug": "page"
+                },
+                {
+                    "url": "staff.index",
+                    "name": "Projects",
+                    "i18n": "page",
+                    "icon": "language",
+                    "slug": "page"
                 }
             ]
         },
 
-        {
-            "url": "staff.index",
-            "name": "Partners",
-            "i18n": "page",
-            "icon": "language",
-            "slug": "page"
-        },
+
         {
             "url": "news.index",
             "name": "news",

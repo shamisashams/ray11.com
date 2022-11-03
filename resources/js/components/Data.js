@@ -6,7 +6,7 @@ export const companies = [
     logo: "/assets/images/logo/2.png",
     title: "Ray Production",
     para: "From banking and insurance to wealth management and on securities distribution, we dedicated financial services them the teams serve all major sectors. of the industry From banking and insurance to wealth management and on securities distribution, we dedicated financial services them the teams serve all major sectors. of the industry. management and on securities distribution, we dedicated financial services them the teams serve all major sectors. of the industry.",
-    link: "/ray-production",
+    link: route("client.rayproductrion"),
     color: "green",
     bg: "/assets/images/shapes/Ellipse1.png",
   },

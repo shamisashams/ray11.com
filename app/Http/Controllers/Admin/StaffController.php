@@ -16,6 +16,7 @@ use App\Http\Requests\Admin\ProductRequest;
 use App\Http\Requests\Admin\StaffRequest;
 use App\Models\Category;
 use App\Models\Customer;
+use App\Models\RayCompany;
 use App\Models\File;
 use App\Models\Product;
 use App\Models\Skill;
@@ -88,6 +89,7 @@ class StaffController extends Controller
             'url' => $url,
             'method' => $method,
             'staff' => $staff,
+            "category" => RayCompany::all(),
         ]);
     }
 
@@ -102,7 +104,7 @@ class StaffController extends Controller
     public function store(StaffRequest $request)
     {
 
-        //dd($request->all());
+        dd($request->all());
         $saveData = Arr::except($request->except('_token'), []);
         //$saveData['status'] = isset($saveData['status']) && (bool)$saveData['status'];
 
@@ -159,6 +161,7 @@ class StaffController extends Controller
             'staff' => $staff,
             'url' => $url,
             'method' => $method,
+            "category" => RayCompany::all(),
         ]);
     }
 
@@ -173,7 +176,7 @@ class StaffController extends Controller
      */
     public function update(StaffRequest $request, string $locale, Staff $staff)
     {
-        //dd($request->all());
+        // dd($request->all());
         $saveData = Arr::except($request->except('_token'), []);
         $saveData['status'] = isset($saveData['status']) && (bool)$saveData['status'];
 

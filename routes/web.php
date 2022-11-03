@@ -65,8 +65,8 @@ Route::prefix('{locale?}')
                 Route::get('category/{category}/destroy', [\App\Http\Controllers\Admin\CategoryController::class, 'destroy'])->name('category.destroy');
 
                 //RayAcademy
-                Route::resource('rayacademy', \App\Http\Controllers\Admin\CategoryController::class);
-                Route::get('rayacademy/{rayacademy}/destroy', [\App\Http\Controllers\Admin\CategoryController::class, 'destroy'])->name('rayacademy.destroy');
+                // Route::resource('rayacademy', \App\Http\Controllers\Admin\CategoryController::class);
+                // Route::get('rayacademy/{rayacademy}/destroy', [\App\Http\Controllers\Admin\CategoryController::class, 'destroy'])->name('rayacademy.destroy');
 
 
                 Route::resource('staff', \App\Http\Controllers\Admin\StaffController::class);
@@ -147,6 +147,7 @@ Route::prefix('{locale?}')
 
             // Ray Compaies
             Route::get('rayacademy', [RayController::class, 'index'])->name('client.rayacademy');
+            Route::get('rayproductrion', [RayController::class, 'rayproductrion'])->name('client.rayproductrion');
 
 
             //news
