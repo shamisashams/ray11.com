@@ -95,6 +95,7 @@
                             </div>
                         </div>
 
+
                     </div>
 
 
@@ -112,6 +113,43 @@
                         </div>
                     </div>
 
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-12">
+
+
+            <div class="card">
+                <div class="card-body">
+                    <div class="form-group">
+                        <label class="form-label">@lang('admin.company_id')</label>
+                        <select name="company_id" class="select2 browser-default">
+                            <option value="" disabled selected>Choose your option</option>
+                            @foreach ($cat as $v)
+                            <option
+                            {{$category->company_id == $v->id ? "selected":""}}
+                            value="{{$v->id}}">
+                            {{$v->name}}
+                           </option>
+                            @endforeach
+                        </select>
+
+                    </div>
+                </div>
+
+                <div class="card-body">
+                    <div class="form-group">
+                        {!! Form::label("video_url",__('admin.video_url'),['class' => 'form-label']) !!}
+                        {!! Form::text("video_url",$category->video_url ?? '',['class' => 'form-control']) !!}
+
+                        @error($locale.'.video_url')
+                        <small class="text-danger">
+                            <div class="error">
+                                {{$message}}
+                            </div>
+                        </small>
+                        @enderror
+                    </div>
                 </div>
             </div>
         </div>

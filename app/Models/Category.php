@@ -73,12 +73,9 @@ class Category extends Model
      * @var string[]
      */
     protected $fillable = [
-        // 'category_id',
         'slug',
-        // 'position',
-        // 'status',
-        // 'parent_id'
-        'name'
+        'video_url',
+        "company_id"
     ];
 
     /** @var string */
@@ -86,8 +83,6 @@ class Category extends Model
 
     /** @var array */
     public $translatedAttributes = [
-        // 'title',
-        // 'description'
         'name'
     ];
 

@@ -27,6 +27,7 @@ class CreateCategoryTranslationsTable extends Migration
             $table->string('locale')->index();
 
             $table->string('name')->nullable();
+            // $table->string('video_url')->nullable();
             // $table->longText('description')->nullable();
 
             $table->unique(['category_id', 'locale']);

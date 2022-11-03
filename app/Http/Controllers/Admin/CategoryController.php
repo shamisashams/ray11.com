@@ -14,6 +14,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\CategoryRequest;
 use App\Models\Category;
 use App\Models\File;
+use App\Models\RayCompany;
 use App\Models\Language;
 use App\Models\Translations\CategoryTranslation;
 use App\Repositories\CategoryRepositoryInterface;
@@ -63,6 +64,7 @@ class CategoryController extends Controller
             'url' => $url,
             'method' => $method,
             'category' => $category,
+            "cat" => RayCompany::all(),
         ]);
     }
 
@@ -131,6 +133,7 @@ class CategoryController extends Controller
             'category' => $category,
             'url' => $url,
             'method' => $method,
+            "cat" => RayCompany::all(),
         ]);
     }
 

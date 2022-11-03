@@ -45,20 +45,6 @@
             "slug": "change_password"
         },
         {
-            "url": "portfolio.index",
-            "name": "Portfolio",
-            "i18n": "page",
-            "icon": "language",
-            "slug": "page"
-        },
-        {
-            "url": "category.index",
-            "name": "Category",
-            "i18n": "page",
-            "icon": "language",
-            "slug": "page"
-        },
-        {
             "url": "product.index",
             "name": "rentals",
             "i18n": "product",
@@ -96,6 +82,13 @@
                 {
                     "url": "staff.index",
                     "name": "Projects",
+                    "i18n": "page",
+                    "icon": "language",
+                    "slug": "page"
+                },
+                {
+                    "url": "category.index",
+                    "name": "Video Gallery",
                     "i18n": "page",
                     "icon": "language",
                     "slug": "page"
