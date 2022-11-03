@@ -80,12 +80,22 @@
             "slug": "slider"
         },
         {
-            "url": "team.index",
-            "name": "Team",
-            "i18n": "page",
-            "icon": "language",
-            "slug": "page"
+            "url": "javascript:void(0)",
+            "name": "Ray Companies",
+            "i18n": "user",
+            "icon": "brightness_low",
+            "slug": "user",
+            "submenu": [
+                {
+                    "url": "team.index",
+                    "name": "RayAcademy",
+                    "i18n": "page",
+                    "icon": "language",
+                    "slug": "page"
+                }
+            ]
         },
+
         {
             "url": "staff.index",
             "name": "Partners",

@@ -98,7 +98,7 @@
 
                                                             @foreach(config('translatable.locales') as $locale)
                                                                 <div class="tab-pane {{$loop->first?"active":""}}" id="cat-{{$locale}}-{{$item->id}}">
-                                                                    {{$item->translate($locale)->name ?? ''}}
+                                                                    {{$item->translate($locale)->title ?? ''}}
                                                                 </div>
                                                             @endforeach
 

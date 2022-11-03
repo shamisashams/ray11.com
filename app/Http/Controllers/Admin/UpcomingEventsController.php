@@ -118,12 +118,6 @@ class UpcomingEventsController extends Controller
         $url = locale_route('upcomingevents.update', $code, false);
         $method = 'PUT';
 
-        /*return view('admin.pages.slider.form', [
-            'slider' => $slider,
-            'url' => $url,
-            'method' => $method,
-        ]);*/
-
         return view('admin.nowa.views.upcomingevents.form', [
             'slider' => $event->find($code),
             'url' => $url,

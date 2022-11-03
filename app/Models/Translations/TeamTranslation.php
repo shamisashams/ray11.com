@@ -14,7 +14,13 @@ class TeamTranslation extends BaseTranslationModel
     //     'position',
     // ];
     protected $fillable = [
-        'name',
-        'position'
+        // 'name',
+        // 'position'
+        'title',
+        'short_description',
+        'description',
+        'whattolearn',
+        'course_includes',
+        'starts',
     ];
 }

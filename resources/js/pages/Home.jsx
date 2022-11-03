@@ -1,19 +1,13 @@
 import React, { useState } from "react";
 import { Link } from '@inertiajs/inertia-react'
 // import Highlight from "../assets/images/shapes/1.png";
-// import Highlight2 from "../assets/images/shapes/6.png";
 import Slider1 from "../components/Slider1";
 import Slider2 from "../components/Slider2";
-// import Pattern from "../assets/images/patterns/1.png";
-// import Pattern2 from "../assets/images/patterns/2.png";
-// import Img1 from "../assets/images/home/3.png";
-// import Img2 from "../assets/images/home/6.png";
 import { HiArrowNarrowDown } from "react-icons/hi";
 import { HiArrowNarrowRight } from "react-icons/hi";
 import { BiPlay } from "react-icons/bi";
 import { companies, newsHome } from "../components/Data";
 import Slider3 from "../components/Slider3";
-// import Light from "../assets/images/svg/light.png";
 import VideoPopup from "../components/VideoPopup";
 import Layout from "../Layouts/Layout";
 

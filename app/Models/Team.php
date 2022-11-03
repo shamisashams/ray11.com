@@ -18,7 +18,12 @@ class Team extends Model
 {
     use Translatable, HasFactory, ScopeFilter;
     protected $table = 'teams';
-    protected $fillable = ['status'];
+    protected $fillable = [
+        'status',
+        'price',
+        'special_price',
+        'video_url',
+    ];
 
     public function getFilterScopes(): array
     {
@@ -49,9 +54,15 @@ class Team extends Model
     }
 
     public $translatedAttributes = [
-        'name',
-        'position',
-        'slug',
+        // 'name',
+        // 'position',
+        // 'slug',
+        'title',
+        'short_description',
+        'description',
+        'whattolearn',
+        'course_includes',
+        'starts',
     ];
 
     // this adds image

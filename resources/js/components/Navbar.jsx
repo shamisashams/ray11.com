@@ -93,7 +93,9 @@ const { pathname } = usePage().props;
                       src={item.bg}
                       alt=""
                     />
-                    <img className="h-10 mx-auto" src={item.logo} alt="" />
+                    <Link href={route("client.home.index")}>
+                      <img className="h-10 mx-auto" src={item.logo} alt="" />
+                    </Link>
                     <div className="bold xl:text-2xl text-xl xl:mt-6 xl:mb-4 my-2">
                       {item.title}
                     </div>

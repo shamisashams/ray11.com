@@ -20,6 +20,12 @@ class CreateTeamTranslationsTable extends Migration
 
             $table->string('name')->nullable();
             $table->string('position')->nullable();
+            $table->string('title')->nullable();
+            $table->string('short_description')->nullable();
+            $table->string('description')->nullable();
+            $table->string('whattolearn')->nullable();
+            $table->string('course_includes')->nullable();
+            $table->string('starts')->nullable();
 
             $table->unique(['team_id', 'locale']);
             $table->foreign('team_id')

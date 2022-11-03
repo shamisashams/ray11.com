@@ -72,12 +72,14 @@
                                         if($loop->first) $active = 'active';
                                         ?>
                                         <div class="tab-pane {{$active}}" id="lang-{{$locale}}">
+
+
                                             <div class="form-group">
-                                                <label class="form-label">@lang('admin.name')</label>
-                                                <input type="text" name="{{$locale.'[name]'}}" class="form-control" placeholder="@lang('admin.name')" value="{{$team->translate($locale)->name ?? ''}}">
+                                                <label class="form-label">@lang('admin.title')</label>
+                                                <input type="text" name="{{$locale.'[title]'}}" class="form-control" placeholder="@lang('admin.title')" value="{{$team->translate($locale)->title ?? ''}}">
 
                                             </div>
-                                            @error($locale.'.name')
+                                            @error($locale.'.title')
                                             <small class="text-danger">
                                                 <div class="error">
                                                     {{$message}}
@@ -86,11 +88,64 @@
                                             @enderror
 
                                             <div class="form-group">
-                                                <label class="form-label">@lang('admin.position')</label>
-                                                <input type="text" name="{{$locale.'[position]'}}" class="form-control" placeholder="@lang('admin.position')" value="{{$team->translate($locale)->position ?? ''}}">
+                                                <label class="form-label">@lang('admin.short_description')</label>
+                                                <input type="text" name="{{$locale.'[short_description]'}}" class="form-control" placeholder="@lang('admin.short_description')" value="{{$team->translate($locale)->short_description ?? ''}}">
 
                                             </div>
-                                            @error($locale.'.position')
+                                            @error($locale.'.short_description')
+                                            <small class="text-danger">
+                                                <div class="error">
+                                                    {{$message}}
+                                                </div>
+                                            </small>
+                                            @enderror
+
+                                            <div class="form-group">
+                                                <label class="form-label">@lang('admin.description')</label>
+                                                <input type="text" name="{{$locale.'[description]'}}" class="form-control" placeholder="@lang('admin.description')" value="{{$team->translate($locale)->description ?? ''}}">
+
+                                            </div>
+                                            @error($locale.'.description')
+                                            <small class="text-danger">
+                                                <div class="error">
+                                                    {{$message}}
+                                                </div>
+                                            </small>
+                                            @enderror
+
+
+                                            <div class="form-group">
+                                                <label class="form-label">@lang('admin.whattolearn')</label>
+                                                <input type="text" name="{{$locale.'[whattolearn]'}}" class="form-control" placeholder="@lang('admin.whattolearn')" value="{{$team->translate($locale)->whattolearn ?? ''}}">
+
+                                            </div>
+                                            @error($locale.'.whattolearn')
+                                            <small class="text-danger">
+                                                <div class="error">
+                                                    {{$message}}
+                                                </div>
+                                            </small>
+                                            @enderror
+
+                                            <div class="form-group">
+                                                <label class="form-label">@lang('admin.course_includes')</label>
+                                                <input type="text" name="{{$locale.'[course_includes]'}}" class="form-control" placeholder="@lang('admin.course_includes')" value="{{$team->translate($locale)->course_includes ?? ''}}">
+
+                                            </div>
+                                            @error($locale.'.course_includes')
+                                            <small class="text-danger">
+                                                <div class="error">
+                                                    {{$message}}
+                                                </div>
+                                            </small>
+                                            @enderror
+
+                                            <div class="form-group">
+                                                <label class="form-label">@lang('admin.starts')</label>
+                                                <input type="text" name="{{$locale.'[starts]'}}" class="form-control" placeholder="@lang('admin.starts')" value="{{$team->translate($locale)->starts ?? ''}}">
+
+                                            </div>
+                                            @error($locale.'.starts')
                                             <small class="text-danger">
                                                 <div class="error">
                                                     {{$message}}
@@ -124,6 +179,48 @@
                         </div>
                     </div>
 
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="form-group">
+                        {!! Form::label("video_url",__('admin.btn_video_url'),['class' => 'form-label']) !!}
+                        {!! Form::text("video_url",$team->video_url ?? '',['class' => 'form-control']) !!}
+
+                        @error($locale.'.video_url')
+                        <small class="text-danger">
+                            <div class="error">
+                                {{$message}}
+                            </div>
+                        </small>
+                        @enderror
+                    </div>
+                    <div class="form-group">
+                        {!! Form::label("price",__('admin.btn_price'),['class' => 'form-label']) !!}
+                        {!! Form::text("price",$team->price ?? '',['class' => 'form-control']) !!}
+
+                        @error($locale.'.price')
+                        <small class="text-danger">
+                            <div class="error">
+                                {{$message}}
+                            </div>
+                        </small>
+                        @enderror
+                    </div>
+                    <div class="form-group">
+                        {!! Form::label("special_price",__('admin.btn_special_price'),['class' => 'form-label']) !!}
+                        {!! Form::text("special_price",$team->special_price ?? '',['class' => 'form-control']) !!}
+
+                        @error($locale.'.special_price')
+                        <small class="text-danger">
+                            <div class="error">
+                                {{$message}}
+                            </div>
+                        </small>
+                        @enderror
+                    </div>
                 </div>
             </div>
         </div>

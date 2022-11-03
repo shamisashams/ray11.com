@@ -22,6 +22,18 @@ class CreateTeamTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('position');
+            $table->string('title');
+            $table->string('short_description');
+            $table->string('description');
+            $table->string('whattolearn');
+            $table->string('starts');
+            $table->string('course_includes');
+
+
+            $table->string('price');
+            $table->string('special_price');
+            $table->string('video_url');
+
             $table->boolean('status');
             $table->timestamps();
         });

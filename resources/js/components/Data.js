@@ -1,44 +1,5 @@
-// import Logo2 from "/assets/images/logo/2.png";
-// import Logo3 from "/assets/images/logo/3.png";
-// import Logo4 from "/assets/images/logo/4.png";
-// import Logo5 from "/assets/images/logo/5.png";
-// import Logo6 from "/assets/images/logo/6.png";
-
-// import News1 from "/assets/images/news/1.png";
-// import News2 from "/assets/images/news/2.png";
-// import News3 from "/assets/images/news/3.png";
-// import News4 from "/assets/images/news/4.png";
-// import News5 from "/assets/images/news/5.png";
-// import News6 from "/assets/images/news/6.png";
-// import News7 from "/assets/images/news/7.png";
-// import News8 from "/assets/images/news/8.png";
-
-// import Img1 from "/assets/images/home/4.png";
-// import Img2 from "/assets/images/home/5.png";
-
-// import Shade1 from "/assets/images/shapes/Ellipse1.png";
-// import Shade2 from "/assets/images/shapes/Ellipse2.png";
-// import Shade3 from "/assets/images/shapes/Ellipse3.png";
-// import Shade4 from "/assets/images/shapes/Ellipse4.png";
-// import Shade5 from "/assets/images/shapes/Ellipse5.png";
-
-// import Img3 from "/assets/images/raypages/10.png";
-// import Img4 from "/assets/images/raypages/11.png";
-// import Img5 from "/assets/images/raypages/12.png";
-// import Img6 from "/assets/images/raypages/13.png";
-// import Img7 from "/assets/images/raypages/17.png";
-// import Img8 from "/assets/images/raypages/18.png";
-// import Img9 from "/assets/images/raypages/19.png";
-
-// import Rental1 from "/assets/images/rental/1.png";
-// import Rental2 from "/assets/images/rental/2.png";
-// import Rental3 from "/assets/images/rental/3.png";
-// import Rental4 from "/assets/images/rental/4.png";
-// import Rental5 from "/assets/images/rental/5.png";
-// import Rental6 from "/assets/images/rental/6.png";
-// import Rental7 from "/assets/images/rental/7.png";
-// import Rental8 from "/assets/images/rental/8.png";
-// import Rental9 from "/assets/images/rental/9.png";
+import React from "react";
+import { Route } from "react-router-dom";
 
 export const companies = [
   {
@@ -61,7 +22,7 @@ export const companies = [
     logo: "/assets/images/logo/4.png",
     title: "Ray Academy",
     para: "From banking and insurance to wealth management and on securities diFrom banking and insurance to wealth management and on securities distribution, stribution, we dedicated financial services them the teams serve all major sectors. of the industry From banking and insurance to wealth management and on securities distribution, we dedicated financial services them the teams serve all major sectors. of the industry. management and on securities distribution, we dedicated financial services them the teams serve all major sectors. of the industry.",
-    link: "/ray-academy",
+    link: route("client.rayacademy"),
     color: "red",
     bg: "/assets/images/shapes/Ellipse3.png",
   },

@@ -5,8 +5,9 @@ import { Question, SocialMedia } from "../components/SmallComps";
 // import bg from "../assets/images/bgs/1.png";
 // import Img1 from "../assets/images/raypages/20.png";
 import Slider5 from "../components/Slider5";
+import Layout from "../Layouts/Layout";
 
-const RayAcademy = () => {
+const RayAcademy = ({seo}) => {
   const questions = [
     {
       q: "What will I learn on this course?",
@@ -27,7 +28,7 @@ const RayAcademy = () => {
   ];
 
   return (
-    <>
+    <Layout seo={seo}>
       <section
         className="relative pt-40 pb-12 h-screen bg-cover bg-center"
         style={{ backgroundImage: `url('/assets/images/bgs/1.png')` }}
@@ -74,7 +75,7 @@ const RayAcademy = () => {
           })}
         </div>
       </section>
-    </>
+    </Layout>
   );
 };
 

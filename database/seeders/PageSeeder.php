@@ -30,6 +30,18 @@ class PageSeeder extends Seeder
                 'key' => 'news'
             ],
             [
+                'key' => 'rayacademy'
+            ],
+            [
+                'key' => 'rayanimation'
+            ],
+            [
+                'key' => 'rayproduction'
+            ],
+            [
+                'key' => 'raycrypto'
+            ],
+            [
                 'key' => 'projects'
             ],
             [

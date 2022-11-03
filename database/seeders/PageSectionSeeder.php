@@ -33,22 +33,16 @@ class PageSectionSeeder extends Seeder
                 'key' => 'partners'
             ],
             [
-                'key' => 'tiles'
+                'key' => 'rayacademy'
             ],
             [
-                'key' => 'tiles2'
+                'key' => 'rayanimation'
             ],
             [
-                'key' => 'laminate'
+                'key' => 'rayproduction'
             ],
             [
-                'key' => 'doors'
-            ],
-            [
-                'key' => 'bathroom'
-            ],
-            [
-                'key' => 'irons'
+                'key' => 'raycrypto'
             ],
             [
                 'key' => 'singleproduct'

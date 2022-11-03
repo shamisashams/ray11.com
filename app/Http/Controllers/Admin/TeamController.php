@@ -188,7 +188,13 @@ class TeamController extends Controller
 
         return redirect(locale_route('team.index', $team->id))->with('success', __('admin.update_successfully'));
     }
-
+    public function destroy(string $locale, Team $staff, $code)
+    {
+        if (!$this->teamRepository->delete($code)) {
+            return redirect(locale_route('staff.index', $code))->with('danger', __('admin.not_delete_message'));
+        }
+        return redirect(locale_route('staff.index'))->with('success', __('admin.delete_message'));
+    }
 
 
     public function docDelete($locale, $id)
