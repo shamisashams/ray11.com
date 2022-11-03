@@ -11,7 +11,13 @@ import { Link, usePage } from "@inertiajs/inertia-react";
 import { companies } from "./Data";
 import { HiArrowNarrowRight } from "react-icons/hi";
 
-const Navbar = () => {
+    const Navbar = () => {
+    const renderHTML = (rawHTML) =>
+    React.createElement("div", {
+        dangerouslySetInnerHTML: { __html: rawHTML },
+    });
+    const sharedData = usePage().props.localizations;
+
   const [menu, setMenu] = useState(false);
 //   const { pathname } = useLocation();
 const { pathname } = usePage().props;
@@ -49,24 +55,25 @@ const { pathname } = usePage().props;
   }
 
   const navs = [
+
     {
-      text: "Home",
+      text: __("client.navbar_home", sharedData),
       link: route("client.home.index"),
     },
     {
-      text: "About Ray 11",
+      text: __("client.navbar_about", sharedData),
       link: route("client.aboutus"),
     },
     {
-      text: "Rental",
+      text: __("client.navbar_rental", sharedData),
       link: route("client.rental.index"),
     },
     {
-      text: "News",
+      text: __("client.navbar_news", sharedData),
       link: route("client.news.index"),
     },
     {
-      text: "Contact",
+      text: __("client.navbar_contact", sharedData),
       link: route("client.contact.index"),
     },
   ];

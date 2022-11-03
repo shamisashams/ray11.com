@@ -9,6 +9,12 @@ import Form from "./Form";
 
 const Footer = () => {
 //   const { pathname } = useLocation();
+const renderHTML = (rawHTML) =>
+    React.createElement("div", {
+        dangerouslySetInnerHTML: { __html: rawHTML },
+    });
+    const sharedData = usePage().props.localizations;
+
 const { pathname } = usePage().props;
   let hide = false;
   if (pathname === "/contact") {
@@ -46,16 +52,28 @@ const { pathname } = usePage().props;
         <div className="py-10 border-t border-solid border-black sm:text-base text-sm">
           <ul className="mb-10">
             <li className="inline-block bold sm:mx-4 mx-2">
-              <Link href="/">Home</Link>
+              <Link href={route("client.home.index")}>
+                {/* Home */}
+                 {__("client.navbar_home", sharedData)}
+                </Link>
             </li>
             <li className="inline-block bold sm:mx-4 mx-2">
-              <Link href="/">About Ray 11</Link>
+              <Link href={route("client.aboutus")}>
+                {/* About Ray 11 */}
+{__("client.navbar_about", sharedData)}
+                </Link>
             </li>
             <li className="inline-block bold sm:mx-4 mx-2">
-              <Link href="/">News</Link>
+              <Link href={route("client.news.index")}>
+                {/* News */}
+{__("client.navbar_news", sharedData)}
+                </Link>
             </li>
             <li className="inline-block bold sm:mx-4 mx-2">
-              <Link href="/">Contact</Link>
+              <Link href={route("client.contact.index")}>
+                {/* Contact */}
+                {__("client.navbar_news", sharedData)}
+                </Link>
             </li>
           </ul>
           <Link className=" w-fit" href="/">
