@@ -4,11 +4,16 @@ import React from "react";
 import { rentalGrid } from "../components/Data";
 import { HiArrowNarrowRight } from "react-icons/hi";
 // import { Link } from "react-router-dom";
-import { Link } from '@inertiajs/inertia-react'
+import { Link, usePage } from '@inertiajs/inertia-react'
 import Layout from "../Layouts/Layout";
 
 const Rental = ({seo, products}) => {
-    console.log(products.data);
+    // console.log(products.data);
+    const renderHTML = (rawHTML) =>
+    React.createElement("div", {
+        dangerouslySetInnerHTML: { __html: rawHTML },
+    });
+    const sharedData = usePage().props.localizations;
   return (
     <Layout seo={seo}>
     <div
@@ -20,17 +25,22 @@ const Rental = ({seo, products}) => {
           <img className=" md:w-1/2" src="/assets/images/other/1.png" alt="" />
           <div className=" md:w-1/2">
             <div className="2xl:text-7xl xl:text-6xl sm:text-5xl text-4xl bold mb-10">
-              Rent modern professional technics for best price
+              {/* Rent modern professional technics for best price */}
+              {__("client.rental_title", sharedData)}
             </div>
             <p className="opacity-70">
               {" "}
-              The driving force of all speeches, we believe that creation should
-              be the point around which any communication strategy revolves.
+              {/* The driving force of all speeches, we believe that creation should
+              be the point around which any communication strategy revolves. */}
+              {__("client.rental_text", sharedData)}
             </p>
           </div>
         </div>
         <div className="pb-20">
-          <div className="bold text-3xl">Products</div>
+          <div className="bold text-3xl">
+            Products
+            {__("client.rental_products", sharedData)}
+            </div>
           <div className="grid xl:grid-cols-3 md:grid-cols-2 mt-10 border-t-2 border-l-2  border-custom-dark">
             {products.data.map((item, index) => {
               return (

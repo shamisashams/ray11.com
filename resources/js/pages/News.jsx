@@ -3,10 +3,15 @@ import React from "react";
 // import img1 from "../assets/images/other/2.png";
 import { newsGrid } from "../components/Data";
 // import { Link } from "react-router-dom";
-import { Link } from '@inertiajs/inertia-react'
+import { Link, usePage } from '@inertiajs/inertia-react'
 import Layout from "../Layouts/Layout";
 
 const News = ({seo,news}) => {
+    const renderHTML = (rawHTML) =>
+    React.createElement("div", {
+        dangerouslySetInnerHTML: { __html: rawHTML },
+    });
+    const sharedData = usePage().props.localizations;
   return (
     <Layout seo={seo}>
     <div className="relative py-32">
@@ -15,10 +20,11 @@ const News = ({seo,news}) => {
         <div className="flex justify-start items-center mb-10 flex-col md:flex-row ">
           <img src="/assets/images/other/2.png" alt="" />
           <p className="opacity-50 md:max-w-lg md:ml-5">
-            From banking and insurance to wealth management and on securities
+            {/* From banking and insurance to wealth management and on securities
             distribution, we dedicated financial services them the teams serve
             all major sectors. of the industry. From banking and insurance to
-            wealth management and on securities distribution, we{" "}
+            wealth management and on securities distribution, we{" "} */}
+            {__("client.news_text", sharedData)}
           </p>
         </div>
         <div className="grid xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 2xl:gap-x-20 gap-10 2xl:gap-y-14">

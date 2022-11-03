@@ -1,17 +1,17 @@
 import React from "react";
-// import Highlight from "../assets/images/shapes/9.png";
-// import Highlight2 from "../assets/images/shapes/3.png";
 import { SocialMedia } from "../components/SmallComps";
-// import Img1 from "../assets/images/raypages/2.png";
-// import Img2 from "../assets/images/raypages/14.png";
-// import Img3 from "../assets/images/raypages/15.png";
 import Slider4 from "../components/Slider4";
 import RaySection from "../components/RaySection";
 import { videoGrid } from "../components/Data";
 import Layout from "../Layouts/Layout";
-// import PlayIcon from "../assets/images/svg/play.svg";
+import { Link, usePage } from "@inertiajs/inertia-react";
 
 const RayProduction = ({seo}) => {
+    const renderHTML = (rawHTML) =>
+    React.createElement("div", {
+        dangerouslySetInnerHTML: { __html: rawHTML },
+    });
+    const sharedData = usePage().props.localizations;
   return (
     <Layout seo={seo}>
       <section className="relative pt-40 pb-12">
@@ -23,7 +23,10 @@ const RayProduction = ({seo}) => {
                 src="/assets/images/shapes/9.png"
                 alt=""
               />
-              <span className="relative">Trying to make it look great</span>
+              <span className="relative">
+                {/* Trying to make it look great */}
+                {__("client.rayproduction_title", sharedData)}
+                </span>
             </div>
             <div className="highlight-title nun-bold relative sm:px-20 px-14 whitespace-nowrap w-fit text-custom-dark xl:text-5xl sm:text-4xl text-3xl sm:my-14 my-10">
               <img
@@ -31,14 +34,21 @@ const RayProduction = ({seo}) => {
                 src="/assets/images/shapes/3.png"
                 alt=""
               />
-              <span className="relative">Ray production</span>
+              <span className="relative">
+                {/* Ray production */}
+                {__("client.rayproduction", sharedData)}
+                </span>
             </div>
             <p className="opacity-30 ">
-              The driving force of all speeches, we believe that creation should
-              be the point around which any communication strategy revolves.
+              {/* The driving force of all speeches, we believe that creation should
+              be the point around which any communication strategy revolves. */}
+              {__("client.rayproduction_text", sharedData)}
             </p>
             <div className="flex justify-start items-center mt-10 mb-8">
-              <div className="text-lg whitespace-nowrap">Social media</div>
+              <div className="text-lg whitespace-nowrap">
+                {/* Social media */}
+                {__("client.social_media", sharedData)}
+                </div>
               <div className="w-28 h-0.5 bg-white mx-4"></div>
               <SocialMedia />
             </div>
@@ -49,21 +59,28 @@ const RayProduction = ({seo}) => {
         </div>
       </section>
       <section className="wrapper pb-20">
-        <div className="bold text-2xl mb-14">Directions</div>
+        <div className="bold text-2xl mb-14">
+            {/* Directions */}
+            {__("client.rayproduction_directions", sharedData)}
+            </div>
         <RaySection color="#A7DE5C" title="Films & Series">
-          <div className="bold text-xl mb-10">Projects</div>
+          <div className="bold text-xl mb-10">
+            {/* Projects */}
+            {__("client.rayproduction_projects", sharedData)}
+            </div>
           <Slider4 />
         </RaySection>
         <RaySection color="#A7DE5C" title="Streaming / Podcasts">
           <div className="flex items-start justify-between flex-col lg:flex-row">
             <div className="lg:max-w-xl opacity-50 lg:mr-5 mr-0 mb-10">
               <p className="mb-4">
-                A podcast is a collection or series of digital audio files that
+              {__("client.rayproduction_commercial_text", sharedData)}
+                {/* A podcast is a collection or series of digital audio files that
                 are made available for downloading or listening via the
                 Internet. Each individual audio recording is known as a podcast
                 episode. Podcasts are typically hosted by an individual or
                 individuals who lead a conversation, share stories, or report
-                the news
+                the news */}
               </p>
               <p className="mb-4">
                 Music, video and other types of media files are prearranged and

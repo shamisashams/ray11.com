@@ -8,6 +8,7 @@ import Form from "./Form";
 // import Pattern2 from "../assets/images/patterns/4.png";
 
 const Footer = () => {
+    const { errors, gphone, gemail, gaddress, gfacebook, ginstagram, gtwitter, gbehance, gdribbble } = usePage().props;
 //   const { pathname } = useLocation();
 const renderHTML = (rawHTML) =>
     React.createElement("div", {
@@ -43,10 +44,10 @@ const { pathname } = usePage().props;
         <SocialMedia />
         <div className="my-10 bold">
           <a href="#" className="mx-3">
-            +995 032 2 000 000
+            {gphone.value? gphone.value : "+995 032 2 000 000"}
           </a>
           <a href="#" className="mx-3">
-            info@Ray11.com
+            {gemail.value ? gemail.value : "info@Ray11.com"}
           </a>
         </div>
         <div className="py-10 border-t border-solid border-black sm:text-base text-sm">
@@ -76,7 +77,7 @@ const { pathname } = usePage().props;
                 </Link>
             </li>
           </ul>
-          <Link className=" w-fit" href="/">
+          <Link className=" w-fit" href={route("client.home.index")}>
             <img className="mx-auto w-32" src="/assets/images/logo/1.png" alt="" />
           </Link>
         </div>

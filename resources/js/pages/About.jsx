@@ -7,14 +7,19 @@ import ImageLayout from "../components/ImageLayout";
 // import PlayIcon from "../assets/images/svg/play.svg";
 import VideoPopup from "../components/VideoPopup";
 // import { Link } from "react-router-dom";
-import { Link } from '@inertiajs/inertia-react'
+import { Link, usePage } from '@inertiajs/inertia-react'
 import { HiArrowNarrowRight } from "react-icons/hi";
 import { companies } from "../components/Data";
 import Layout from "../Layouts/Layout";
 
 const About = ({seo,images,page}) => {
 
-    console.log( images ,'esaa');
+    // console.log( images ,'esaa');
+    const renderHTML = (rawHTML) =>
+    React.createElement("div", {
+        dangerouslySetInnerHTML: { __html: rawHTML },
+    });
+const sharedData = usePage().props.localizations;
   const [showVideo, setShowVideo] = useState(false);
   return (
     <Layout seo={seo}>
@@ -29,11 +34,13 @@ const About = ({seo,images,page}) => {
           {" "}
           <img className="absolute left-32 -top-20 z-10" src="/assets/images/other/6.png" alt="" />
           <div className="bold opacity-50 text-2xl relative w-fit">
-            About us
+            {/* About us */}
+            {__("client.about_about_us", sharedData)}
           </div>
           <div className=" 2xl:text-7xl xl:text-6xl sm:text-5xl text-4xl mb-10 max-w-2xl underline italic mt-10">
-            We are the best at creating things that's why so many people trusts
-            us.
+            {/* We are the best at creating things that's why so many people trusts
+            us. */}
+             {__("client.about_text", sharedData)}
           </div>
         </div>
       </section>
@@ -74,7 +81,10 @@ const About = ({seo,images,page}) => {
     </div>
       </section>
       <section className="wrapper text-center py-20">
-        <div className="bold text-2xl opacity-30 mb-10">History</div>
+        <div className="bold text-2xl opacity-30 mb-10">
+            {/* History */}
+            {__("client.about_history", sharedData)}
+            </div>
         <div className="max-w-5xl mx-auto relative">
           <div className="absolute w-8 h-8 -top-5 -left-5 border-l-4 border-t-4"></div>
           <div className="absolute w-8 h-8 -top-5 -right-5 border-r-4 border-t-4"></div>
@@ -82,7 +92,7 @@ const About = ({seo,images,page}) => {
           <div className="absolute w-8 h-8 -bottom-5 -left-5 border-l-4 border-b-4"></div>
           <p className="opacity-50">
             {" "}
-            A business goal is an endpoint, accomplishment or target an
+            {/* A business goal is an endpoint, accomplishment or target an
             organization wants to achieve in the short term or long term.
             Business goals can take many different forms and be aspirational or
             motivational, such as driving an organization toward a certain
@@ -91,7 +101,8 @@ const About = ({seo,images,page}) => {
             in the short term or long term. Business goals can take many
             different forms and be aspirational or motivational, such as driving
             an organization toward a certain objective like improved customer
-            service.
+            service. */}
+            {__("client.about_history_text", sharedData)}
           </p>
         </div>
       </section>
