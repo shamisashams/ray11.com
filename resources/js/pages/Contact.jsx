@@ -4,8 +4,10 @@ import Form from "../components/Form";
 // import bg2 from "../assets/images/bgs/6.png";
 import { SocialMedia } from "../components/SmallComps";
 import Layout from "../Layouts/Layout";
+import { Link, usePage } from "@inertiajs/inertia-react";
 
 const Contact = ({seo}) => {
+    const { errors, gphone, gemail, gaddress, gfacebook, ginstagram, gtwitter, gbehance, gdribbble } = usePage().props;
   return (
     <Layout seo={seo}>
     <div className="min-h-screen relative contact">
@@ -28,11 +30,17 @@ const Contact = ({seo}) => {
             Contact us
           </div>
           <div className="opacity-50 mb-3 mt-8">Phone number:</div>
-          <div className="bold">+995 032 2 000 000</div>
+          <div className="bold">
+            {gphone.value ? gphone.value : "+995 032 2 000 000"}
+            </div>
           <div className="opacity-50 mb-3 mt-8">Email:</div>
-          <div className="bold">info@Ray11.com</div>
+          <div className="bold">
+            {gemail.value ?gemail.value : "info@Ray11.com"}
+            </div>
           <div className="opacity-50 mb-3 mt-8">Address:</div>
-          <div className="bold">Street name #123. Tbilisi, Georgia</div>
+          <div className="bold">
+            {gaddress.value ? gaddress.value : "Street name #123. Tbilisi, Georgia"}
+            </div>
           <div className="flex my-10 justify-start items-center">
             <div className="opacity-50">Social media</div>
             <div className="sm:w-40 w-20 h-1 bg-white mx-5"></div>

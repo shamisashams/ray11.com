@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from '@inertiajs/inertia-react'
+import { Link, usePage } from "@inertiajs/inertia-react";
 // import Highlight from "../assets/images/shapes/1.png";
 import Slider1 from "../components/Slider1";
 import Slider2 from "../components/Slider2";
@@ -12,6 +12,11 @@ import VideoPopup from "../components/VideoPopup";
 import Layout from "../Layouts/Layout";
 
 const Home = ({seo}) => {
+    const renderHTML = (rawHTML) =>
+    React.createElement("div", {
+        dangerouslySetInnerHTML: { __html: rawHTML },
+    });
+const sharedData = usePage().props.localizations;
   const [showVideo, setShowVideo] = useState(false);
   return (
     <>
@@ -43,7 +48,8 @@ const Home = ({seo}) => {
             <div className="flex justify-start items-center mt-10 mb-8">
               <Link href="/about">
                 <button className="px-8 h-10 text-custom-dark bg-custom-yellow bold rounded-full transition-all duration-300 hover:bg-white">
-                  About us
+                  {/* About us */}
+                  {__("client.home_aboutus_btn", sharedData)}
                 </button>
               </Link>
               <button
@@ -63,7 +69,10 @@ const Home = ({seo}) => {
               href="#footer"
               className="w-fit flex items-center justify-center border border-solid border-custom-yellow bold text-custom-yellow h-12 px-7 rounded-full transition-all duration-300 hover:text-white hover:border-white"
             >
-              <span>Get in touch</span>
+              <span>
+                {/* Get in touch */}
+                {__("client.home_getintouch_btn", sharedData)}
+                </span>
               <HiArrowNarrowDown className="w-6 h-6 ml-2" />
             </a>
           </div>
@@ -74,12 +83,16 @@ const Home = ({seo}) => {
       </section>
       <section className="py-10 wrapper">
         <div className="flex md:items-center items-start justify-start mb-10 flex-col md:flex-row">
-          <div className="bold lg:text-4xl text-2xl">Our Companies</div>
+          <div className="bold lg:text-4xl text-2xl">
+            {/* Our Companies */}
+            {__("client.home_our_companies", sharedData)}
+            </div>
           <div className="h-12 w-0.5 bg-white rounded mx-6 md:inline-block hidden"></div>
           <p className="opacity-30 max-w-2xl">
-            From banking and insurance to wealth management and on securities
+            {/* From banking and insurance to wealth management and on securities
             distribution, we dedicated financial services them the teams serve
-            all major sectors. of the industry.
+            all major sectors. of the industry. */}
+             {__("client.home_main_companies_title", sharedData)}
           </p>
         </div>
         <div className="flex items-start 2xl:justify-between justify-center flex-wrap 2xl:flex-nowrap -m-2">
@@ -102,7 +115,8 @@ const Home = ({seo}) => {
                   className={`flex items-center justify-center border border-solid border-custom-slate-900 bold text-custom-slate-900 sm:h-12 h-10 w-fit sm:px-7 px-4 rounded-full transition-all duration-300  sm:text-base text-sm  whitespace-nowrap`}
                 >
                   <span className="transition-all duration-300">
-                    Learn more
+                    {/* Learn more */}
+                    {__("client.home_learn_more_btn", sharedData)}
                   </span>
                   <HiArrowNarrowRight className="w-6 h-6 " />
                 </Link>
@@ -117,13 +131,17 @@ const Home = ({seo}) => {
       <section className="py-10 wrapper flex items-center justify-between flex-col lg:flex-row overflow-hidden">
         <div className="lg:max-w-sm  ">
           <div className="xl:text-7xl sm:text-5xl text-3xl bold mb-7 ">
-            Don't miss any news
+            {/* Don't miss any news */}
+            {__("client.home_main_dont_miss_any", sharedData)}
           </div>
           <Link
             href="/news"
             className={`flex items-center justify-center border border-solid border-custom-yellow bold text-custom-yellow sm:h-10 h-10 w-fit sm:px-6 px-4 rounded-full transition-all duration-300  sm:text-base text-sm  whitespace-nowrap`}
           >
-            <span>Check all</span>
+            <span>
+                {/* Check all */}
+                {__("client.home_checkall", sharedData)}
+            </span>
             <HiArrowNarrowRight className="w-6 h-6 m-2" />
           </Link>
         </div>
@@ -171,13 +189,17 @@ const Home = ({seo}) => {
         <img className="w-1/3" src="/assets/images/home/6.png" alt="" />
         <div className="xl:max-w-md max-w-sm bold xl:text-6xl sm:text-4xl text-2xl leading-tight text-right">
           <span className="opacity-10 group-hover:opacity-100 transition-all duration-500">
-            Professional Technics for Rent
+            {/* Professional Technics for Rent */}
+            {__("client.home_main_professional_tec_for_rent", sharedData)}
           </span>
           <Link
-            to="/"
+            href={route("client.rental.index")}
             className={`flex items-center justify-center border border-solid border-custom-yellow bold text-custom-yellow sm:h-10 h-10 w-fit sm:px-6 px-4 rounded-full transition-all duration-300  sm:text-base text-sm  whitespace-nowrap mx-auto mr-0 mt-5`}
           >
-            <span>See what we got</span>
+            <span>
+                See what we got
+                {__("client.home_main_see_whatwegot_btn", sharedData)}
+            </span>
             <HiArrowNarrowRight className="w-6 h-6 m-2" />
           </Link>
         </div>
