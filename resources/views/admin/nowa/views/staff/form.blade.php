@@ -85,20 +85,7 @@
                                             </small>
                                             @enderror
 
-                                        <div class="form-group">
-                                            <label class="form-label">@lang('admin.company_id')</label>
-                                            <select name="category_id" class="select2 browser-default">
-                                                <option value="" disabled selected>Choose your option</option>
-                                                @foreach ($category as $cat)
-                                                {{-- <option value={{$cat->id}}>{{$cat->name}}</option>
-                                                {{old('cat_id') ==  $cat->id   ?   "selected":""}} value="{{$cat->translate($locale)->brand}}"> {{$cat->name}}</option> --}}
 
-                                                <option{{old('category_id') ==  $cat->id   ?   "selected":""}}  value="{{$cat->id}}" >{{$cat->name}}</option>
-
-                                                @endforeach
-                                            </select>
-
-                                        </div>
 
                                         </div>
 
@@ -129,7 +116,25 @@
                 </div>
             </div>
         </div>
+        <div class="col-lg-6 col-md-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="form-group">
+                        <label class="form-label">@lang('admin.company_id')</label>
+                        <select name="company_id" class="select2 browser-default">
+                            <option value="" disabled selected>Choose your option</option>
+                            @foreach ($category as $cat)
+                            {{-- <option value={{$cat->id}}>{{$cat->name}}</option>
+                            {{old('cat_id') ==  $cat->id   ?   "selected":""}} value="{{$cat->translate($locale)->brand}}"> {{$cat->name}}</option> --}}
+                            <option{{old('company_id') ==  $cat->id   ?   "selected":""}}  value="{{$cat->id}}" >{{$cat->name}}</option>
 
+                            @endforeach
+                        </select>
+
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- /row -->

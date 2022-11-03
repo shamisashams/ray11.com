@@ -104,7 +104,7 @@ class StaffController extends Controller
     public function store(StaffRequest $request)
     {
 
-        dd($request->all());
+        // dd($request->all());
         $saveData = Arr::except($request->except('_token'), []);
         //$saveData['status'] = isset($saveData['status']) && (bool)$saveData['status'];
 
@@ -179,9 +179,8 @@ class StaffController extends Controller
         // dd($request->all());
         $saveData = Arr::except($request->except('_token'), []);
         $saveData['status'] = isset($saveData['status']) && (bool)$saveData['status'];
+        // dd($saveData, $staff->id);
 
-
-        //dd($staff->id);
 
         if ($this->staffRepository->update($staff->id, $saveData)) {
         }
