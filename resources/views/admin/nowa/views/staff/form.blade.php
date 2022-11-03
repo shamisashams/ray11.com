@@ -112,7 +112,6 @@
                             {!! Form::submit($staff->created_at ? __('admin.update') : __('admin.create'),['class' => 'btn btn-primary']) !!}
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -124,10 +123,15 @@
                         <select name="company_id" class="select2 browser-default">
                             <option value="" disabled selected>Choose your option</option>
                             @foreach ($category as $cat)
+
                             {{-- <option value={{$cat->id}}>{{$cat->name}}</option>
                             {{old('cat_id') ==  $cat->id   ?   "selected":""}} value="{{$cat->translate($locale)->brand}}"> {{$cat->name}}</option> --}}
-                            <option{{old('company_id') ==  $cat->id   ?   "selected":""}}  value="{{$cat->id}}" >{{$cat->name}}</option>
-
+                            {{-- <option{{old('company_id') ==  $cat->id   ?   "selected":""}}  value="{{$cat->id}}" >{{$cat->name}}</option> --}}
+                            <option
+                            {{$staff->company_id == $cat->id ? "selected":""}}
+                            value="{{$cat->id}}">
+                            {{$cat->name}}
+                           </option>
                             @endforeach
                         </select>
 
