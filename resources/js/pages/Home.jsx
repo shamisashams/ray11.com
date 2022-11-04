@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Link, usePage } from "@inertiajs/inertia-react";
-// import Highlight from "../assets/images/shapes/1.png";
 import Slider1 from "../components/Slider1";
 import Slider2 from "../components/Slider2";
 import { HiArrowNarrowDown } from "react-icons/hi";
@@ -11,7 +10,7 @@ import Slider3 from "../components/Slider3";
 import VideoPopup from "../components/VideoPopup";
 import Layout from "../Layouts/Layout";
 
-const Home = ({seo}) => {
+const Home = ({seo,sliders, UpcomingEvent}) => {
     const renderHTML = (rawHTML) =>
     React.createElement("div", {
         dangerouslySetInnerHTML: { __html: rawHTML },
@@ -77,7 +76,7 @@ const sharedData = usePage().props.localizations;
             </a>
           </div>
           <div className="lg:w-3/5 w-full">
-            <Slider1 />
+            <Slider1 slidedata={sliders} />
           </div>
         </div>
       </section>
@@ -126,7 +125,7 @@ const sharedData = usePage().props.localizations;
         </div>
       </section>
       <section>
-        <Slider2 />
+        <Slider2 data={UpcomingEvent} />
       </section>
       <section className="py-10 wrapper flex items-center justify-between flex-col lg:flex-row overflow-hidden">
         <div className="lg:max-w-sm  ">

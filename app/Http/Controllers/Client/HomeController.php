@@ -9,6 +9,7 @@ use App\Models\Product;
 use App\Models\Portfolio;
 use App\Models\Staff;
 use App\Models\Slider;
+use App\Models\UpcomingEvent;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
@@ -48,6 +49,7 @@ class HomeController extends Controller
 
         return Inertia::render('Home', [
             // "category" => Category::with('translations')->get(),
+            "UpcomingEvent" => UpcomingEvent::with(['file', 'translations'])->get(),
             "sliders" => $sliders->get(), "page" => $page, "seo" => [
                 "title" => $page->meta_title,
                 "description" => $page->meta_description,

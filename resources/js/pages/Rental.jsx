@@ -77,10 +77,10 @@ const Rental = ({seo, products}) => {
             })}
           </div>
           <div className="text-center border-b-2 border-l-2 border-r-2 border-custom-dark py-5">
-            <button className="bold mx-2">1</button>
+            {/* <button className="bold mx-2">1</button>
             <button className="bold mx-2 opacity-50">2</button>
             <button className="bold mx-2 opacity-50">3</button>
-            <button className="bold mx-2 opacity-50">4</button>
+            <button className="bold mx-2 opacity-50">4</button> */}
           </div>
         </div>
       </div>

@@ -11,7 +11,7 @@ import { eventSlider } from "./Data";
 // import { Link } from "react-router-dom";
 import { Link } from '@inertiajs/inertia-react'
 
-const Slider2 = () => {
+const Slider2 = ({data}) => {
   const nextRef = useRef(null);
   return (
     <div className="wrapper py-12">
@@ -53,20 +53,33 @@ const Slider2 = () => {
             },
           }}
         >
-          {eventSlider.map((item, index) => {
+            {/* {
+                data.map((e,i)=>{
+                    return(<h2>asdsda</h2>)
+                })
+            } */}
+          {data.map((item, index) => {
             return (
               <SwiperSlide key={index}>
                 <div className="flex sm:items-center justify-center flex-col sm:flex-row 2xl:p-10 p-6 2xl:py-14 py-10 pb-16  border-l-2 border-solid border-zinc-300">
                   <div className="xl:w-36 xl:h-36 w-28 h-28 rounded-full overflow-hidden mr-5 shrink-0 sm:mb-0 mb-5">
-                    <img src={item.img} alt="" />
+                    <img src={
+                       item.file != null && item.file
+                       ? "/" +
+                       item.file.path +
+                       "/" +
+                       item.file.title
+                       : null
+                    }
+                    alt="" />
                   </div>
                   <div className="">
                     <div className="opacity-50 nun-bold ">
                       <MdOutlineLocationOn className="inline-block mr-1 mb-1" />
-                      {item.location}
+                      {item.locations}
                     </div>
                     <div className="nun-bold mb-2 mt-1"># {item.title}</div>
-                    <p className="mb-2 ">{item.para}</p>
+                    <p className="mb-2 ">{item.description}</p>
                     <Link href="/" className="bold">
                       Learn more{" "}
                       <HiArrowNarrowRight className="inline-block w-6 h-6 ml-1" />

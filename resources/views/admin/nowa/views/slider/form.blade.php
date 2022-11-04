@@ -99,9 +99,11 @@
                                             </div>--}}
                                             <div class="form-group">
                                                 <label class="form-label" for="short_description">@lang('admin.short_description')</label>
-                                                <input type='text' class="form-control" id="short_description-{{$locale}}"
-                                                          name="{{$locale}}[short_description]'">
-                                                {!! $slider->translate($locale)->short_description ?? '' !!}
+                                                <input type='text'
+                                                class="form-control" id="short_description-{{$locale}}"
+                                                name="{{$locale}}[short_description]'"
+                                                value="{!! $slider->translate($locale)->short_description ?? '' !!}"
+                                            >
                                             </input>
                                                 @error($locale.'.short_description')
                                                 <small class="text-danger">

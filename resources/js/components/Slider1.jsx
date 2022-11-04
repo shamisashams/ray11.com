@@ -12,8 +12,9 @@ import {
   HiOutlineArrowCircleRight,
   HiOutlineArrowCircleLeft,
 } from "react-icons/hi";
+import { Link, usePage } from "@inertiajs/inertia-react";
 
-const Slider1 = () => {
+const Slider1 = ({slidedata}) => {
   const prevRef = useRef(null);
   const nextRef = useRef(null);
   const data = [
@@ -47,7 +48,8 @@ const Slider1 = () => {
           swiper.navigation.update();
         }}
       >
-        {data.map((item, index) => {
+        {slidedata.map((item, index) => {
+            console.log(item , 'esaa');
           return (
             <SwiperSlide className="p-5 " key={index}>
               <div className="flex items-center justify-center ">
@@ -55,18 +57,30 @@ const Slider1 = () => {
                   <div className="img">
                     <img
                       className="w-full h-full object-cover"
-                      src={item.img}
+                      src={
+                        item.file != null && item.file
+                        ? "/" +
+                        item.file.path +
+                        "/" +
+                        item.file.title
+                        : null
+                      }
                       alt=""
                     />
                   </div>
                 </div>
                 <div className="contentContainer text-right">
                   <div className="sliderTitle bold">{item.title}</div>
-                  <p className="opacity-30 my-6 paragraph">{item.para}</p>
+                  <p className="opacity-30 my-6 paragraph">
+                    {/* {item.short_description} */}
+                    {item.description}
+                    </p>
+                    <a href={item.reddirect_url?item.reddirect_url: "/"} target="_blank">
                   <button className="flex items-center justify-center border border-solid border-custom-yellow bold text-custom-yellow sm:h-12 h-10 sm:px-7 px-4 rounded-full transition-all duration-300 hover:text-white hover:border-white mx-auto mr-0 sm:text-base text-sm">
                     <span>Learn more</span>
                     <HiArrowNarrowRight className="w-6 h-6 ml-2" />
                   </button>
+                  </a>
                 </div>
               </div>
             </SwiperSlide>
