@@ -30,7 +30,10 @@ const sharedData = usePage().props.localizations;
                 src="/assets/images/shapes/1.png"
                 alt=""
               />
-              <span className="relative">Craft multiple Solutions</span>
+              <span className="relative">
+                {/* Craft multiple Solutions */}
+                {__("client.home_craft_multiple", sharedData)}
+                </span>
             </div>
             <div className="highlight-title nun-bold relative sm:px-20 px-14 whitespace-nowrap w-fit text-custom-dark xl:text-5xl text-4xl sm:my-14 my-10">
               <img
@@ -38,11 +41,15 @@ const sharedData = usePage().props.localizations;
                 src="/assets/images/shapes/1.png"
                 alt=""
               />
-              <span className="relative">Ray eleven</span>
+              <span className="relative">
+                {/* Ray eleven */}
+                {__("client.home_rayleven", sharedData)}
+                </span>
             </div>
             <p className="opacity-30 ">
-              The driving force of all speeches, we believe that creation should
-              be the point around which any communication strategy revolves.
+              {/* The driving force of all speeches, we believe that creation should
+              be the point around which any communication strategy revolves. */}
+               {__("client.home_slider1_text", sharedData)}
             </p>
             <div className="flex justify-start items-center mt-10 mb-8">
               <Link href="/about">

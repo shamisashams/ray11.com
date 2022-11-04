@@ -121,7 +121,7 @@ export const companySlide = [
     title: "Let your mind explore new world",
     para: "From banking and insurance to wealth management and on securities distribution, we dedicated financial services them the teams serve all major sectors. of the industry.",
     color: "#3FA0CD",
-    link: "/",
+    link: route("client.rayanimation"),
   },
   {
     logo: "/assets/images/logo/6.png",
@@ -129,7 +129,7 @@ export const companySlide = [
     title: "New NFTs Collection for sale ",
     para: "From banking and insurance to wealth management and on securities distribution, we dedicated financial services them the teams serve all major sectors. of the industry.",
     color: "#7261BD",
-    link: "/",
+    link: route("client.raycrypto"),
   },
 ];
 
