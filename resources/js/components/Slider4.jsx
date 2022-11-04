@@ -6,7 +6,6 @@ import "swiper/css/scrollbar";
 import { Scrollbar } from "swiper";
 
 const Slider4 = ({data}) => {
-    // console.log(data, 'esaa');
   return (
     <Swiper
       slidesPerView={4}
@@ -30,7 +29,6 @@ const Slider4 = ({data}) => {
       }}
     >
       {data.map((item, index) => {
-        console.log(item, 'esaa');
         return (
           <SwiperSlide className="pb-10" key={index}>
             <div className="">

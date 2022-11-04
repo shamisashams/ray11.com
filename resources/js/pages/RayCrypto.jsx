@@ -124,13 +124,20 @@ const RayCrypto = ({seo,project,videogallery}) => {
               </div>
             </div>
             <div className="lg:grid grid-cols-3 gap-10 ml-5 flex flex-wrap justify-center items-start lg:mt-0 mt-10">
-              {nftGrid.map((item, index) => {
+              {videogallery.map((item, index) => {
                 return (
                   <div key={index} className="w-48">
                     <div className="w-full h-40 mb-4">
                       <img
                         className="w-full h-full object-cover"
-                        src={item.img}
+                        src={
+                            item.files != null && item.files[0]
+                            ? "/" +
+                            item.files[0].path +
+                            "/" +
+                            item.files[0].title
+                            : null
+                        }
                         alt=""
                       />
                     </div>

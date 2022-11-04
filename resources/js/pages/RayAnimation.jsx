@@ -54,7 +54,7 @@ const RayAnimation = ({seo,project,videogallery}) => {
         <div className="bold text-2xl mb-14">Directions</div>
         <RaySection color="#3FA0CD" title="Video animation">
           <div className="bold text-xl mb-10">Projects</div>
-          <Slider4 />
+          <Slider4 data={project} />
         </RaySection>
         <RaySection color="#3FA0CD" title="Animated series">
           <div className="flex items-start justify-between flex-col lg:flex-row">
@@ -91,7 +91,7 @@ const RayAnimation = ({seo,project,videogallery}) => {
           </div>
           <div className="flex items-start justify-between flex-col lg:flex-row">
             <div className="grid grid-cols-2 sm:gap-10 gap-5 max-w-xl lg:mr-10 mr-0 mb-14 ">
-              {videoGrid.map((item, index) => {
+              {videogallery.map((item, index) => {
                 return (
                   <div
                     onClick={() => setShowVideo(true)}
@@ -101,7 +101,14 @@ const RayAnimation = ({seo,project,videogallery}) => {
                     <div className="w-full h-32 mb-5 relative">
                       <img
                         className="w-full h-full object-cover"
-                        src={item.img}
+                        src={
+                            item.files != null && item.files[0]
+                            ? "/" +
+                            item.files[0].path +
+                            "/" +
+                            item.files[0].title
+                            : null
+                        }
                         alt=""
                       />
                       <img
