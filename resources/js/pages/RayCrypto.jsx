@@ -16,8 +16,9 @@ import { Link } from '@inertiajs/inertia-react'
 // import Gridimg6 from "../assets/images/raypages/9.png";
 import { SiAppstore } from "react-icons/si";
 import { IoLogoGooglePlaystore } from "react-icons/io5";
+import Layout from "../Layouts/Layout";
 
-const RayCrypto = () => {
+const RayCrypto = ({seo}) => {
   const nftGrid = [
     {
       img: "/assets/images/raypages/4.png",
@@ -46,7 +47,7 @@ const RayCrypto = () => {
   ];
 
   return (
-    <>
+    <Layout seo={seo}>
       <section className="relative pt-40 pb-12">
         <div className="wrapper flex items-center justify-between lg:flex-row flex-col">
           <div className="lg:w-2/5 lg:mr-10 lg:mb-0 mb-10">
@@ -77,7 +78,7 @@ const RayCrypto = () => {
             </div>
           </div>
           <div className="">
-            <img src={Img1} alt="" />
+            <img src={"/assets/images/raypages/1.png"} alt="" />
           </div>
         </div>
       </section>
@@ -108,10 +109,10 @@ const RayCrypto = () => {
                 <div className="">
                   <div className="bold inline-block">Meet community:</div>
                   <a href="#" className="inline-block mx-4 align-middle">
-                    <img src={Icon1} alt="" />
+                    <img src={"/assets/images/icons/4.png"} alt="" />
                   </a>
                   <a href="#" className="inline-block align-middle">
-                    <img src={Icon2} alt="" />
+                    <img src={"/assets/images/icons/5.png"} alt="" />
                   </a>
                 </div>
                 <Link
@@ -160,7 +161,7 @@ const RayCrypto = () => {
             <div className="flex sm:items-center items-start justify-between flex-col sm:flex-row">
               <div className="flex items-center sm:mr-5 sm:mb-0 mb-5">
                 <div className=" rounded-lg overflow-hidden mr-4 w-24 h-24 shrink-0">
-                  <img src={Gridimg1} alt="" />
+                  <img src={"/assets/images/raypages/4.png"} alt="" />
                 </div>
                 <div>
                   <div className="text-lg mb-2">Game Name</div>
@@ -224,10 +225,10 @@ const RayCrypto = () => {
         <div className="w-fit h-fit relative mx-auto p-5">
           <div className="w-14 h-14 absolute -top-0 -left-0 border-l-4 border-t-4 border-solid border-custom-purple"></div>
           <div className="w-14 h-14 absolute -bottom-0 -right-0 border-r-4 border-b-4 border-solid border-custom-purple"></div>
-          <img src={Img2} alt="" />
+          <img src={"/assets/images/raypages/3.png"} alt="" />
         </div>
       </section>
-    </>
+    </Layout>
   );
 };
 

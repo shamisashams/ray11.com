@@ -10,11 +10,12 @@ import RaySection from "../components/RaySection";
 import { videoGrid } from "../components/Data";
 // import PlayIcon from "../assets/images/svg/play.svg";
 import VideoPopup from "../components/VideoPopup";
+import Layout from "../Layouts/Layout";
 
-const RayAnimation = () => {
+const RayAnimation = ({seo}) => {
   const [showVideo, setShowVideo] = useState(false);
   return (
-    <>
+    <Layout seo={seo}>
       <section className="relative pt-40 pb-12">
         <div className="wrapper flex items-center justify-between lg:flex-row flex-col">
           <div className="lg:w-2/5 lg:mr-10 lg:mb-0 mb-10">
@@ -105,7 +106,7 @@ const RayAnimation = () => {
                       />
                       <img
                         className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 group-hover:animate-pulse"
-                        src={PlayIcon}
+                        src={"/assets/images/svg/play.svg"}
                         alt=""
                       />
                     </div>
@@ -166,7 +167,7 @@ const RayAnimation = () => {
         closeVideo={() => setShowVideo(false)}
         src="https://www.youtube.com/embed/xYrPGIJ2qoo"
       />
-    </>
+    </Layout>
   );
 };
 

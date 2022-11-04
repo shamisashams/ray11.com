@@ -149,6 +149,8 @@ Route::prefix('{locale?}')
             Route::get('rayacademy', [RayController::class, 'index'])->name('client.rayacademy');
             Route::get('rayacademy/{course?}', [RayController::class, 'show'])->name('client.rayacademy.show');
             Route::get('rayproductrion', [RayController::class, 'rayproductrion'])->name('client.rayproductrion');
+            Route::get('rayanimation', [RayController::class, 'rayanimation'])->name('client.rayanimation');
+            Route::get('raycrypto', [RayController::class, 'raycrypto'])->name('client.raycrypto');
 
 
             //news
@@ -163,7 +165,6 @@ Route::prefix('{locale?}')
             Route::get('/projects', [\App\Http\Controllers\PortfolioController::class, 'index'])->name('client.project.index');
             Route::get('/projectssearch{search}/{item}', [\App\Http\Controllers\PortfolioController::class, 'search'])->name('client.project.show');
             Route::get('/projects/ssearch/{search}/{item?}', [\App\Http\Controllers\PortfolioController::class, 'searchProject'])->name('client.projects.show');
-
             Route::get('project/projectsdetails/{projectsdetails?}', [\App\Http\Controllers\PortfolioController::class, 'singleproject'])->name('client.showsingleproject.show');
 
 
