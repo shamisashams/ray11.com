@@ -49,7 +49,6 @@ const Slider1 = ({slidedata}) => {
         }}
       >
         {slidedata.map((item, index) => {
-            console.log(item , 'esaa');
           return (
             <SwiperSlide className="p-5 " key={index}>
               <div className="flex items-center justify-center ">

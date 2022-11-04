@@ -11,7 +11,6 @@ import VideoPopup from "../components/VideoPopup";
 import Layout from "../Layouts/Layout";
 
 const Home = ({seo,sliders, UpcomingEvent, news}) => {
-    console.log(news ,'esaa');
     const renderHTML = (rawHTML) =>
     React.createElement("div", {
         dangerouslySetInnerHTML: { __html: rawHTML },
@@ -110,8 +109,21 @@ const sharedData = usePage().props.localizations;
                 <p className="opacity-30 group-hover:opacity-80 h-24 my-5 mb-10 overflow-hidden text-sm !text-white transition-all duration-300">
                   {item.para}
                 </p>
-                <Link
-                  href={item.link}
+                {
+                    index != 3?
+                    <Link
+                    href={item.link}
+                    className={`flex items-center justify-center border border-solid border-custom-slate-900 bold text-custom-slate-900 sm:h-12 h-10 w-fit sm:px-7 px-4 rounded-full transition-all duration-300  sm:text-base text-sm  whitespace-nowrap`}
+                  >
+                    <span className="transition-all duration-300">
+                      {/* Learn more */}
+                      {__("client.home_learn_more_btn", sharedData)}
+                    </span>
+                    <HiArrowNarrowRight className="w-6 h-6 " />
+                  </Link>
+                  :
+                  <a
+                  href="https://rayshop.ge/ge"
                   className={`flex items-center justify-center border border-solid border-custom-slate-900 bold text-custom-slate-900 sm:h-12 h-10 w-fit sm:px-7 px-4 rounded-full transition-all duration-300  sm:text-base text-sm  whitespace-nowrap`}
                 >
                   <span className="transition-all duration-300">
@@ -119,7 +131,9 @@ const sharedData = usePage().props.localizations;
                     {__("client.home_learn_more_btn", sharedData)}
                   </span>
                   <HiArrowNarrowRight className="w-6 h-6 " />
-                </Link>
+                </a>
+                }
+
               </div>
             );
           })}

@@ -100,9 +100,17 @@ const { pathname } = usePage().props;
                       src={item.bg}
                       alt=""
                     />
-                    <Link href={route("client.home.index")}>
+                    {
+                        index != 3?
+                        <Link href={route("client.home.index")}>
+                        <img className="h-10 mx-auto" src={item.logo} alt="" />
+                      </Link>
+                      :
+                      <a href={"https://rayshop.ge/ge"}>
                       <img className="h-10 mx-auto" src={item.logo} alt="" />
-                    </Link>
+                    </a>
+                    }
+
                     <div className="bold xl:text-2xl text-xl xl:mt-6 xl:mb-4 my-2">
                       {item.title}
                     </div>
@@ -110,13 +118,25 @@ const { pathname } = usePage().props;
                       {item.para}
                     </p>
                   </div>
-                  <Link
+                  {
+                    index != 3 ?
+                    <Link
                     href={item.link}
                     className={`flex items-center justify-center border border-solid border-white bold text-white sm:h-10 h-10 w-fit sm:px-6 px-4 rounded-full transition-all duration-300  sm:text-base text-sm  whitespace-nowrap mx-auto`}
                   >
                     <span>Learn more</span>
                     <HiArrowNarrowRight className="w-6 h-6 m-2" />
                   </Link>
+                  :
+                  <a
+                    href={"https://rayshop.ge/ge"}
+                    className={`flex items-center justify-center border border-solid border-white bold text-white sm:h-10 h-10 w-fit sm:px-6 px-4 rounded-full transition-all duration-300  sm:text-base text-sm  whitespace-nowrap mx-auto`}
+                  >
+                    <span>Learn more</span>
+                    <HiArrowNarrowRight className="w-6 h-6 m-2" />
+                  </a>
+                  }
+
                 </div>
               );
             })}
