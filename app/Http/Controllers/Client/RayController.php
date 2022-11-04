@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Page;
 use App\Models\Category;
 use App\Models\Product;
+use App\Models\Team;
 use App\Models\Portfolio;
 use App\Models\Staff;
 use App\Models\Slider;
@@ -47,6 +48,7 @@ class RayController extends Controller
         //     ->with(['latestImage', 'translations'])->paginate(6);
 
         return Inertia::render('RayAcademy', [
+            "courses" => Team::with("files", "translations")->get(),
             // "category" => Category::with('translations')->get(),
             "sliders" => $sliders->get(), "page" => $page, "seo" => [
                 "title" => $page->meta_title,

@@ -8,7 +8,7 @@ import Slider5 from "../components/Slider5";
 import Layout from "../Layouts/Layout";
 import { Link, usePage } from "@inertiajs/inertia-react";
 
-const RayAcademy = ({seo}) => {
+const RayAcademy = ({seo,courses}) => {
     const renderHTML = (rawHTML) =>
     React.createElement("div", {
         dangerouslySetInnerHTML: { __html: rawHTML },
@@ -82,7 +82,7 @@ const RayAcademy = ({seo}) => {
         </div>
       </section>
       <section>
-        <Slider5 />
+        <Slider5 data={courses}/>
       </section>
       <section className="wrapper flex items-start justify-between lg:py-24 py-20 flex-col lg:flex-row">
         <img className="mt-20 mx-auto " src="/assets/images/raypages/20.png" alt="" />

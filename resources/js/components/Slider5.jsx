@@ -11,7 +11,8 @@ import {
 import { academySlider } from "./Data";
 import { Link } from '@inertiajs/inertia-react'
 
-const Slider5 = () => {
+const Slider5 = ({data}) => {
+    // console.log(data, 'esaa');
   const prevRef = useRef(null);
   const nextRef = useRef(null);
 
@@ -32,27 +33,35 @@ const Slider5 = () => {
             swiper.navigation.update();
           }}
         >
-          {academySlider.map((item, index) => {
+          {data.map((item, index) => {
             return (
               <SwiperSlide key={index}>
                 <div className=" flex items-start justify-between flex-col lg:flex-row  py-20">
                   <div className="lg:w-1/2">
                     <div className="xl:text-7xl sm:text-5xl text-2xl bold mb-7 ">
-                      {item.title1}
+                      {item.title}
                     </div>
                     <div className="flex items-stretch">
                       <div className="sm:w-64 w-40 sm:mr-8 mr-4 shrink-0 grayscale">
                         <img
                           className="w-full h-full object-cover"
-                          src={item.img1}
+                          src={
+                            item.files != null && item.files[0]
+                            ? "/" +
+                            item.files[0].path +
+                            "/" +
+                            item.files[0].title
+                            : null
+
+                           }
                           alt=""
                         />
                       </div>
                       <div className="max-w-sm">
                         <div className="xl:text-7xl sm:text-5xl text-xl bold opacity-50">
-                          {item.title2}
+                          {item.short_description}
                         </div>
-                        <p className="opacity-30 sm:my-10 my-2">{item.para}</p>
+                        <p className="opacity-30 sm:my-10 my-2">{item.description}</p>
                         <Link
                           href={item.link}
                           className={`flex items-center justify-center border border-solid border-custom-slate-900 bold text-custom-slate-900 sm:h-12 h-10 w-fit sm:px-7 px-4 rounded-full transition-all duration-300  sm:text-base text-sm  whitespace-nowrap`}
@@ -66,7 +75,14 @@ const Slider5 = () => {
                     </div>
                   </div>
                   <div className="pt-10 lg:w-1/2">
-                    <img src={item.img2} alt="" />
+                    <img src={
+                           item.files != null && item.files[1]
+                           ? "/" +
+                           item.files[1].path +
+                           "/" +
+                           item.files[1].title
+                           : null
+                        } alt="" />
                   </div>
                 </div>
               </SwiperSlide>
