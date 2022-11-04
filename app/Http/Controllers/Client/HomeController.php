@@ -8,6 +8,7 @@ use App\Models\Category;
 use App\Models\Product;
 use App\Models\Portfolio;
 use App\Models\Staff;
+use App\Models\News;
 use App\Models\Slider;
 use App\Models\UpcomingEvent;
 use Illuminate\Support\Facades\App;
@@ -49,6 +50,7 @@ class HomeController extends Controller
 
         return Inertia::render('Home', [
             // "category" => Category::with('translations')->get(),
+            "news" => News::with('translations', 'file')->orderBy('created_at', 'desc')->limit(3)->get(),
             "UpcomingEvent" => UpcomingEvent::with(['file', 'translations'])->get(),
             "sliders" => $sliders->get(), "page" => $page, "seo" => [
                 "title" => $page->meta_title,

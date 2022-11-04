@@ -49,33 +49,33 @@ const sharedData = usePage().props.localizations;
         <div className="imageLayout wrapper flex items-center justify-center">
       <div className="column w-1/5 lg:mx-2 mx-1">
         <div className="img medium overflow-hidden lg:my-4 my-2 border  border-solid sm:rounded-xl rounded-md border-custom-yellow">
-          <img className="w-full h-full object-cover" src="/assets/images/news/1.png" alt="" />
+          <img className="w-full h-full object-cover" src={images[0]?images[0]: "/assets/images/news/1.png"} alt="" />
         </div>
       </div>
       <div className="column w-1/5 lg:mx-2 mx-1">
         <div className="img short overflow-hidden lg:my-4 my-2 border  border-solid sm:rounded-xl rounded-md border-custom-yellow">
-          <img className="w-full h-full object-cover" src="/assets/images/news/2.png" alt="" />
+          <img className="w-full h-full object-cover" src={images[1]?images[1] : "/assets/images/news/2.png"} alt="" />
         </div>
         <div className="img medium overflow-hidden lg:my-4 my-2 border  border-solid sm:rounded-xl rounded-md border-custom-yellow">
-          <img className="w-full h-full object-cover" src="/assets/images/news/3.png" alt="" />
+          <img className="w-full h-full object-cover" src={images[2]? images[2]: "/assets/images/news/3.png"} alt="" />
         </div>
       </div>
       <div className="column w-1/5 lg:mx-2 mx-1">
         <div className="img long overflow-hidden lg:my-4 my-2 border  border-solid sm:rounded-xl rounded-md border-custom-yellow">
-          <img className="w-full h-full object-cover" src="/assets/images/news/7.png" alt="" />
+          <img className="w-full h-full object-cover" src={images[3]? images[3]: "/assets/images/news/7.png"} alt="" />
         </div>
       </div>
       <div className="column w-1/5 lg:mx-2 mx-1">
         <div className="img medium overflow-hidden lg:my-4 my-2 border  border-solid sm:rounded-xl rounded-md border-custom-yellow">
-          <img className="w-full h-full object-cover" src="/assets/images/news/5.png" alt="" />
+          <img className="w-full h-full object-cover" src={images[4]? images[4]: "/assets/images/news/5.png"} alt="" />
         </div>
         <div className="img short overflow-hidden lg:my-4 my-2 border  border-solid sm:rounded-xl rounded-md border-custom-yellow">
-          <img className="w-full h-full object-cover" src="/assets/images/news/6.png" alt="" />
+          <img className="w-full h-full object-cover" src={images[5]? images[5]: "/assets/images/news/6.png"} alt="" />
         </div>
       </div>
       <div className="column medium w-1/5 lg:mx-2 mx-1">
         <div className="img medium overflow-hidden lg:my-4 my-2 border  border-solid sm:rounded-xl rounded-md border-custom-yellow">
-          <img className="w-full h-full object-cover" src="/assets/images/news/4.png" alt="" />
+          <img className="w-full h-full object-cover" src={images[6]? images[6]: "/assets/images/news/4.png"} alt="" />
         </div>
       </div>
     </div>
@@ -119,12 +119,16 @@ const sharedData = usePage().props.localizations;
       </section>
       <section className="py-20 wrapper">
         <div className="flex md:items-center items-start justify-start mb-10 flex-col md:flex-row">
-          <div className="bold lg:text-4xl text-2xl">Our Companies</div>
+          <div className="bold lg:text-4xl text-2xl">
+            {/* Our Companies */}
+            {__("client.home_our_companies", sharedData)}
+            </div>
           <div className="h-12 w-0.5 bg-white rounded mx-6 md:inline-block hidden"></div>
           <p className="opacity-30 max-w-2xl">
-            From banking and insurance to wealth management and on securities
+            {/* From banking and insurance to wealth management and on securities
             distribution, we dedicated financial services them the teams serve
-            all major sectors. of the industry.
+            all major sectors. of the industry. */}
+            {__("client.home_main_companies_title", sharedData)}
           </p>
         </div>
         <div className="flex items-start 2xl:justify-between justify-center flex-wrap 2xl:flex-nowrap -m-2">

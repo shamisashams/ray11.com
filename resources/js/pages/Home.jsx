@@ -10,7 +10,8 @@ import Slider3 from "../components/Slider3";
 import VideoPopup from "../components/VideoPopup";
 import Layout from "../Layouts/Layout";
 
-const Home = ({seo,sliders, UpcomingEvent}) => {
+const Home = ({seo,sliders, UpcomingEvent, news}) => {
+    console.log(news ,'esaa');
     const renderHTML = (rawHTML) =>
     React.createElement("div", {
         dangerouslySetInnerHTML: { __html: rawHTML },
@@ -134,7 +135,7 @@ const sharedData = usePage().props.localizations;
             {__("client.home_main_dont_miss_any", sharedData)}
           </div>
           <Link
-            href="/news"
+            href={__("client.navbar_news", sharedData)}
             className={`flex items-center justify-center border border-solid border-custom-yellow bold text-custom-yellow sm:h-10 h-10 w-fit sm:px-6 px-4 rounded-full transition-all duration-300  sm:text-base text-sm  whitespace-nowrap`}
           >
             <span>
@@ -155,25 +156,38 @@ const sharedData = usePage().props.localizations;
           <div className="w-12 h-12 absolute -right-5 -top-5 border-custom-yellow border-t-4 border-r-4 border-solid"></div>
         </div>
         <div className="lg:max-w-lg">
-          {newsHome.map((item, index) => {
+          {news.map((item, index) => {
+             const date = () => {
+                let z = item.created_at.split("-");
+                z[2] = z[2].split(":");
+                z[2] = z[2][0].slice(0, z[2][0].search("T"));
+                return z;
+            }
             return (
               <Link
                 key={index}
-                href="/"
+                href={route("client.news.show",item.id)}
                 className="flex items-center justify-start p-5 border-b border-custom-slate-900 hover:bg-custom-slate-900 rounded transition-all"
               >
                 <div className="sm:w-36 sm:h-36 w-28 h-28 rounded mr-3 overflow-hidden shrink-0">
                   <img
                     className="w-full h-full object-cover"
-                    src={item.img}
+                    src={
+                        item.file != null && item.file
+                        ? "/" +
+                        item.file.path +
+                        "/" +
+                        item.file.title
+                        : null
+                    }
                     alt=""
                   />
                 </div>
                 <div>
                   <div className="bold">{item.title}</div>
-                  <p className="opacity-30 text-sm my-2">Date: {item.date}</p>
+                  <p className="opacity-30 text-sm my-2">Date: {`${date()[2]}.${date()[1]}.${date()[0]}`}</p>
                   <p className="opacity-30 h-16 overflow-hidden sm:text-base text-sm">
-                    {item.para}
+                    {item.short_description}
                   </p>
                 </div>
               </Link>
