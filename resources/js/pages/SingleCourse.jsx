@@ -7,11 +7,19 @@ import React from "react";
 import { BiCheck, BiCalendar } from "react-icons/bi";
 // import PlayIcon from "../assets/images/svg/play.svg";
 import { HiArrowNarrowRight } from "react-icons/hi";
-import { Link } from '@inertiajs/inertia-react'
+import { Link, usePage } from '@inertiajs/inertia-react'
 import VideoPopup from "../components/VideoPopup";
 import { useState } from "react";
+import Layout from "../Layouts/Layout";
 
-const SingleCourse = () => {
+const SingleCourse = ({seo, courses,othercourses}) => {
+    const renderHTML = (rawHTML) =>
+    React.createElement("div", {
+        dangerouslySetInnerHTML: { __html: rawHTML },
+    });
+    const sharedData = usePage().props.localizations;
+
+    console.log(othercourses, 'esaa');
   const [showVideo, setShowVideo] = useState(false);
   const checks = [
     "From banking and insurance to wealth management and on securities distribution,",
@@ -45,6 +53,7 @@ const SingleCourse = () => {
   ];
 
   return (
+    <Layout seo={seo}>
     <div className="bg-white text-custom-dark singleCourse pb-20">
       <section
         className="sm:h-80 h-52 bg-cover bg-no-repeat bg-center mb-10"
@@ -53,19 +62,21 @@ const SingleCourse = () => {
       <section className="wrapper flex justify-start items-start lg:flex-row flex-col">
         <div className="lg:w-1/2 lg:mr-10 mb-20">
           <div className=" 2xl:text-7xl xl:text-6xl sm:text-5xl text-4xl bold mb-10">
-            Motion designer course
+            {/* Motion designer course */}
+            {courses.title}
           </div>
           <div className="sm:text-3xl text-2xl bold mb-7">
             What you'll learn
           </div>
-          {checks.map((item, index) => {
+          {/* {checks.map((item, index) => {
             return (
               <p key={index} className="mb-5 flex items-start justify-start">
                 <BiCheck className="shrink-0 mr-2 w-5 h-5 " />
                 <span> {item}</span>
               </p>
             );
-          })}
+          })} */}
+          {renderHTML(courses.whattolearn)}
 
           <div className="mt-16 ">
             <div className="sm:text-3xl text-2xl bold mb-7">
@@ -100,44 +111,62 @@ const SingleCourse = () => {
             </div>
             <div className="p-6 pb-10 ">
               <div className="flex items-center justify-start mb-6">
-                <div className="text-3xl bold">₾ 750</div>
-                <div className="text-2xl bold opacity-70 mx-4">₾ 1200</div>
-                <div className="text-2xl bold  text-custom-red">60% Off</div>
+                {courses.special_price?
+                <div className="text-3xl bold">₾ {courses.special_price}</div>
+                : ""
+                }
+                <div className="text-2xl bold opacity-70 mx-4">₾ {courses.price}</div>
+                <div className="text-2xl bold  text-custom-red">
+                    {/* 60% */}
+                    {
+                     courses.special_price? `${((courses.special_price * 100)/ courses.price).toFixed(0) }% ` : ""
+                    }
+                    { courses.special_price ? "Off" : "" }
+                    </div>
               </div>
               <div className="bold mb-3">This course includes:</div>
-              {includes.map((item, index) => {
+              {/* {includes.map((item, index) => {
                 return (
                   <p className="mb-2" key={index}>
                     {item}
                   </p>
                 );
-              })}
+              })} */}
+              {renderHTML(courses.course_includes)}
               <div className="bold mb-3 mt-6">Course starting at:</div>
               <p>
-                <BiCalendar className="inline-block mr-1 w-5 h-5 mb-1" /> 15
-                Octomber
+                <BiCalendar className="inline-block mr-1 w-5 h-5 mb-1" />
+                {/* 15 Octomber */}
+                {courses.starts}
               </p>
             </div>
           </div>
           <div className="my-10">
             <div className="bold mb-3 mt-6">Other courses</div>
-            {otherCourses.map((item, index) => {
+            {othercourses.map((item, index) => {
               return (
                 <Link
                   key={index}
-                  href="/"
+                  href={route("client.rayacademy.show",item.id)}
                   className="p-4 hover:bg-custom-slate-200 flex items-center justify-start transition"
                 >
                   <div className="w-20 h-20 rounded-lg overflow-hidden mr-4 shrink-0">
                     <img
                       className="object-cover w-full h-full"
-                      src={item.img}
+                      src={
+                        item.files != null && item.files[0]
+                        ? "/" +
+                        item.files[0].path +
+                        "/" +
+                        item.files[0].title
+                        : null
+                      }
                       alt=""
                     />
                   </div>
                   <div>
-                    <div className="bold mb-1">{item.name}</div>
-                    <p>{item.para}</p>
+                    <div className="bold mb-1">{item.title}</div>
+                    <p>{item.short_description}</p>
                   </div>
                 </Link>
               );
@@ -148,9 +177,12 @@ const SingleCourse = () => {
       <VideoPopup
         open={showVideo}
         closeVideo={() => setShowVideo(false)}
-        src="https://www.youtube.com/embed/xYrPGIJ2qoo"
+        src={
+            courses.video_url ? courses.video_url : "https://www.youtube.com/embed/xYrPGIJ2qoo"
+        }
       />
     </div>
+    </Layout>
   );
 };
 

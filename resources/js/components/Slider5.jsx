@@ -10,6 +10,7 @@ import {
 } from "react-icons/hi";
 import { academySlider } from "./Data";
 import { Link } from '@inertiajs/inertia-react'
+import { Route } from "react-router-dom";
 
 const Slider5 = ({data}) => {
     // console.log(data, 'esaa');
@@ -63,7 +64,7 @@ const Slider5 = ({data}) => {
                         </div>
                         <p className="opacity-30 sm:my-10 my-2">{item.description}</p>
                         <Link
-                          href={item.link}
+                          href={route("client.rayacademy.show",item.id)}
                           className={`flex items-center justify-center border border-solid border-custom-slate-900 bold text-custom-slate-900 sm:h-12 h-10 w-fit sm:px-7 px-4 rounded-full transition-all duration-300  sm:text-base text-sm  whitespace-nowrap`}
                         >
                           <span className="transition-all duration-300">

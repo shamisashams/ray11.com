@@ -31,8 +31,8 @@ class CreateTeamTable extends Migration
 
 
             $table->string('price');
-            $table->string('special_price');
-            $table->string('video_url');
+            $table->string('special_price')->nullable();
+            $table->string('video_url')->nullable();
 
             $table->boolean('status');
             $table->timestamps();

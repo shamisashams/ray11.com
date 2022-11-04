@@ -147,6 +147,7 @@ Route::prefix('{locale?}')
 
             // Ray Compaies
             Route::get('rayacademy', [RayController::class, 'index'])->name('client.rayacademy');
+            Route::get('rayacademy/{course?}', [RayController::class, 'show'])->name('client.rayacademy.show');
             Route::get('rayproductrion', [RayController::class, 'rayproductrion'])->name('client.rayproductrion');
 
 
