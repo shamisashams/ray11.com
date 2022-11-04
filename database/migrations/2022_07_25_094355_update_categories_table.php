@@ -15,7 +15,7 @@ class UpdateCategoriesTable extends Migration
     {
         //
         Schema::table('categories', function (Blueprint $table) {
-            $table->string('slug')->unique();
+            $table->string('slug');
         });
     }
 

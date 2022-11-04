@@ -5,7 +5,8 @@ import { projectSlider } from "./Data";
 import "swiper/css/scrollbar";
 import { Scrollbar } from "swiper";
 
-const Slider4 = () => {
+const Slider4 = ({data}) => {
+    // console.log(data, 'esaa');
   return (
     <Swiper
       slidesPerView={4}
@@ -28,14 +29,22 @@ const Slider4 = () => {
         },
       }}
     >
-      {projectSlider.map((item, index) => {
+      {data.map((item, index) => {
+        console.log(item, 'esaa');
         return (
           <SwiperSlide className="pb-10" key={index}>
             <div className="">
               <div className="w-full h-80 mb-5">
                 <img
                   className="w-full h-full object-cover"
-                  src={item.img}
+                  src={
+                    item.files != null && item.files[0]
+                    ? "/" +
+                    item.files[0].path +
+                    "/" +
+                    item.files[0].title
+                    : null
+                  }
                   alt=""
                 />
               </div>

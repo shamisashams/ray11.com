@@ -18,7 +18,7 @@ import { SiAppstore } from "react-icons/si";
 import { IoLogoGooglePlaystore } from "react-icons/io5";
 import Layout from "../Layouts/Layout";
 
-const RayCrypto = ({seo}) => {
+const RayCrypto = ({seo,project,videogallery}) => {
   const nftGrid = [
     {
       img: "/assets/images/raypages/4.png",

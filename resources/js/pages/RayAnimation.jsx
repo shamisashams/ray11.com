@@ -12,7 +12,7 @@ import { videoGrid } from "../components/Data";
 import VideoPopup from "../components/VideoPopup";
 import Layout from "../Layouts/Layout";
 
-const RayAnimation = ({seo}) => {
+const RayAnimation = ({seo,project,videogallery}) => {
   const [showVideo, setShowVideo] = useState(false);
   return (
     <Layout seo={seo}>

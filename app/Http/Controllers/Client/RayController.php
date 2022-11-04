@@ -23,7 +23,6 @@ class RayController extends Controller
     public function index(Request $request)
     {
         // $portfolio = Portfolio::where("status", 0)->with(['files', 'translations', 'latestImage'])->paginate(6);
-
         $page = Page::where('key', 'rayacademy')->firstOrFail();
 
         $images = [];
@@ -147,6 +146,8 @@ class RayController extends Controller
 
         return Inertia::render('RayProduction', [
             // "category" => Category::with('translations')->get(),
+            "project" => Staff::with('translations', 'files')->where("id", 1)->get(),
+            "videogallery" => Category::with('translations', 'files')->where("id", 1)->get(),
             "sliders" => $sliders->get(), "page" => $page, "seo" => [
                 "title" => $page->meta_title,
                 "description" => $page->meta_description,
@@ -182,6 +183,8 @@ class RayController extends Controller
         $sliders = Slider::query()->where("status", 1)->with(['file', 'translations']);
         return Inertia::render('RayAnimation', [
             // "category" => Category::with('translations')->get(),
+            "project" => Staff::with('translations', 'files')->where("id", 2)->get(),
+            "videogallery" => Category::with('translations', 'files')->where("id", 2)->get(),
             "sliders" => $sliders->get(), "page" => $page, "seo" => [
                 "title" => $page->meta_title,
                 "description" => $page->meta_description,
@@ -217,6 +220,8 @@ class RayController extends Controller
         $sliders = Slider::query()->where("status", 1)->with(['file', 'translations']);
         return Inertia::render('RayCrypto', [
             // "category" => Category::with('translations')->get(),
+            "project" => Staff::with('translations', 'files')->where("id", 3)->get(),
+            "videogallery" => Category::with('translations', 'files')->where("id", 3)->get(),
             "sliders" => $sliders->get(), "page" => $page, "seo" => [
                 "title" => $page->meta_title,
                 "description" => $page->meta_description,

@@ -6,7 +6,7 @@ import { videoGrid } from "../components/Data";
 import Layout from "../Layouts/Layout";
 import { Link, usePage } from "@inertiajs/inertia-react";
 
-const RayProduction = ({seo}) => {
+const RayProduction = ({seo,project,videogallery}) => {
     const renderHTML = (rawHTML) =>
     React.createElement("div", {
         dangerouslySetInnerHTML: { __html: rawHTML },
@@ -68,7 +68,7 @@ const RayProduction = ({seo}) => {
             {/* Projects */}
             {__("client.rayproduction_projects", sharedData)}
             </div>
-          <Slider4 />
+          <Slider4 data={project} />
         </RaySection>
         <RaySection color="#A7DE5C" title="Streaming / Podcasts">
           <div className="flex items-start justify-between flex-col lg:flex-row">
@@ -106,13 +106,20 @@ const RayProduction = ({seo}) => {
           </div>
           <div className="flex items-start justify-between flex-col lg:flex-row">
             <div className="grid grid-cols-2 sm:gap-10 gap-5 max-w-xl lg:mr-10 mr-0 mb-14 ">
-              {videoGrid.map((item, index) => {
+              {videogallery.map((item, index) => {
                 return (
                   <div key={index} className="cursor-pointer group">
                     <div className="w-full h-32 mb-5 relative">
                       <img
                         className="w-full h-full object-cover"
-                        src={item.img}
+                        src={
+                            item.files != null && item.files[0]
+                            ? "/" +
+                            item.files[0].path +
+                            "/" +
+                            item.files[0].title
+                            : null
+                        }
                         alt=""
                       />
                       <img
