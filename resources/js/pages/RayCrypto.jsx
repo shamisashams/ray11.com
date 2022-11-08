@@ -7,7 +7,7 @@ import { SocialMedia } from "../components/SmallComps";
 import RaySection from "../components/RaySection";
 // import Icon1 from "../assets/images/icons/4.png";
 // import Icon2 from "../assets/images/icons/5.png";
-import { Link } from '@inertiajs/inertia-react'
+import { Link,usePage } from '@inertiajs/inertia-react'
 // import Gridimg1 from "../assets/images/raypages/4.png";
 // import Gridimg2 from "../assets/images/raypages/5.png";
 // import Gridimg3 from "../assets/images/raypages/6.png";
@@ -19,6 +19,12 @@ import { IoLogoGooglePlaystore } from "react-icons/io5";
 import Layout from "../Layouts/Layout";
 
 const RayCrypto = ({seo,project,videogallery}) => {
+    const renderHTML = (rawHTML) =>
+    React.createElement("div", {
+        dangerouslySetInnerHTML: { __html: rawHTML },
+    });
+    const sharedData = usePage().props.localizations;
+
   const nftGrid = [
     {
       img: "/assets/images/raypages/4.png",
@@ -57,7 +63,10 @@ const RayCrypto = ({seo,project,videogallery}) => {
                 src="/assets/images/shapes/8.png"
                 alt=""
               />
-              <span className="relative">Just another way to make it</span>
+              <span className="relative">
+                {/* Just another way to make it */}
+                {__("client.raycrypto_just_anotherway", sharedData)}
+                </span>
             </div>
             <div className="highlight-title nun-bold relative sm:px-20 px-14 whitespace-nowrap w-fit text-custom-dark xl:text-5xl text-4xl sm:my-14 my-10">
               <img
@@ -65,14 +74,21 @@ const RayCrypto = ({seo,project,videogallery}) => {
                 src="/assets/images/shapes/8.png"
                 alt=""
               />
-              <span className="relative">Ray crypto</span>
+              <span className="relative">
+                {/* Ray crypto */}
+                {__("client_raycrypto", sharedData)}
+                </span>
             </div>
             <p className="opacity-30 ">
-              The driving force of all speeches, we believe that creation should
-              be the point around which any communication strategy revolves.
+              {/* The driving force of all speeches, we believe that creation should
+              be the point around which any communication strategy revolves. */}
+              {__("client.raycrypto_thedrivingforce", sharedData)}
             </p>
             <div className="flex justify-start items-center mt-10 mb-8">
-              <div className="text-lg whitespace-nowrap">Social media</div>
+              <div className="text-lg whitespace-nowrap">
+                {/* Social media */}
+                {__("client.raycrypto_socmedia", sharedData)}
+                </div>
               <div className="w-28 h-0.5 bg-white mx-4"></div>
               <SocialMedia />
             </div>
@@ -83,19 +99,23 @@ const RayCrypto = ({seo,project,videogallery}) => {
         </div>
       </section>
       <section className="wrapper pb-20">
-        <div className="bold text-2xl mb-14">What we do?</div>
-        <RaySection color="#7261BD" title="NFT art">
+        <div className="bold text-2xl mb-14">
+            {/* What we do? */}
+            {__("client.raycrypto_whatwedo", sharedData)}
+            </div>
+        <RaySection color="#7261BD" title={__("client.raycrypto_nftart", sharedData)}>
           <div className="flex justify-between  flex-col lg:flex-row">
             <div className="lg:w-1/2 lg:max-w-lg">
               <div className="opacity-50 mb-4">
-                From banking and insurance to wealth management and on
+                {/* From banking and insurance to wealth management and on
                 securities distribution, we dedicated financial services them
                 the teams serve all major sectors. of the industry. From banking
                 and insurance to wealth management and on securities
                 distribution, we dedicated financial services them the teams
-                serve all major sectors. of the industry.
+                serve all major sectors. of the industry. */}
+                {renderHTML(__("client.raycrypto_nftart_text", sharedData))}
               </div>
-              <div className="opacity-50 mb-8">
+              {/* <div className="opacity-50 mb-8">
                 management and on securities distribution, we dedicated
                 financial services them the teams serve all major sectors. of
                 the industry. From banking and insurance to wealth management
@@ -104,10 +124,14 @@ const RayCrypto = ({seo,project,videogallery}) => {
                 banking and insurance to wealth management and on securities
                 distribution, we dedicated financial services them the teams
                 serve all major sectors. of the industry.
-              </div>
+              </div> */}
               <div className="flex items-center justify-between flex-wrap">
                 <div className="">
-                  <div className="bold inline-block">Meet community:</div>
+                  <div className="bold inline-block">
+                    {/* Meet community   */}
+                    {__("client.rayanimation_title", sharedData)}
+
+                    :</div>
                   <a href="#" className="inline-block mx-4 align-middle">
                     <img src={"/assets/images/icons/4.png"} alt="" />
                   </a>
@@ -119,7 +143,8 @@ const RayCrypto = ({seo,project,videogallery}) => {
                   href="/"
                   className="bold py-3 px-8 border border-custom-purple border solid rounded-full my-5"
                 >
-                  Open on market
+                  {/* Open on market */}
+                  {__("client.raycrypto_openonmarket", sharedData)}
                 </Link>
               </div>
             </div>
@@ -148,11 +173,12 @@ const RayCrypto = ({seo,project,videogallery}) => {
             </div>
           </div>
         </RaySection>
-        <RaySection color="#7261BD" title="P2E Games">
+        <RaySection color="#7261BD" title={__("client.raycrypto_p2egames", sharedData)}>
           <div className=" mb-8">
-            From banking and insurance to wealth management and on securities
+            {/* From banking and insurance to wealth management and on securities
             distribution, we dedicated financial services them the teams serve
-            all major sectors.
+            all major sectors. */}
+             {__("client.raycrypto_p2egames_text", sharedData)}
           </div>
           <div className="max-w-xl">
             <div className="h-80 w-full mb-5">
@@ -171,15 +197,19 @@ const RayCrypto = ({seo,project,videogallery}) => {
                   <img src={"/assets/images/raypages/4.png"} alt="" />
                 </div>
                 <div>
-                  <div className="text-lg mb-2">Game Name</div>
+                  <div className="text-lg mb-2">
+                    {/* Game Name */}
+                    {__("client.raycrypto_gamename", sharedData)}
+                    </div>
                   <p className="opacity-50 text-sm">
-                    From banking and insurance to wealth management and on
-                    securities distribution, we dedicated financial services
+                    {/* From banking and insurance to wealth management and on
+                    securities distribution, we dedicated financial services */}
                   </p>
                 </div>
               </div>
               <div>
-                <div className="opacity-50">Get on:</div>
+                <div className="opacity-50">
+                {__("client.raycrypto_geton", sharedData)}:</div>
                 <Link
                   href="/"
                   className="bold text-sm leading-loose mt-3 block py-1 px-4 border border-custom-purple border solid rounded-full  whitespace-nowrap"
@@ -202,15 +232,17 @@ const RayCrypto = ({seo,project,videogallery}) => {
       <section className="wrapper flex items-center justify-between flex-col md:flex-row pb-10">
         <div className="md:mr-10 mr-0 mb-10">
           <div className="xl:text-7xl sm:text-5xl text-3xl bold mb-7 ">
-            Our mission
+          {__("client.raycrypto_ourmission", sharedData)}
+            {/* Our mission */}
           </div>
           <div className="max-w-sm opacity-30">
             <p className=" mb-4">
-              From banking and insurance to wealth management and on securities
+              {/* From banking and insurance to wealth management and on securities
               distribution, we dedicated financial services them the teams serve
-              all major sectors. of the industry.
+              all major sectors. of the industry. */}
+              {renderHTML(__("client.raycrypto_ourmission_text", sharedData))}
             </p>
-            <p className=" mb-4">
+            {/* <p className=" mb-4">
               From banking and insurance to wealth management and on securities
               distribution, we dedicated financial services them the teams serve
               all major sectors. of the industry.
@@ -226,7 +258,7 @@ const RayCrypto = ({seo,project,videogallery}) => {
               wealth management and on securities distribution, we dedicated
               financial services them the teams serve all major sectors. of the
               industry.
-            </p>
+            </p> */}
           </div>
         </div>
         <div className="w-fit h-fit relative mx-auto p-5">

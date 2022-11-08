@@ -11,8 +11,14 @@ import { videoGrid } from "../components/Data";
 // import PlayIcon from "../assets/images/svg/play.svg";
 import VideoPopup from "../components/VideoPopup";
 import Layout from "../Layouts/Layout";
+import { Link, usePage } from "@inertiajs/inertia-react";
 
 const RayAnimation = ({seo,project,videogallery}) => {
+    const renderHTML = (rawHTML) =>
+    React.createElement("div", {
+        dangerouslySetInnerHTML: { __html: rawHTML },
+    });
+    const sharedData = usePage().props.localizations;
   const [showVideo, setShowVideo] = useState(false);
   return (
     <Layout seo={seo}>
@@ -25,7 +31,10 @@ const RayAnimation = ({seo,project,videogallery}) => {
                 src="/assets/images/shapes/11.png"
                 alt=""
               />
-              <span className="relative">Animate your ideas with us</span>
+              <span className="relative">
+                {/* Animate your ideas with us */}
+                {__("client.rayanimation_title", sharedData)}
+                </span>
             </div>
             <div className="highlight-title nun-bold relative sm:px-20 px-14 whitespace-nowrap w-fit text-custom-dark xl:text-5xl sm:text-4xl text-3xl sm:my-14 my-10">
               <img
@@ -33,14 +42,21 @@ const RayAnimation = ({seo,project,videogallery}) => {
                 src="/assets/images/shapes/4.png"
                 alt=""
               />
-              <span className="relative">Ray animation</span>
+              <span className="relative">
+                {/* Ray animation */}
+                {__("client.rayanimation", sharedData)}
+                </span>
             </div>
             <p className="opacity-30 ">
-              The driving force of all speeches, we believe that creation should
-              be the point around which any communication strategy revolves.
+              {/* The driving force of all speeches, we believe that creation should
+              be the point around which any communication strategy revolves. */}
+              {__("client.rayanimation_drivingforce", sharedData)}
             </p>
             <div className="flex justify-start items-center mt-10 mb-8">
-              <div className="text-lg whitespace-nowrap">Social media</div>
+              <div className="text-lg whitespace-nowrap">
+                {/* Social media */}
+                {__("client.rayanimation_socials", sharedData)}
+                </div>
               <div className="w-28 h-0.5 bg-white mx-4"></div>
               <SocialMedia />
             </div>
@@ -51,15 +67,21 @@ const RayAnimation = ({seo,project,videogallery}) => {
         </div>
       </section>
       <section className="wrapper pb-20">
-        <div className="bold text-2xl mb-14">Directions</div>
-        <RaySection color="#3FA0CD" title="Video animation">
-          <div className="bold text-xl mb-10">Projects</div>
+        <div className="bold text-2xl mb-14">
+            {/* Directions */}
+            {__("client.rayanimation_directions", sharedData)}
+            </div>
+        <RaySection color="#3FA0CD" title={__("client.rayanimation_video_animation", sharedData)}>
+          <div className="bold text-xl mb-10">
+            {/* Projects */}
+            {__("client.rayanimation_projects", sharedData)}
+            </div>
           <Slider4 data={project} />
         </RaySection>
-        <RaySection color="#3FA0CD" title="Animated series">
+        <RaySection color="#3FA0CD" title={__("client.rayanimation_animated_series", sharedData)}>
           <div className="flex items-start justify-between flex-col lg:flex-row">
             <div className="lg:max-w-xl opacity-50 lg:mr-5 mr-0 mb-10">
-              <p className="mb-4">
+              {/* <p className="mb-4">
                 A podcast is a collection or series of digital audio files that
                 are made available for downloading or listening via the
                 Internet. Each individual audio recording is known as a podcast
@@ -79,15 +101,19 @@ const RayAnimation = ({seo,project,videogallery}) => {
                 internet connection, access or subscription to a streaming
                 service or app, and a compatible device. See speed
                 recommendations below.
+              </p> */}
+              <p className="mb-4">
+              {renderHTML(__("client.rayanimation_animatedseries_text", sharedData))}
               </p>
             </div>
             <img className="mx-auto" src="/assets/images/raypages/14.png" alt="" />
           </div>
         </RaySection>
-        <RaySection color="#3FA0CD" title="Grapgics & commercial">
+        <RaySection color="#3FA0CD" title={__("client.rayanimation_grapgics_commercial", sharedData)}>
           <div className="max-w-xl text-lg mb-10">
-            From banking and insurance to wealth management and on securities
-            distribution.
+            {/* From banking and insurance to wealth management and on securities
+            distribution. */}
+            {__("client.rayanimation_grapgics_text", sharedData)}
           </div>
           <div className="flex items-start justify-between flex-col lg:flex-row">
             <div className="grid grid-cols-2 sm:gap-10 gap-5 max-w-xl lg:mr-10 mr-0 mb-14 ">
@@ -123,7 +149,7 @@ const RayAnimation = ({seo,project,videogallery}) => {
               })}
             </div>
             <div className="max-w-xl opacity-50 lg:mx-auto">
-              <p className="mb-5">
+              {/* <p className="mb-5">
                 {" "}
                 Live streaming is the broadcast of an event over the internet as
                 it happens. Awards shows, sports, boxing matches, video games
@@ -136,14 +162,18 @@ const RayAnimation = ({seo,project,videogallery}) => {
                 between users. You can live stream on any compatible smartphone,
                 tablet, TV, computer or gaming console with a relatively fast
                 internet connection.
+              </p> */}
+              <p className="mb-5">
+              {renderHTML(__("client.rayanimation_grapgics_text", sharedData))}
               </p>
+
             </div>
           </div>
         </RaySection>
-        <RaySection color="#3FA0CD" title="Character creation">
+        <RaySection color="#3FA0CD" title={__("client.rayanimation_character_creation", sharedData)}>
           <div className="flex items-start justify-between flex-col lg:flex-row">
             <div className="lg:max-w-xl opacity-50 lg:mr-5 mr-0 mb-10">
-              <p className="mb-4">
+              {/* <p className="mb-4">
                 A podcast is a collection or series of digital audio files that
                 are made available for downloading or listening via the
                 Internet. Each individual audio recording is known as a podcast
@@ -163,7 +193,10 @@ const RayAnimation = ({seo,project,videogallery}) => {
                 internet connection, access or subscription to a streaming
                 service or app, and a compatible device. See speed
                 recommendations below.
-              </p>
+              </p> */}
+               <p className="mb-4">
+                    {renderHTML(__("client.rayanimation_charactercreation", sharedData))}
+               </p>
             </div>
             <img className="mx-auto lg:w-1/2" src="/assets/images/raypages/14.png" alt="" />
           </div>

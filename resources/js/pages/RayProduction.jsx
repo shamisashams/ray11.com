@@ -63,14 +63,14 @@ const RayProduction = ({seo,project,videogallery}) => {
             {/* Directions */}
             {__("client.rayproduction_directions", sharedData)}
             </div>
-        <RaySection color="#A7DE5C" title="Films & Series">
+        <RaySection color="#A7DE5C" title={__("client.rayproduction_filmsseries", sharedData)}>
           <div className="bold text-xl mb-10">
             {/* Projects */}
             {__("client.rayproduction_projects", sharedData)}
             </div>
           <Slider4 data={project} />
         </RaySection>
-        <RaySection color="#A7DE5C" title="Streaming / Podcasts">
+        <RaySection color="#A7DE5C" title={__("client.rayproduction_streaming", sharedData)}>
           <div className="flex items-start justify-between flex-col lg:flex-row">
             <div className="lg:max-w-xl opacity-50 lg:mr-5 mr-0 mb-10">
               <p className="mb-4">
@@ -82,7 +82,7 @@ const RayProduction = ({seo,project,videogallery}) => {
                 individuals who lead a conversation, share stories, or report
                 the news */}
               </p>
-              <p className="mb-4">
+              {/* <p className="mb-4">
                 Music, video and other types of media files are prearranged and
                 transmitted in sequential packets of data so they can be
                 streamed instantaneously. And unlike traditional downloads that
@@ -94,16 +94,16 @@ const RayProduction = ({seo,project,videogallery}) => {
                 internet connection, access or subscription to a streaming
                 service or app, and a compatible device. See speed
                 recommendations below.
-              </p>
+              </p> */}
             </div>
             <img className="mx-auto" src="/assets/images/raypages/14.png" alt="" />
           </div>
         </RaySection>
-        <RaySection color="#A7DE5C" title="Music video">
+        <RaySection color="#A7DE5C" title={__("client.rayproduction_musicvideo", sharedData)}>
           <div className="max-w-xl text-lg mb-10">
             {/* From banking and insurance to wealth management and on securities
             distribution. */}
-            {__("client.rayproduction_commercial_text1", sharedData)}
+            {__("client.rayproduction_commercial_text", sharedData)}
           </div>
           <div className="flex items-start justify-between flex-col lg:flex-row">
             <div className="grid grid-cols-2 sm:gap-10 gap-5 max-w-xl lg:mr-10 mr-0 mb-14 ">
@@ -155,7 +155,7 @@ const RayProduction = ({seo,project,videogallery}) => {
             </div>
           </div>
         </RaySection>
-        <RaySection color="#A7DE5C" title="Commercial">
+        <RaySection color="#A7DE5C" title={__("client.rayproduction_commercial", sharedData)}>
           <div className="flex items-start justify-between flex-col lg:flex-row">
             <div className="lg:max-w-xl opacity-50 lg:mr-5 mr-0 mb-10">
               {/* <p className="mb-4">
@@ -179,6 +179,7 @@ const RayProduction = ({seo,project,videogallery}) => {
                 service or app, and a compatible device. See speed
                 recommendations below.
               </p> */}
+              {renderHTML(__("client.rayproduction_commercial_text", sharedData))}
             </div>
             <img className="mx-auto lg:w-1/2" src="/assets/images/raypages/15.png" alt="" />
           </div>
