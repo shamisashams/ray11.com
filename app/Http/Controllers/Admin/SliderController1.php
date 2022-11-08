@@ -131,7 +131,7 @@ class SliderController1 extends Controller
             'method' => $method,
         ]);*/
 
-        return view('admin.nowa.views.slider1.form', [
+        return view('admin.nowa.views.slider1.edit', [
             'slider' => $slider,
             'url' => $url,
             "slide" => $slider->find($code),

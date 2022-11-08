@@ -64,7 +64,6 @@
                             </div>
                             <div class="panel-body tabs-menu-body main-content-body-right border">
                                 <div class="tab-content">
-
                                     @foreach(config('translatable.locales') as $locale)
 
                                         <?php
@@ -88,7 +87,7 @@
 
                                             <div class="form-group">
                                                 {!! Form::label($locale.'[title]',__('admin.title'),['class' => 'form-label']) !!}
-                                                {!! Form::text($locale.'[title]',$slide->translate($locale)->title ?? '',['class' => 'form-control']) !!}
+                                                {!! Form::text($locale.'[title]',$slider->translate($locale)->title ?? '',['class' => 'form-control']) !!}
 
                                                 @error($locale.'.title')
                                                 <small class="text-danger">
@@ -100,7 +99,7 @@
                                             </div>
                                             {{--<div class="form-group">
                                                 {!! Form::label($locale.'[title_2]',__('admin.title_2'),['class' => 'form-label']) !!}
-                                                {!! Form::text($locale.'[title_2]',$slider->translate($locale)->title_2 ?? '',['class' => 'form-control']) !!}
+                                                {!! Form::text($locale.'[title_2]',$sliderr->translate($locale)->title_2 ?? '',['class' => 'form-control']) !!}
 
                                                 @error($locale.'.title_2')
                                                 <small class="text-danger">
@@ -115,7 +114,7 @@
                                                 <input type='text'
                                                 class="form-control" id="short_description-{{$locale}}"
                                                 name="{{$locale}}[short_description]'"
-                                                value="{!! $slide->translate($locale)->short_description ?? '' !!}"
+                                                value="{!! $slider->translate($locale)->short_description ?? '' !!}"
                                             >
                                             </input>
                                                 @error($locale.'.short_description')
@@ -132,7 +131,7 @@
                                                 <label class="form-label" for="description">@lang('admin.description')</label>
                                                 <textarea class="form-control" id="description-{{$locale}}"
                                                           name="{{$locale}}[description]'">
-                                                {!! $slide->translate($locale)->description ?? '' !!}
+                                                {!! $slider->translate($locale)->description ?? '' !!}
                                             </textarea>
                                                 @error($locale.'.description')
                                                 <small class="text-danger">
@@ -164,14 +163,14 @@
                         <h6 class="card-title mb-1">@lang('admin.logo')</h6>
                     </div>
                     <div class="input-group mb-3">
-                        <input type="file" name='logo' class="form-control" onchange="readURL(this);" value={{$slide != null?$slide->logo: null }}>
+                        <input type="file" name='logo' class="form-control" onchange="readURL(this);" value={{$slider != null?$slider->logo: null }}>
                     </div>
-                    {{-- @dd($slide) --}}
-                    <img id="blah" src={{isset($slide)&&$slide != null? $links . "/" . $slide->logo : "#"}} alt="" style={{$slide != null? "width:90px; height:70px" : ""}} />
+                    {{-- @dd($slider) --}}
+                    <img id="blah" src={{isset($slider)&&$slider != null? $links . "/" . $slider->logo : "#"}} alt="" style={{$slider != null? "width:90px; height:70px" : ""}} />
 
                     <div class="form-group">
                         {!! Form::label("reddirect_url",__('admin.btn_reddirect_url'),['class' => 'form-label']) !!}
-                        {!! Form::text("reddirect_url",$slide->reddirect_url ?? '',['class' => 'form-control']) !!}
+                        {!! Form::text("reddirect_url",$slider->reddirect_url ?? '',['class' => 'form-control']) !!}
 
                         @error($locale.'.reddirect_url')
                         <small class="text-danger">
@@ -185,11 +184,11 @@
                     <div class="form-group">
                         <label class="ckbox">
                             <input type="checkbox" name="status"
-                                   value="true" {{$slide->status ? 'checked' : ''}}>
+                                   value="true" {{$slider->status ? 'checked' : ''}}>
                             <span>{{__('admin.status')}}</span>
                         </label>
                     </div>
-{{-- @dd($slider) --}}
+{{-- @dd($sliderr) --}}
                     <div class="form-group mb-0 mt-3 justify-content-end">
                         <div>
                             {!! Form::submit($slider->created_at ? __('admin.update') : __('admin.create'),['class' => 'btn btn-primary']) !!}
