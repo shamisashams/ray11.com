@@ -85,6 +85,8 @@
                                                                     </span>
                                                 @endif
                                             </div> --}}
+                                            {{-- <input type="file" id="myfile" class="form-controll" name="myfile"><br><br> --}}
+
                                             <div class="form-group">
                                                 {!! Form::label($locale.'[title]',__('admin.title'),['class' => 'form-label']) !!}
                                                 {!! Form::text($locale.'[title]',$slider->translate($locale)->title ?? '',['class' => 'form-control']) !!}
@@ -159,6 +161,14 @@
         <div class="col-lg-6 col-md-12">
             <div class="card">
                 <div class="card-body">
+                    <div>
+                        <h6 class="card-title mb-1">@lang('admin.logo')</h6>
+                    </div>
+                    <div class="input-group mb-3">
+                        <input type="file" name='logo' class="form-control" onchange="readURL(this);" value="{{isset($slide)&& $slide != null?$slide->logo: null }}">
+                    </div>
+                    {{-- @dd($slide) --}}
+                    <img id="blah" src={{isset($slide)&&$slide != null? $links . "/" . $slide->logo : "#"}} alt="" style="{{isset($slide)&&$slide != null?"width:90px; height:70px": ""}}" />
 
                     <div class="form-group">
                         {!! Form::label("reddirect_url",__('admin.btn_reddirect_url'),['class' => 'form-label']) !!}
@@ -255,6 +265,19 @@
     <script src="{{asset('uploader/image-uploader.js')}}"></script>
 
     <script>
+function readURL(input) {
+  if (input.files && input.files[0]) {
+    var reader = new FileReader();
+
+    reader.onload = function (e) {
+      $('#blah').attr('src', e.target.result).width(90).height(70);
+    };
+
+    reader.readAsDataURL(input.files[0]);
+  }
+}
+
+
         let oldImages = $('#old_images').val();
         if (oldImages) {
             oldImages = JSON.parse(oldImages);
@@ -281,6 +304,34 @@
         } else {
             $('.input-images').imageUploader();
         }
+
+        // let oldImages1 = $('#old_images1').val();
+        // if (oldImages1) {
+        //     oldImages1 = JSON.parse(oldImages1);
+        // }
+        // let imagedata1 = [];
+        // let getUrl1 = window.location;
+        // let baseUrl1 = getUrl1.protocol + "//" + getUrl1.host + "/" + getUrl1.pathname.split('/')[0];
+        // if (oldImages1 && oldImages1.length > 0) {
+        //     // alert('asdasd')
+        //     oldImages1.forEach((el, key) => {
+        //         // let directory = '';
+        //         if (el.fileable_type === 'App\\Models\\Project') {
+        //             directory = 'project';
+        //         }
+        //         imagedata1.push({
+        //             id: el.id,
+        //             src: `${baseUrl1}${el.path}/${el.title}`
+        //         })
+        //     })
+        //     $('.input-images1').imageUploader({
+        //         preloaded: imagedata1,
+        //         imagesInputName: 'images1',
+        //         preloadedInputName: 'old_images1'
+        //     });
+        // } else {
+        //     $('.input-images1').imageUploader();
+        // }
 
 
 

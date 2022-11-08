@@ -18,6 +18,7 @@ class Slider2 extends Model
     protected $table = 'slider2s';
     protected $fillable = [
         'status',
+        'logo',
         // 'youtube_url',
         'reddirect_url'
     ];
