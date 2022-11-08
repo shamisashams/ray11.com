@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use App\Models\Translations\SliderTranslation;
+use App\Models\Translations\SliderTranslation2;
 use App\Traits\ScopeFilter;
 use Astrotomic\Translatable\Translatable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -15,10 +15,10 @@ class Slider2 extends Model
 {
     use SoftDeletes, Translatable, HasFactory, ScopeFilter;
 
-
+    protected $table = 'slider2s';
     protected $fillable = [
         'status',
-        'youtube_url',
+        // 'youtube_url',
         'reddirect_url'
     ];
 
@@ -28,8 +28,9 @@ class Slider2 extends Model
     /** @var array */
     public $translatedAttributes = [
         'title',
-        'title_2',
-        'description'
+        // 'title_2',
+        'description',
+        'short_description',
     ];
 
     public function getFilterScopes(): array

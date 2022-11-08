@@ -20,7 +20,7 @@ use App\Repositories\SliderRepositoryInterface;
  * Class LanguageRepository
  * @package App\Repositories\Eloquent
  */
-class SliderRepository extends BaseRepository implements SliderRepositoryInterface
+class SliderRepository1 extends BaseRepository implements SliderRepositoryInterface
 {
     /**
      * @param \App\Models\Slider $model

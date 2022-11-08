@@ -35,6 +35,7 @@
     </div> --}}
     <!-- /breadcrumb -->
     <input name="old-images[]" id="old_images" hidden disabled value="{{$slider->files}}">
+    <input name="old-images1[]" id="old_images1" hidden disabled value="{{$slider->files}}">
     <!-- row -->
     {!! Form::model($slider,['url' => $url, 'method' => $method,'files' => true]) !!}
     <div class="row">
@@ -73,6 +74,17 @@
                                         ?>
                                         <div class="tab-pane {{$active}}" id="lang-{{$locale}}">
 
+                                            {{-- <div class="container">
+                                                <div>
+                                                    <h6 class="card-title mb-1">@lang('admin.logo')</h6>
+                                                </div>
+                                                <div class="input-images1"></div>
+                                                @if ($errors->has('images1'))
+                                                    <span class="help-block">
+                                                                        {{ $errors->first('images1') }}
+                                                                    </span>
+                                                @endif
+                                            </div> --}}
                                             <div class="form-group">
                                                 {!! Form::label($locale.'[title]',__('admin.title'),['class' => 'form-label']) !!}
                                                 {!! Form::text($locale.'[title]',$slider->translate($locale)->title ?? '',['class' => 'form-control']) !!}
@@ -160,18 +172,7 @@
                         </small>
                         @enderror
                     </div>
-                    <div class="form-group">
-                        {!! Form::label("youtube_url",__('admin.btn_link'),['class' => 'form-label']) !!}
-                        {!! Form::text("youtube_url",$slider->youtube_url ?? '',['class' => 'form-control']) !!}
 
-                        @error($locale.'.youtube_url')
-                        <small class="text-danger">
-                            <div class="error">
-                                {{$message}}
-                            </div>
-                        </small>
-                        @enderror
-                    </div>
                     <div class="form-group">
                         <label class="ckbox">
                             <input type="checkbox" name="status"
@@ -280,6 +281,10 @@
         } else {
             $('.input-images').imageUploader();
         }
+
+
+
+
     </script>
 
     <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>

@@ -13,10 +13,7 @@ namespace App\Http\Requests\Admin;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 
-/**
- * Class ProductRequest
- * @package App\Http\Requests\Admin
- */
+
 class SliderRequest1 extends FormRequest
 {
     /**
@@ -42,7 +39,7 @@ class SliderRequest1 extends FormRequest
         }
 
         return [
-            config('translatable.fallback_locale') . '.title' => 'required|string|max:255',
+            // config('translatable.fallback_locale') . '.title' => 'required|string|max:255',
         ];
     }
 }

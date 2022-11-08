@@ -15,7 +15,11 @@ class CreateSlider2sTable extends Migration
     {
         Schema::create('slider2s', function (Blueprint $table) {
             $table->id();
+            $table->boolean("status")->default(true);
+            // $table->string('youtube_url')->nullable();
+            $table->string('reddirect_url')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

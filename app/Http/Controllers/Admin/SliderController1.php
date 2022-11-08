@@ -3,9 +3,11 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Admin\SliderRequest1 as SliderRequest;
-use App\Models\Slider1 as Slider;
+use App\Http\Requests\Admin\SliderRequest1;
+use Illuminate\Http\Request;
+use App\Models\Slider2;
 use App\Repositories\SliderRepositoryInterface;
+use App\Repositories\Eloquent\SliderRepository1;
 use Illuminate\Support\Arr;
 
 class SliderController1 extends Controller
@@ -19,7 +21,7 @@ class SliderController1 extends Controller
      * @param \App\Repositories\SliderRepositoryInterface $slideRepository
      */
     public function __construct(
-        SliderRepositoryInterface $slideRepository
+        SliderRepository1 $slideRepository
     ) {
         $this->slideRepository = $slideRepository;
     }
@@ -29,7 +31,7 @@ class SliderController1 extends Controller
      *
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
-    public function index(SliderRequest $request)
+    public function index(SliderRequest1 $request)
     {
         /*return view('admin.pages.slider.index', [
             'sliders' => $this->slideRepository->getData($request, ['translations'])
@@ -48,7 +50,7 @@ class SliderController1 extends Controller
     {
         $slider = $this->slideRepository->model;
 
-        $url = locale_route('slider.store', [], false);
+        $url = locale_route('slider1.store', [], false);
         $method = 'POST';
 
         /*return view('admin.pages.slider.form', [
@@ -72,7 +74,7 @@ class SliderController1 extends Controller
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      * @throws \ReflectionException
      */
-    public function store(SliderRequest $request)
+    public function store(Request $request)
     {
         $saveData = Arr::except($request->except('_token'), []);
         $saveData['status'] = isset($saveData['status']) && (bool)$saveData['status'];
@@ -83,7 +85,7 @@ class SliderController1 extends Controller
             $slider = $this->slideRepository->saveFiles($slider->id, $request);
         }
 
-        return redirect(locale_route('slider.index', $slider->id))->with('success', __('admin.create_successfully'));
+        return redirect(locale_route('slider1.index', $slider->id))->with('success', __('admin.create_successfully'));
     }
 
     /**

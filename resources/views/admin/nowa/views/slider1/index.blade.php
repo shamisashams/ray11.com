@@ -29,7 +29,7 @@
                     <div class="d-flex justify-content-between">
                         <h4 class="card-title mg-b-0">@lang('admin.slider')</h4>
                     </div>
-                    <a href="{{locale_route('slider.create')}}" class="btn ripple btn-primary" type="button">@lang('admin.create')</a>
+                    <a href="{{locale_route('slider1.create')}}" class="btn ripple btn-primary" type="button">@lang('admin.create')</a>
 
                     {{--<p class="tx-12 tx-gray-500 mb-2">Example of Nowa Simple Table. <a href="">Learn more</a></p>--}}
                 </div>
@@ -66,7 +66,6 @@
                                                class="validate {{$errors->has('title') ? '' : 'valid'}}">
                                     </th>
                                     <th></th>
-
                                 @if($sliders)
                                     @foreach($sliders as $slider)
                                         <tr>
