@@ -35,7 +35,6 @@
     </div> --}}
     <!-- /breadcrumb -->
     <input name="old-images[]" id="old_images" hidden disabled value="{{$slider->files}}">
-    <input name="old-images1[]" id="old_images1" hidden disabled value="{{$slider->files}}">
     <!-- row -->
     {!! Form::model($slider,['url' => $url, 'method' => $method,'files' => true]) !!}
     <div class="row">
@@ -89,7 +88,7 @@
 
                                             <div class="form-group">
                                                 {!! Form::label($locale.'[title]',__('admin.title'),['class' => 'form-label']) !!}
-                                                {!! Form::text($locale.'[title]',$slider->translate($locale)->title ?? '',['class' => 'form-control']) !!}
+                                                {!! Form::text($locale.'[title]',$slide->translate($locale)->title ?? '',['class' => 'form-control']) !!}
 
                                                 @error($locale.'.title')
                                                 <small class="text-danger">
@@ -116,7 +115,7 @@
                                                 <input type='text'
                                                 class="form-control" id="short_description-{{$locale}}"
                                                 name="{{$locale}}[short_description]'"
-                                                value="{!! $slider->translate($locale)->short_description ?? '' !!}"
+                                                value="{!! $slide->translate($locale)->short_description ?? '' !!}"
                                             >
                                             </input>
                                                 @error($locale.'.short_description')
@@ -133,7 +132,7 @@
                                                 <label class="form-label" for="description">@lang('admin.description')</label>
                                                 <textarea class="form-control" id="description-{{$locale}}"
                                                           name="{{$locale}}[description]'">
-                                                {!! $slider->translate($locale)->description ?? '' !!}
+                                                {!! $slide->translate($locale)->description ?? '' !!}
                                             </textarea>
                                                 @error($locale.'.description')
                                                 <small class="text-danger">
@@ -165,14 +164,14 @@
                         <h6 class="card-title mb-1">@lang('admin.logo')</h6>
                     </div>
                     <div class="input-group mb-3">
-                        <input type="file" name='logo' class="form-control" onchange="readURL(this);" value="{{isset($slide)&& $slide != null?$slide->logo: null }}">
+                        <input type="file" name='logo' class="form-control" onchange="readURL(this);" value={{$slide != null?$slide->logo: null }}>
                     </div>
                     {{-- @dd($slide) --}}
-                    <img id="blah" src={{isset($slide)&&$slide != null? $links . "/" . $slide->logo : "#"}} alt="" style="{{isset($slide)&&$slide != null?"width:90px; height:70px": ""}}" />
+                    <img id="blah" src={{isset($slide)&&$slide != null? $links . "/" . $slide->logo : "#"}} alt="" style={{$slide != null? "width:90px; height:70px" : ""}} />
 
                     <div class="form-group">
                         {!! Form::label("reddirect_url",__('admin.btn_reddirect_url'),['class' => 'form-label']) !!}
-                        {!! Form::text("reddirect_url",$slider->reddirect_url ?? '',['class' => 'form-control']) !!}
+                        {!! Form::text("reddirect_url",$slide->reddirect_url ?? '',['class' => 'form-control']) !!}
 
                         @error($locale.'.reddirect_url')
                         <small class="text-danger">
@@ -186,7 +185,7 @@
                     <div class="form-group">
                         <label class="ckbox">
                             <input type="checkbox" name="status"
-                                   value="true" {{$slider->status ? 'checked' : ''}}>
+                                   value="true" {{$slide->status ? 'checked' : ''}}>
                             <span>{{__('admin.status')}}</span>
                         </label>
                     </div>

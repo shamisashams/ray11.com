@@ -156,8 +156,13 @@ class SliderController1 extends Controller
             $request->file('logo')->storeAs('public/images/slider2logo/', $name);
         }
         $saveData = Arr::except($request->except('_token'), []);
+        // dd($saveData);
+        if ($request->logo == null) {
+            $saveData = Arr::except($request->except('logo'), []);
+        } else {
+            $saveData['logo'] = $request->logo ? $request->file('logo')->getClientOriginalName() : null;
+        }
         $saveData['status'] = isset($saveData['status']) && (bool)$saveData['status'];
-        $saveData['logo'] = $request->logo ? $name = $request->file('logo')->getClientOriginalName() : null;
         $this->slideRepository->update($code, $saveData);
 
         $this->slideRepository->saveFiles($code, $request);
