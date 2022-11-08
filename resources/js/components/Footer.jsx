@@ -44,10 +44,10 @@ const { pathname } = usePage().props;
         <SocialMedia />
         <div className="my-10 bold">
           <a href="#" className="mx-3">
-            {gphone.value? gphone.value : "+995 032 2 000 000"}
+            {gphone.value? gphone.value : ""}
           </a>
           <a href="#" className="mx-3">
-            {gemail.value ? gemail.value : "info@Ray11.com"}
+            {gemail.value ? gemail.value : ""}
           </a>
         </div>
         <div className="py-10 border-t border-solid border-black sm:text-base text-sm">

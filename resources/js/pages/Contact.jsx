@@ -40,21 +40,21 @@ const Contact = ({seo}) => {
             {__("client.contact_number", sharedData)}:
             </div>
           <div className="bold">
-            {gphone.value ? gphone.value : "+995 032 2 000 000"}
+            {gphone.value ? gphone.value : ""}
             </div>
           <div className="opacity-50 mb-3 mt-8">
             {/* Email: */}
             {__("client.contact_email", sharedData)}:
             </div>
           <div className="bold">
-            {gemail.value ?gemail.value : "info@Ray11.com"}
+            {gemail.value ?gemail.value : ""}
             </div>
           <div className="opacity-50 mb-3 mt-8">
             {/* Address: */}
             {__("client.contact_address", sharedData)}:
             </div>
           <div className="bold">
-            {gaddress.value ? gaddress.value : "Street name #123. Tbilisi, Georgia"}
+            {gaddress.value ? gaddress.value : ""}
             </div>
           <div className="flex my-10 justify-start items-center">
             <div className="opacity-50">

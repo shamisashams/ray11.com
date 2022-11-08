@@ -15,6 +15,7 @@ use App\Http\Controllers\Admin\PageController;
 use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\NewsController;
 use App\Http\Controllers\Admin\SliderController;
+use App\Http\Controllers\Admin\SliderController1;
 use App\Http\Controllers\Admin\UpcomingEventsController;
 use App\Http\Controllers\Admin\TranslationController;
 use App\Http\Controllers\CKEditorController;
@@ -90,7 +91,9 @@ Route::prefix('{locale?}')
                 // Slider
                 Route::resource('slider', SliderController::class);
                 Route::get('slider/{slider}/destroy', [SliderController::class, 'destroy'])->name('slider.destroy');
-
+                //slider1
+                Route::resource('slider1', SliderController1::class);
+                Route::get('slider1/{slider1}/destroy', [SliderController1::class, 'destroy'])->name('slider.destroy');
 
 
                 // upcoming events

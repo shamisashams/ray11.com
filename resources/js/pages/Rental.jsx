@@ -38,7 +38,7 @@ const Rental = ({seo, products}) => {
         </div>
         <div className="pb-20">
           <div className="bold text-3xl">
-            Products
+            {/* Products */}
             {__("client.rental_products", sharedData)}
             </div>
           <div className="grid xl:grid-cols-3 md:grid-cols-2 mt-10 border-t-2 border-l-2  border-custom-dark">

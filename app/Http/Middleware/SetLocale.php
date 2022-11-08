@@ -1,4 +1,5 @@
 <?php
+
 /**
  *  app/Http/Middleware/SetLocale.php
  *
@@ -38,7 +39,6 @@ class SetLocale
     {
         // app/Http/Middleware/SetLocale.php
 
-
         $locale = $request->segment(1);
         $segments = $request->segments();
         $language = Language::where('locale', $locale)->first();
@@ -56,13 +56,14 @@ class SetLocale
             array_shift($segments);
             return $this->redirectTo($segments);
         }
+        // dd($language->locale);
         app()->setLocale($language->locale);
         //languages for inertia
         $trans = new Db();
 
 
         Inertia::share("currentLocale", $language->locale);
-        Inertia::share( "localizations", $trans->loadTranslations($language->locale, "client"));
+        Inertia::share("localizations", $trans->loadTranslations($language->locale, "client"));
         return $next($request);
     }
 

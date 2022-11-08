@@ -231,7 +231,7 @@ const sharedData = usePage().props.localizations;
             className={`flex items-center justify-center border border-solid border-custom-yellow bold text-custom-yellow sm:h-10 h-10 w-fit sm:px-6 px-4 rounded-full transition-all duration-300  sm:text-base text-sm  whitespace-nowrap mx-auto mr-0 mt-5`}
           >
             <span>
-                See what we got
+                {/* See what we got */}
                 {__("client.home_main_see_whatwegot_btn", sharedData)}
             </span>
             <HiArrowNarrowRight className="w-6 h-6 m-2" />

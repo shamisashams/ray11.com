@@ -12,6 +12,15 @@ import { companies } from "./Data";
 import { HiArrowNarrowRight } from "react-icons/hi";
 
     const Navbar = () => {
+        const {
+            errors,
+            gphone,
+            gemail,
+            gaddress,
+            locales,
+            currentLocale,
+            locale_urls,
+        } = usePage().props;
     const renderHTML = (rawHTML) =>
     React.createElement("div", {
         dangerouslySetInnerHTML: { __html: rawHTML },
@@ -201,11 +210,26 @@ const { pathname } = usePage().props;
           </div>
           <div className="absolute right-0 -bottom-10">
             <div className="bold">
-              <span>En</span>
+                {currentLocale}
+            <span className="px-1">/</span>
+            {currentLocale == "ge" ? (
+                                        <Link href={locale_urls["English"]}>
+                                            {" "}
+                                            {/* <img src={langFlags["en"]} alt="" /> */}
+                                            En
+                                        </Link>
+                                    ) : (
+                                        <Link href={locale_urls["ქართული"]}>
+                                            {" "}
+                                            Geo
+                                            {/* <img src={langFlags["ge"]} alt="" /> */}
+                                        </Link>
+                                    )}
+              {/* <span>En</span>
               <span className="px-1">/</span>
               <a href="/" className="opacity-50">
                 Geo
-              </a>
+              </a> */}
             </div>
           </div>
         </div>

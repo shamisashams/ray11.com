@@ -32,13 +32,13 @@ class LanguageSeeder extends Seeder
                 'title' => 'ქართული',
                 'locale' => 'ge',
                 'status' => true,
-                'default' => true
+                'default' => false
             ],
             [
                 'title' => 'English',
                 'locale' => 'en',
                 'status' => true,
-                'default' => false
+                'default' => true
             ],
         ];
 
