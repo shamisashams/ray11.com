@@ -9,14 +9,20 @@ import { MdOutlineLocationOn } from "react-icons/md";
 import { eventSlider } from "./Data";
 // import Shade from "../assets/images/shapes/7.png";
 // import { Link } from "react-router-dom";
-import { Link } from '@inertiajs/inertia-react'
+import { Link, usePage} from '@inertiajs/inertia-react'
 
 const Slider2 = ({data}) => {
+    const renderHTML = (rawHTML) =>
+    React.createElement("div", {
+        dangerouslySetInnerHTML: { __html: rawHTML },
+    });
+const sharedData = usePage().props.localizations;
   const nextRef = useRef(null);
   return (
     <div className="wrapper py-12">
       <div className="bold lg:text-4xl text-2xl text-center mb-12">
-        Upcoming Events
+        {/* Upcoming Events */}
+        {renderHTML(__("client.home_main_events", sharedData))}
       </div>
       <div className="relative bg-custom-slate-300 rounded-2xl text-custom-dark ">
         <img
@@ -25,7 +31,7 @@ const Slider2 = ({data}) => {
           alt=""
         />
         <Swiper
-          loop
+        //   loop
           slidesPerView={3}
           slidesPerGroup={3}
           pagination={{

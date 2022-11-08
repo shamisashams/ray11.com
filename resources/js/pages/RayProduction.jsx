@@ -101,8 +101,9 @@ const RayProduction = ({seo,project,videogallery}) => {
         </RaySection>
         <RaySection color="#A7DE5C" title="Music video">
           <div className="max-w-xl text-lg mb-10">
-            From banking and insurance to wealth management and on securities
-            distribution.
+            {/* From banking and insurance to wealth management and on securities
+            distribution. */}
+            {__("client.rayproduction_commercial_text1", sharedData)}
           </div>
           <div className="flex items-start justify-between flex-col lg:flex-row">
             <div className="grid grid-cols-2 sm:gap-10 gap-5 max-w-xl lg:mr-10 mr-0 mb-14 ">
@@ -134,7 +135,7 @@ const RayProduction = ({seo,project,videogallery}) => {
               })}
             </div>
             <div className="max-w-xl opacity-50 lg:mx-auto">
-              <p className="mb-5">
+              {/* <p className="mb-5">
                 {" "}
                 Live streaming is the broadcast of an event over the internet as
                 it happens. Awards shows, sports, boxing matches, video games
@@ -147,6 +148,9 @@ const RayProduction = ({seo,project,videogallery}) => {
                 between users. You can live stream on any compatible smartphone,
                 tablet, TV, computer or gaming console with a relatively fast
                 internet connection.
+              </p> */}
+              <p>
+              {__("client.rayproduction_music_text", sharedData)}
               </p>
             </div>
           </div>
@@ -154,7 +158,7 @@ const RayProduction = ({seo,project,videogallery}) => {
         <RaySection color="#A7DE5C" title="Commercial">
           <div className="flex items-start justify-between flex-col lg:flex-row">
             <div className="lg:max-w-xl opacity-50 lg:mr-5 mr-0 mb-10">
-              <p className="mb-4">
+              {/* <p className="mb-4">
                 A podcast is a collection or series of digital audio files that
                 are made available for downloading or listening via the
                 Internet. Each individual audio recording is known as a podcast
@@ -174,7 +178,7 @@ const RayProduction = ({seo,project,videogallery}) => {
                 internet connection, access or subscription to a streaming
                 service or app, and a compatible device. See speed
                 recommendations below.
-              </p>
+              </p> */}
             </div>
             <img className="mx-auto lg:w-1/2" src="/assets/images/raypages/15.png" alt="" />
           </div>
