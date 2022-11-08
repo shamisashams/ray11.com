@@ -10,7 +10,7 @@ import Slider3 from "../components/Slider3";
 import VideoPopup from "../components/VideoPopup";
 import Layout from "../Layouts/Layout";
 
-const Home = ({seo,sliders, UpcomingEvent, news}) => {
+const Home = ({seo,sliders, UpcomingEvent, news, slider2, links}) => {
     const renderHTML = (rawHTML) =>
     React.createElement("div", {
         dangerouslySetInnerHTML: { __html: rawHTML },
@@ -217,7 +217,7 @@ const sharedData = usePage().props.localizations;
         </div>
       </section>
       <section className="py-10">
-        <Slider3 />
+        <Slider3 data={slider2} links={links} />
       </section>
       <section className="py-20 wrapper group relative flex items-center justify-start">
         <img className="w-1/3" src="/assets/images/home/6.png" alt="" />

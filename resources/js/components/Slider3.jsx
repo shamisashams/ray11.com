@@ -12,14 +12,15 @@ import { companySlide } from "./Data";
 // import { Link } from "react-router-dom";
 import { Link } from '@inertiajs/inertia-react'
 
-const Slider3 = () => {
+const Slider3 = ({data, links}) => {
+    console.log(data);
   const prevRef = useRef(null);
   const nextRef = useRef(null);
 
   return (
     <div className="companySlider">
       <Swiper
-        loop
+        // loop
         slidesPerView="auto"
         spaceBetween={30}
         grabCursor
@@ -32,23 +33,30 @@ const Slider3 = () => {
           swiper.navigation.update();
         }}
       >
-        {companySlide.map((item, index) => {
+        {data.map((item, index) => {
           return (
             <SwiperSlide className="slide-item" key={index}>
               <div className="h-full flex items-start justify-start flex-col md:flex-row">
                 <div className="img h-full mr-4">
                   <img
                     className="w-full h-full object-cover"
-                    src={item.img}
+                    src={
+                        item.file != null && item.file
+                        ? "/" +
+                        item.file.path +
+                        "/" +
+                        item.file.title
+                        : null
+                    }
                     alt=""
                   />
                 </div>
                 <div className="max-w-sm pt-5">
-                  <img className="h-12" src={item.logo} alt="" />
+                  <img className="h-12" src={links + "/" +item.logo} alt="" />
                   <div className="xl:text-7xl md:text-5xl text-3xl bold xl:my-8 my-5 md:-ml-20 !leading-tight">
                     {item.title}
                   </div>
-                  <p className="opacity-30 mb-5">{item.para}</p>
+                  <p className="opacity-30 mb-5">{item.short_description}</p>
                   <div className="companyBox">
                     <Link
                       href="/news"

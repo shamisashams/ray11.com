@@ -10,6 +10,7 @@ use App\Models\Portfolio;
 use App\Models\Staff;
 use App\Models\News;
 use App\Models\Slider;
+use App\Models\Slider2;
 use App\Models\UpcomingEvent;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
@@ -50,8 +51,10 @@ class HomeController extends Controller
 
         return Inertia::render('Home', [
             // "category" => Category::with('translations')->get(),
+            "links" => asset('storage/images/slider2logo'),
             "news" => News::with('translations', 'file')->orderBy('created_at', 'desc')->limit(3)->get(),
             "UpcomingEvent" => UpcomingEvent::with(['file', 'translations'])->get(),
+            "slider2" => Slider2::with('translations', 'file')->get(),
             "sliders" => $sliders->get(), "page" => $page, "seo" => [
                 "title" => $page->meta_title,
                 "description" => $page->meta_description,
