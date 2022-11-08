@@ -34,7 +34,7 @@
         </div>
     </div> --}}
     <!-- /breadcrumb -->
-    <input name="old-images[]" id="old_images" hidden disabled value="{{$slider->files}}">
+    <input name="old-images[]" id="old_images" hidden disabled value="{{$slide->files}}">
     <!-- row -->
     {!! Form::model($slider,['url' => $url, 'method' => $method,'files' => true]) !!}
     <div class="row">

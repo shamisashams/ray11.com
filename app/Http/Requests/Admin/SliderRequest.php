@@ -1,4 +1,5 @@
 <?php
+
 /**
  *  app/Http/Requests/Admin/ProductRequest.php
  *
@@ -41,7 +42,7 @@ class SliderRequest extends FormRequest
         }
 
         return [
-            config('translatable.fallback_locale') . '.title' => 'required|string|max:255',
+            // config('translatable.fallback_locale') . '.title' => 'required|string|max:255',
         ];
     }
 }

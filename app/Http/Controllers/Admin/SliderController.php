@@ -20,10 +20,8 @@ class SliderController extends Controller
      */
     public function __construct(
         SliderRepositoryInterface $slideRepository
-    )
-    {
+    ) {
         $this->slideRepository = $slideRepository;
-
     }
 
     /**
@@ -87,7 +85,6 @@ class SliderController extends Controller
         }
 
         return redirect(locale_route('slider.index', $slider->id))->with('success', __('admin.create_successfully'));
-
     }
 
     /**
