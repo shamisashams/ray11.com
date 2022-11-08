@@ -27,7 +27,7 @@
             <div class="card">
                 <div class="card-header pb-0">
                     <div class="d-flex justify-content-between">
-                        <h4 class="card-title mg-b-0">@lang('admin.partners')</h4>
+                        <h4 class="card-title mg-b-0">@lang('admin.academy')</h4>
                     </div>
                     <a href="{{locale_route('team.create')}}" class="btn ripple btn-primary" type="button">@lang('admin.createbutt')</a>
 
