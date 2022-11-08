@@ -9,6 +9,58 @@ import Layout from "../Layouts/Layout";
 
 const Rental = ({seo, products}) => {
     // console.log(products.data);
+    let links = function (links) {
+        let rows = [];
+        {
+            links.map(function (item, index) {
+                if (index > 0 && index < links.length - 1) {
+                    rows.push(
+                        <Link
+                            href={item.url}
+                            className={
+                                item.active
+                                    ? "text-decoration-line: underline bold mx-2 "
+                                    : "bold mx-2"
+                            }
+                        >
+                            <span style={{ padding: "5px" }}>{item.label}</span>
+                        </Link>
+                    );
+                }
+            });
+        }
+        return <div className="nums"> {rows.length > 1 ? rows : null} </div>;
+    };
+
+    let linksPrev = function (links) {
+        let rowCount = 0;
+        links.map(function (item, index) {
+            if (index > 0 && index < links.length - 1) {
+                rowCount++;
+            }
+        });
+        return rowCount > 1 ? (
+            <Link href={links[0].url}>
+                {/* <Arrow color="#2F3E51" rotate="90" /> */}
+                {/* <Arrow color="#2F3E51" rotate="90" /> */}
+            </Link>
+        ) : null;
+    };
+    let linksNext = function (links) {
+        let rowCount = 0;
+        links.map(function (item, index) {
+            if (index > 0 && index < links.length - 1) {
+                rowCount++;
+            }
+        });
+        return rowCount > 1 ? (
+            <Link href={links[links.length - 1].url}>
+                {/* <Arrow color="#2F3E51" rotate="-90" /> */}
+                {/* <Arrow color="#2F3E51" rotate="-90" /> */}
+            </Link>
+        ) : null;
+    };
+
     const renderHTML = (rawHTML) =>
     React.createElement("div", {
         dangerouslySetInnerHTML: { __html: rawHTML },
@@ -81,6 +133,12 @@ const Rental = ({seo, products}) => {
             <button className="bold mx-2 opacity-50">2</button>
             <button className="bold mx-2 opacity-50">3</button>
             <button className="bold mx-2 opacity-50">4</button> */}
+
+{linksPrev(products.links)}
+                        <p className="bold mx-2">
+                            {links(products.links)}
+                        </p>
+                        {linksNext(products.links)}
           </div>
         </div>
       </div>
