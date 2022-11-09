@@ -13,7 +13,7 @@ import VideoPopup from "../components/VideoPopup";
 import Layout from "../Layouts/Layout";
 import { Link, usePage } from "@inertiajs/inertia-react";
 
-const RayAnimation = ({seo,project,videogallery}) => {
+const RayAnimation = ({seo,project,videogallery,content}) => {
     const renderHTML = (rawHTML) =>
     React.createElement("div", {
         dangerouslySetInnerHTML: { __html: rawHTML },
@@ -78,37 +78,38 @@ const RayAnimation = ({seo,project,videogallery}) => {
             </div>
           <Slider4 data={project} />
         </RaySection>
-        <RaySection color="#3FA0CD" title={__("client.rayanimation_animated_series", sharedData)}>
-          <div className="flex items-start justify-between flex-col lg:flex-row">
-            <div className="lg:max-w-xl opacity-50 lg:mr-5 mr-0 mb-10">
-              {/* <p className="mb-4">
-                A podcast is a collection or series of digital audio files that
-                are made available for downloading or listening via the
-                Internet. Each individual audio recording is known as a podcast
-                episode. Podcasts are typically hosted by an individual or
-                individuals who lead a conversation, share stories, or report
-                the news
-              </p>
-              <p className="mb-4">
-                Music, video and other types of media files are prearranged and
-                transmitted in sequential packets of data so they can be
-                streamed instantaneously. And unlike traditional downloads that
-                are stored on your device, media files are automatically deleted
-                once you play them.
-              </p>
-              <p className="mb-4">
-                All you need to stream is a reliable and fast high speed
-                internet connection, access or subscription to a streaming
-                service or app, and a compatible device. See speed
-                recommendations below.
-              </p> */}
-              <p className="mb-4">
-              {renderHTML(__("client.rayanimation_animatedseries_text", sharedData))}
-              </p>
-            </div>
-            <img className="mx-auto" src="/assets/images/raypages/14.png" alt="" />
-          </div>
-        </RaySection>
+
+        {
+            content.map((e,i)=>{
+                // console.log(e.translation.title, 'esaa');
+                return(
+                    <div key={i}>
+                         <RaySection color="#A7DE5C" title={e.translation.title}>
+                            <div className="flex items-start justify-between flex-col lg:flex-row">
+                            <div className="lg:max-w-xl opacity-50 lg:mr-5 mr-0 mb-10">
+                                <p className="mb-4">
+                                {/* {__("client.rayproduction_commercial_text", sharedData)} */}
+                                {e.translation.description}
+                                </p>
+                            </div>
+                            <img className="mx-auto"
+                            src={
+                                e.files != null && e.files[0]
+                                ? "/" +
+                                e.files[0].path +
+                                "/" +
+                                e.files[0].title
+                                : null
+                            }
+
+                            alt="" />
+                            </div>
+                          </RaySection>
+                    </div>
+                )
+            })
+        }
+
         <RaySection color="#3FA0CD" title={__("client.rayanimation_grapgics_commercial", sharedData)}>
           <div className="max-w-xl text-lg mb-10">
             {/* From banking and insurance to wealth management and on securities
@@ -168,37 +169,6 @@ const RayAnimation = ({seo,project,videogallery}) => {
               </p>
 
             </div>
-          </div>
-        </RaySection>
-        <RaySection color="#3FA0CD" title={__("client.rayanimation_character_creation", sharedData)}>
-          <div className="flex items-start justify-between flex-col lg:flex-row">
-            <div className="lg:max-w-xl opacity-50 lg:mr-5 mr-0 mb-10">
-              {/* <p className="mb-4">
-                A podcast is a collection or series of digital audio files that
-                are made available for downloading or listening via the
-                Internet. Each individual audio recording is known as a podcast
-                episode. Podcasts are typically hosted by an individual or
-                individuals who lead a conversation, share stories, or report
-                the news
-              </p>
-              <p className="mb-4">
-                Music, video and other types of media files are prearranged and
-                transmitted in sequential packets of data so they can be
-                streamed instantaneously. And unlike traditional downloads that
-                are stored on your device, media files are automatically deleted
-                once you play them.
-              </p>
-              <p className="mb-4">
-                All you need to stream is a reliable and fast high speed
-                internet connection, access or subscription to a streaming
-                service or app, and a compatible device. See speed
-                recommendations below.
-              </p> */}
-               <p className="mb-4">
-                    {renderHTML(__("client.rayanimation_charactercreation", sharedData))}
-               </p>
-            </div>
-            <img className="mx-auto lg:w-1/2" src="/assets/images/raypages/14.png" alt="" />
           </div>
         </RaySection>
       </section>

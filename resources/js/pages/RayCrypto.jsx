@@ -18,7 +18,7 @@ import { SiAppstore } from "react-icons/si";
 import { IoLogoGooglePlaystore } from "react-icons/io5";
 import Layout from "../Layouts/Layout";
 
-const RayCrypto = ({seo,project,videogallery}) => {
+const RayCrypto = ({seo,project,videogallery,content}) => {
     const renderHTML = (rawHTML) =>
     React.createElement("div", {
         dangerouslySetInnerHTML: { __html: rawHTML },
@@ -173,61 +173,40 @@ const RayCrypto = ({seo,project,videogallery}) => {
             </div>
           </div>
         </RaySection>
-        <RaySection color="#7261BD" title={__("client.raycrypto_p2egames", sharedData)}>
-          <div className=" mb-8">
-            {/* From banking and insurance to wealth management and on securities
-            distribution, we dedicated financial services them the teams serve
-            all major sectors. */}
-             {__("client.raycrypto_p2egames_text", sharedData)}
-          </div>
-          <div className="max-w-xl">
-            <div className="h-80 w-full mb-5">
-              <iframe
-                className="w-full h-full"
-                src="https://www.youtube.com/embed/xYrPGIJ2qoo"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              ></iframe>
-            </div>
-            <div className="flex sm:items-center items-start justify-between flex-col sm:flex-row">
-              <div className="flex items-center sm:mr-5 sm:mb-0 mb-5">
-                <div className=" rounded-lg overflow-hidden mr-4 w-24 h-24 shrink-0">
-                  <img src={"/assets/images/raypages/4.png"} alt="" />
-                </div>
-                <div>
-                  <div className="text-lg mb-2">
-                    {/* Game Name */}
-                    {__("client.raycrypto_gamename", sharedData)}
+
+
+        {
+            content.map((e,i)=>{
+                // console.log(e.translation.title, 'esaa');
+                return(
+                    <div key={i}>
+                         <RaySection color="#A7DE5C" title={e.translation.title}>
+                            <div className="flex items-start justify-between flex-col lg:flex-row">
+                            <div className="lg:max-w-xl opacity-50 lg:mr-5 mr-0 mb-10">
+                                <p className="mb-4">
+                                {/* {__("client.rayproduction_commercial_text", sharedData)} */}
+                                {e.translation.description}
+                                </p>
+                            </div>
+                            <img className="mx-auto"
+                            src={
+                                e.files != null && e.files[0]
+                                ? "/" +
+                                e.files[0].path +
+                                "/" +
+                                e.files[0].title
+                                : null
+                            }
+
+                            alt="" />
+                            </div>
+                          </RaySection>
                     </div>
-                  <p className="opacity-50 text-sm">
-                    {/* From banking and insurance to wealth management and on
-                    securities distribution, we dedicated financial services */}
-                  </p>
-                </div>
-              </div>
-              <div>
-                <div className="opacity-50">
-                {__("client.raycrypto_geton", sharedData)}:</div>
-                <Link
-                  href="/"
-                  className="bold text-sm leading-loose mt-3 block py-1 px-4 border border-custom-purple border solid rounded-full  whitespace-nowrap"
-                >
-                  <SiAppstore className="inline-block  mr-2" />
-                  Appstore
-                </Link>
-                <Link
-                  href="/"
-                  className="bold text-sm leading-loose block py-1 mt-3 px-4 border border-custom-purple border solid rounded-full  whitespace-nowrap"
-                >
-                  <IoLogoGooglePlaystore className="inline-block  mr-2" />
-                  Playstore
-                </Link>
-              </div>
-            </div>
-          </div>
-        </RaySection>
+                )
+            })
+        }
+
+
       </section>
       <section className="wrapper flex items-center justify-between flex-col md:flex-row pb-10">
         <div className="md:mr-10 mr-0 mb-10">

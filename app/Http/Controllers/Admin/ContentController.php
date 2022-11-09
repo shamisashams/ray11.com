@@ -178,7 +178,7 @@ class ContentController extends Controller
      * @return Application|RedirectResponse|Redirector
      * @throws ReflectionException
      */
-    public function update(ContentRequset $request, string $locale, Content $content)
+    public function update(ContentRequset $request, string $locale, Content $content, $code)
     {
         // dd($request->all());
         $saveData = Arr::except($request->except('_token'), []);
@@ -186,13 +186,13 @@ class ContentController extends Controller
         // dd($saveData, $staff->id);
 
 
-        if ($this->staffRepository->update($content->id, $saveData)) {
+        if ($this->staffRepository->update($code, $saveData)) {
         }
 
-        $this->staffRepository->saveFiles($content->id, $request);
+        $this->staffRepository->saveFiles($code, $request);
 
 
-        return redirect(locale_route('staff.index', $content->id))->with('success', __('admin.update_successfully'));
+        return redirect(locale_route('raycontent.index', $code))->with('success', __('admin.update_successfully'));
     }
 
     /**

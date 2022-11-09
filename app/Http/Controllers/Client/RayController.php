@@ -9,6 +9,7 @@ use App\Models\Product;
 use App\Models\Team;
 use App\Models\Portfolio;
 use App\Models\Staff;
+use App\Models\Content;
 use App\Models\Slider;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
@@ -148,6 +149,7 @@ class RayController extends Controller
         return Inertia::render('RayProduction', [
             // "category" => Category::with('translations')->get(),
             "project" => Staff::with('translations', 'files')->where("company_id", 1)->get(),
+            "content" => Content::with('translation', 'files')->where("company_id", 1)->get(),
             "videogallery" => Category::with('translations', 'files')->where("company_id", 1)->get(),
             "sliders" => $sliders->get(), "page" => $page, "seo" => [
                 "title" => $page->meta_title,
@@ -185,6 +187,7 @@ class RayController extends Controller
         return Inertia::render('RayAnimation', [
             // "category" => Category::with('translations')->get(),
             "project" => Staff::with('translations', 'files')->where("company_id", 2)->get(),
+            "content" => Content::with('translation', 'files')->where("company_id", 2)->get(),
             "videogallery" => Category::with('translations', 'files')->where('company_id', 2)->get(),
             "sliders" => $sliders->get(), "page" => $page, "seo" => [
                 "title" => $page->meta_title,
@@ -222,6 +225,7 @@ class RayController extends Controller
         return Inertia::render('RayCrypto', [
             // "category" => Category::with('translations')->get(),
             "project" => Staff::with('translations', 'files')->where("company_id", 3)->get(),
+            "content" => Content::with('translation', 'files')->where("company_id", 3)->get(),
             "videogallery" => Category::with('translations', 'files')->where("company_id", 3)->get(),
             "sliders" => $sliders->get(), "page" => $page, "seo" => [
                 "title" => $page->meta_title,
