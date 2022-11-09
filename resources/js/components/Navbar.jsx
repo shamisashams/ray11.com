@@ -269,11 +269,11 @@ const { pathname } = usePage().props;
        {" "}
        {/* <img src={langFlags["en"]} alt="" /> */}
        {locales[e]}
-       {
+       {/* {
         i < Object.keys(locales).length - 1 ?
         " /"
         : ""
-       }
+       } */}
       </Link>
       )
    })
