@@ -3,7 +3,7 @@ return array(
     'locales' =>
     array(
         'English' => 'en',
-        'geo' => 'ge',
+        // 'geo' => 'ge',
     ),
     'locale_separator' => '-',
     'locale' => NULL,
