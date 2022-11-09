@@ -1,4 +1,4 @@
-import React from "react";
+import React ,{ useEffect } from "react";
 // import bg from "../assets/images/bgs/2.png";
 // import Img1 from "../assets/images/raypages/17.png";
 // import Img2 from "../assets/images/raypages/10.png";
@@ -13,6 +13,12 @@ import { useState } from "react";
 import Layout from "../Layouts/Layout";
 
 const SingleCourse = ({seo, courses,othercourses}) => {
+    useEffect(() => {
+        // alert('sadsa');
+        document.documentElement.scrollTop = 0
+        // console.log(window.pageYOffset);
+
+      },);
     const renderHTML = (rawHTML) =>
     React.createElement("div", {
         dangerouslySetInnerHTML: { __html: rawHTML },
