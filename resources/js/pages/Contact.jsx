@@ -12,7 +12,7 @@ const Contact = ({seo}) => {
         dangerouslySetInnerHTML: { __html: rawHTML },
     });
     const sharedData = usePage().props.localizations;
-    const { errors, gphone, gemail, gaddress, gfacebook, ginstagram, gtwitter, gbehance, gdribbble } = usePage().props;
+    const { errors, gphone, gemail, gaddress,  gfacebook, ginstagram, gyoutube} = usePage().props;
   return (
     <Layout seo={seo}>
     <div className="min-h-screen relative contact">
@@ -62,7 +62,35 @@ const Contact = ({seo}) => {
                 {__("client.contact_social_media", sharedData)}
             </div>
             <div className="sm:w-40 w-20 h-1 bg-white mx-5"></div>
-            <SocialMedia />
+            {/* <SocialMedia /> */}
+            <div className="flex items-center justify-center">
+
+{gfacebook.value ?
+    <a href={gfacebook.value}>
+        <img src="/assets/images/icons/1.png" alt="" />
+    </a>:
+    " "
+}
+
+{
+ginstagram.value ?
+        <a href={ginstagram.value} className="mx-5">
+            <img src="/assets/images/icons/2.png" alt="" />
+        </a>
+ :
+ ""
+}
+
+{
+    gyoutube.value ?
+<a href="#">
+<img src="/assets/images/icons/3.png" alt="" />
+</a>
+:
+" "
+
+}
+</div>
           </div>
           <div className="opacity-50 mb-5 mt-8">
             {/* Find us on a map */}

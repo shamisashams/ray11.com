@@ -5,6 +5,8 @@ import React, { useState } from "react";
 import { BiChevronDown } from "react-icons/bi";
 
 export const SocialMedia = () => {
+    // console.log(data , inst, yout,'jaba');
+    // console.log(data , 'esaa');
   return (
     <div className="flex items-center justify-center">
       <a href="#">

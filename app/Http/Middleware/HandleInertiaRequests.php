@@ -141,6 +141,7 @@ class HandleInertiaRequests extends Middleware
         // $gcountry = "";
         $ginstagram = "";
         $gfacebook = "";
+        $gyoutube = "";
         $gbehance = "";
         $gdribbble = "";
 
@@ -165,6 +166,9 @@ class HandleInertiaRequests extends Middleware
                 case "twitter":
                     $gtwitter = $setting;
                     break;
+                case "youtube":
+                    $gyoutube = $setting;
+                    break;
                 case "behance":
                     $gbehance = $setting;
                     break;
@@ -183,6 +187,7 @@ class HandleInertiaRequests extends Middleware
             "gbehance" => $gbehance,
             "gdribbble" => $gdribbble,
             "gtwitter" => $gtwitter,
+            "gyoutube" => $gyoutube,
         ]);
     }
 }

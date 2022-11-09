@@ -8,8 +8,9 @@ import Form from "./Form";
 // import Pattern2 from "../assets/images/patterns/4.png";
 
 const Footer = () => {
-    const { errors, gphone, gemail, gaddress, gfacebook, ginstagram, gtwitter, gbehance, gdribbble } = usePage().props;
+    const { errors, gphone, gemail, gaddress, gfacebook, ginstagram, gyoutube } = usePage().props;
 //   const { pathname } = useLocation();
+// console.log(gfacebook.value, ginstagram.value  ,gyoutube.value, 'esaa');
 const renderHTML = (rawHTML) =>
     React.createElement("div", {
         dangerouslySetInnerHTML: { __html: rawHTML },
@@ -44,7 +45,35 @@ const { pathname } = usePage().props;
 
       </div>
       <div className="text-center mt-20">
-        <SocialMedia />
+        {/* <SocialMedia data={gfacebook.value} /> */}
+        <div className="flex items-center justify-center">
+
+            {gfacebook.value ?
+                <a href={gfacebook.value}>
+                    <img src="/assets/images/icons/1.png" alt="" />
+                </a>:
+                " "
+            }
+
+            {
+            ginstagram.value ?
+                    <a href={ginstagram.value} className="mx-5">
+                        <img src="/assets/images/icons/2.png" alt="" />
+                    </a>
+             :
+             ""
+            }
+
+            {
+                gyoutube.value ?
+      <a href="#">
+        <img src="/assets/images/icons/3.png" alt="" />
+      </a>
+      :
+      " "
+
+            }
+    </div>
         <div className="my-10 bold">
           <a href="#" className="mx-3">
             {gphone.value? gphone.value : ""}
