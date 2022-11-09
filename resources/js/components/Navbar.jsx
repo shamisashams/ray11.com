@@ -21,6 +21,7 @@ import { HiArrowNarrowRight } from "react-icons/hi";
             currentLocale,
             locale_urls,
         } = usePage().props;
+        // console.log(Object.keys(locales).length, 'esaa');
     const renderHTML = (rawHTML) =>
     React.createElement("div", {
         dangerouslySetInnerHTML: { __html: rawHTML },
@@ -250,30 +251,37 @@ const { pathname } = usePage().props;
               <div className="span"></div>
             </button>
           </div>
-          <div className="absolute right-0 -bottom-10">
-            <div className="bold">
-                {currentLocale}
-            <span className="px-1">/</span>
-            {currentLocale == "ge" ? (
-                                        <Link href={locale_urls["English"]}>
-                                            {" "}
-                                            {/* <img src={langFlags["en"]} alt="" /> */}
-                                            En
-                                        </Link>
-                                    ) : (
-                                        <Link href={locale_urls["ქართული"]}>
-                                            {" "}
-                                            Geo
-                                            {/* <img src={langFlags["ge"]} alt="" /> */}
-                                        </Link>
-                                    )}
-              {/* <span>En</span>
-              <span className="px-1">/</span>
-              <a href="/" className="opacity-50">
-                Geo
-              </a> */}
-            </div>
-          </div>
+{Object.keys(locales).length > 0 ?
+   <div className="absolute right-0 -bottom-10">
+   <div className="bold">
+       {currentLocale}
+   <span className="px-1">/</span>
+ {
+   Object.keys(locales).map((e,i)=>{
+
+ if(locales[e] == currentLocale){
+     delete locales[e]
+ }
+   //    delete locales.age
+
+
+      return(
+       <Link href={locale_urls[e]}>
+       {" "}
+       {/* <img src={langFlags["en"]} alt="" /> */}
+       {locales[e]}
+      </Link>
+      )
+   })
+ }
+
+
+   </div>
+ </div>
+ : ""
+}
+
+
         </div>
       </header>
     </>
