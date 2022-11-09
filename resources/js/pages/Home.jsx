@@ -74,7 +74,7 @@ const sharedData = usePage().props.localizations;
             <div className="relative 2xl:text-7xl xl:text-6xl sm:text-5xl text-4xl bold w-fit">
               <img
                 className="absolute -left-14 top-1/2 -translate-y-1/2 "
-                src="/assets/images/shapes/1.png"
+                src="/assets/images/shapes/6.png"
                 alt=""
               />
               <span className="relative">
