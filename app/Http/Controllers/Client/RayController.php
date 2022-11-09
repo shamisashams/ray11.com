@@ -17,6 +17,7 @@ use App\Repositories\Eloquent\ProductRepository;
 use Clockwork\Request\Request;
 use Dotenv\Util\Regex;
 use Illuminate\Support\Facades\Redis;
+use Session;
 
 class RayController extends Controller
 {
@@ -94,8 +95,8 @@ class RayController extends Controller
         //     ->leftJoin('categories', 'categories.id', '=', 'products.category_id')
         //     ->where('categories.slug', '=', 'filebi')
         //     ->with(['latestImage', 'translations'])->paginate(6);
-
         return Inertia::render('SingleCourse', [
+            'success' => Session::get('success'),
             "courses" => Team::with("files", "translations")->where('id', $course)->first(),
             "othercourses" => Team::with("files", "translations")->where("id", "!=", $course)->inRandomOrder()->limit(3)->get(),
             // "category" => Category::with('translations')->get(),

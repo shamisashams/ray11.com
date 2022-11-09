@@ -12,9 +12,17 @@ import VideoPopup from "../components/VideoPopup";
 import { useState } from "react";
 import Layout from "../Layouts/Layout";
 import { Inertia } from '@inertiajs/inertia'
+import Swal from 'sweetalert2'
 
-const SingleCourse = ({seo, courses,othercourses}) => {
-
+const SingleCourse = ({seo, courses,othercourses,success}) => {
+    if (success) {
+             Swal.fire({
+                 title: __('client.alert_success', sharedData),
+                 text: __('client.alert_sent_successfuly', sharedData),
+                 icon: __('client.alert_success1', sharedData),
+                 confirmButtonText: 'Cool'
+             })
+         }
     const [values, setValues] = useState({
         name: "",
         surname: "",
