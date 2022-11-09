@@ -8,7 +8,7 @@ import { Link, usePage } from "@inertiajs/inertia-react";
 // import Logo6 from "../assets/images/logo/6.png";
 // import Logo7 from "../assets/images/logo/7.png";
 // import Logo8 from "../assets/images/logo/8.png";
-import { companies } from "./Data";
+// import { companies } from "./Data";
 import { HiArrowNarrowRight } from "react-icons/hi";
 
     const Navbar = () => {
@@ -86,7 +86,49 @@ const { pathname } = usePage().props;
       link: route("client.contact.index"),
     },
   ];
+  const companies = [
+    {
+      logo: "/assets/images/logo/2.png",
+      title: __("client.raycompanies_productrion", sharedData),
+      para: __("client.raycompanies_productrion_text", sharedData),
+      link: route("client.rayproductrion"),
+      color: "green",
+      bg: "/assets/images/shapes/Ellipse1.png",
+    },
+    {
+      logo: "/assets/images/logo/3.png",
+      title: __("client.raycompanies_animation", sharedData),
+      para: __("client.raycompanies_animation_text", sharedData),
+      link: route("client.rayanimation"),
+      color: "blue",
+      bg: "/assets/images/shapes/Ellipse2.png",
+    },
+    {
+      logo: "/assets/images/logo/4.png",
+      title: __("client.raycompanies_academy", sharedData),
+      para: __("client.raycompanies_academy_text", sharedData),
+      link: route("client.rayacademy"),
+      color: "red",
+      bg: "/assets/images/shapes/Ellipse3.png",
+    },
+    {
+      logo: "/assets/images/logo/5.png",
+      title: __("client.raycompanies_shop", sharedData),
+      para: __("client.raycompanies_shop_text", sharedData),
+      link: "/",
+      color: "orange",
 
+      bg: "/assets/images/shapes/Ellipse4.png",
+    },
+    {
+      logo: "/assets/images/logo/6.png",
+      title: __("client.raycompanies_crypto", sharedData),
+      para: __("client.raycompanies_crypto_text", sharedData),
+      link: route("client.raycrypto"),
+      color: "purple",
+      bg: "/assets/images/shapes/Ellipse5.png",
+    },
+  ];
   return (
     <>
       <div
