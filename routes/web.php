@@ -22,6 +22,7 @@ use App\Http\Controllers\CKEditorController;
 use App\Http\Controllers\Client\HomeController;
 use App\Http\Controllers\Client\RayController;
 use App\Http\Controllers\Client\ContactController;
+use App\Http\Controllers\Admin\ContentController;
 use App\Http\Controllers\Client\AboutUsController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\EvaluationController;
@@ -126,7 +127,11 @@ Route::prefix('{locale?}')
                 Route::resource('courseorder', \App\Http\Controllers\Admin\EvaluationController::class);
                 Route::get('courseorder/{id}', [EvaluationController::class, 'details'])->name('eval.details');
 
+                //Ray Content
 
+                Route::resource('raycontent', \App\Http\Controllers\Admin\ContentController::class);
+                // Route::get('raycontent/{id}', [ContentController::class, 'details'])->name('eval.details');
+                Route::get('raycontent/{raycontent}/destroy', [ContentController::class, 'destroy'])->name('raycontent.destroy');
 
                 // Password
                 Route::get('password', [\App\Http\Controllers\Admin\PasswordController::class, 'index'])->name('password.index');

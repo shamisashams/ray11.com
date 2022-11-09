@@ -104,6 +104,13 @@
                     "i18n": "page",
                     "icon": "language",
                     "slug": "page"
+                },
+                {
+                    "url": "raycontent.index",
+                    "name": "კონტენტი",
+                    "i18n": "page",
+                    "icon": "language",
+                    "slug": "page"
                 }
             ]
         },
