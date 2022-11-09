@@ -258,7 +258,6 @@ const { pathname } = usePage().props;
    <span className="px-1">/</span>
  {
    Object.keys(locales).map((e,i)=>{
-
  if(locales[e] == currentLocale){
      delete locales[e]
  }
@@ -270,6 +269,11 @@ const { pathname } = usePage().props;
        {" "}
        {/* <img src={langFlags["en"]} alt="" /> */}
        {locales[e]}
+       {
+        i < Object.keys(locales).length - 1 ?
+        " /"
+        : ""
+       }
       </Link>
       )
    })
