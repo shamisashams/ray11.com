@@ -11,11 +11,43 @@ import { Link, usePage } from '@inertiajs/inertia-react'
 import VideoPopup from "../components/VideoPopup";
 import { useState } from "react";
 import Layout from "../Layouts/Layout";
+import { Inertia } from '@inertiajs/inertia'
 
 const SingleCourse = ({seo, courses,othercourses}) => {
+
+    const [values, setValues] = useState({
+        name: "",
+        surname: "",
+        phone: "",
+        email: "",
+        course: courses.title ? courses.title : "",
+    })
+
+    function handleChange(e) {
+        const key = e.target.id;
+        const value = e.target.value
+        setValues(values => ({
+            ...values,
+            [key]: value,
+        }))
+    }
+    function handleSubmit(e) {
+        e.preventDefault()
+        var forms = document.evaluation;
+        let validForm = true;
+        for (const key in values) {
+            if (forms[key].value == "") {
+                validForm = false;
+            }
+        }
+// console.log(values);
+        Inertia.post(route('client.documentations.rateservices'), values)
+    }
+
+
     useEffect(() => {
         // alert('sadsa');
-        document.documentElement.scrollTop = 0
+        // document.documentElement.scrollTop = 0
         // console.log(window.pageYOffset);
 
       },);
@@ -25,7 +57,6 @@ const SingleCourse = ({seo, courses,othercourses}) => {
     });
     const sharedData = usePage().props.localizations;
 
-    console.log(othercourses, 'esaa');
   const [showVideo, setShowVideo] = useState(false);
   const checks = [
     "From banking and insurance to wealth management and on securities distribution,",
@@ -88,11 +119,15 @@ const SingleCourse = ({seo, courses,othercourses}) => {
             <div className="sm:text-3xl text-2xl bold mb-7">
               Register on a course
             </div>
-            <form className="max-w-sm ">
-              <input type="text" placeholder="Name" />
-              <input type="text" placeholder="Surname" />
-              <input type="text" placeholder="Phone number" />
-              <input type="text" placeholder="Email address" />
+            <form onSubmit={handleSubmit} name='evaluation' className="max-w-sm ">
+              <input type="text" placeholder={__('client.form_name', sharedData)} name='name' id='name' onChange={handleChange} />
+              <input type="text" placeholder={__('client.form_surname', sharedData)} name='surname' id='surname' onChange={handleChange} />
+              <input type="text" placeholder={__('client.form_phone', sharedData)} name='phone' id='phone' onChange={handleChange} />
+              <input type="text" placeholder={__('client.form_email', sharedData)} name='email' id='email' onChange={handleChange} />
+              <input type="hidden"  name='course' id='course'
+            //    onChange={handleChange}
+               value={courses.title}
+               />
               <button
                 className={`flex items-center justify-center border border-solid border-custom-dark bold text-custom-dark sm:h-10 h-10 w-fit sm:px-6 px-4 rounded-full transition-all duration-300  sm:text-base text-sm  whitespace-nowrap mx-auto mt-5`}
               >

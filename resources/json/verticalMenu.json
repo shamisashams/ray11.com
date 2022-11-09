@@ -35,7 +35,7 @@
                 "icon": "language",
                 "slug": "product"
                 },
-        
+
                 {
                 "url": "upcomingevents.index",
                 "name": "ივენთები",
@@ -107,7 +107,7 @@
                 }
             ]
         },
-        
+
         {
             "url": "javascript:void(0)",
             "name": "4. ენის პარამეტრები",
@@ -130,7 +130,15 @@
                     "slug": "translation"
                 }
             ]
+        },
+        {
+            "url": "courseorder.index",
+            "name": "ინვოისი",
+            "i18n": "page",
+            "icon": "language",
+            "slug": "page"
         }
+
     ],
     "_comment": [
         {

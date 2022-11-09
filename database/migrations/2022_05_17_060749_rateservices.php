@@ -16,16 +16,12 @@ class Rateservices extends Migration
         //
         Schema::create('rateservices', function (Blueprint $table) {
             $table->id();
-            $table->string('company_name');
+            $table->string('name')->nullable();
             // $table->date('created_at');
-            $table->tinyInteger('answer_1');
-            $table->string('answer_2');
-            $table->string('answer_3');
-            $table->string('answer_4');
-            $table->string('answer_5');
-            $table->tinyInteger('answer_6');
-            $table->tinyInteger('answer_7');
-            $table->tinyInteger('answer_8');
+            $table->string('surname')->nullable();
+            $table->string('phone')->nullable();
+            $table->string('email')->nullable();
+            $table->string('course')->nullable();
             $table->timestamps();
         });
     }

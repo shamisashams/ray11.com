@@ -10,14 +10,10 @@ class Rateservice extends Model
     use HasFactory;
     public $timestamps = true;
     protected $fillable = [
-        'company_name',
-        'answer_1',
-        'answer_2',
-        'answer_3',
-        'answer_4',
-        'answer_5',
-        'answer_6',
-        'answer_7',
-        'answer_8',
+        'name',
+        'surname',
+        'phone',
+        'email',
+        'course',
     ];
 }

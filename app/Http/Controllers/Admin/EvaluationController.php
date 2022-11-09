@@ -75,4 +75,10 @@ class EvaluationController extends Controller
             'data'  => $owner->find($id)
         ]);
     }
+    public function show(Request $req, $locale, RateService $owner, $id = "")
+    {
+        return view('admin.nowa.views.apps.evaldetail', [
+            'data'  => $owner->find($id)
+        ]);
+    }
 }

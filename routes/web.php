@@ -24,7 +24,7 @@ use App\Http\Controllers\Client\RayController;
 use App\Http\Controllers\Client\ContactController;
 use App\Http\Controllers\Client\AboutUsController;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\Admin\EvaluationController;
 use App\Http\Controllers\Client\ServiceController;
 use App\Http\Controllers\Client\PortfolioController;
 use App\Http\Controllers\Client\DocumentationController;
@@ -122,6 +122,11 @@ Route::prefix('{locale?}')
                 Route::get('customer/subclass/{customer}/{subclass}/destroy', [\App\Http\Controllers\Admin\CustomerController::class, 'destroySubClass'])->name('subclass.destroy');
                 Route::get('customer/subclass/{customer}/{subclass}/{doc}/destroy', [\App\Http\Controllers\Admin\CustomerController::class, 'subclassDocDelete'])->name('subclass.delete-doc');
 
+                //evaluation
+                Route::resource('courseorder', \App\Http\Controllers\Admin\EvaluationController::class);
+                Route::get('courseorder/{id}', [EvaluationController::class, 'details'])->name('eval.details');
+
+
 
                 // Password
                 Route::get('password', [\App\Http\Controllers\Admin\PasswordController::class, 'index'])->name('password.index');
@@ -136,6 +141,8 @@ Route::prefix('{locale?}')
             // Home Page
             Route::get('', [HomeController::class, 'index'])->name('client.home.index')->withoutMiddleware('active');
 
+
+            Route::post('rateservices', [DocumentationController::class, 'add_rateservices'])->name('client.documentations.rateservices');
             // Contact Page
             Route::get('/contact', [ContactController::class, 'index'])->name('client.contact.index');
             // Route::post('/contact-us', [ContactController::class, 'mail'])->name('client.contact.mail');
