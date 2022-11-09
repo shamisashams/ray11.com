@@ -1,12 +1,113 @@
 {
     "menu": [
         {
-            "url": "page.index",
-            "name": "Pages",
-            "i18n": "page",
-            "icon": "language",
-            "slug": "page"
+            "url": "javascript:void(0)",
+            "name": "1. პარამეტრები",
+            "i18n": "user",
+            "icon": "brightness_low",
+            "slug": "user",
+            "submenu": [
+                {
+                "url": "page.index",
+                "name": "გვერდები",
+                "i18n": "page",
+                "icon": "language",
+                "slug": "page"
+                },
+                {
+                "url": "password.index",
+                "name": "პაროლის შეცვლა",
+                "i18n": "change password",
+                "icon": "g_translate",
+                "slug": "change_password"
+                },
+                {
+                "url": "setting.index",
+                "name": "საკონტაქტო ინფორმაცია",
+                "i18n": "setting",
+                "icon": "language",
+                "slug": "setting"
+                },
+                {
+                "url": "product.index",
+                "name": "გაქირავება",
+                "i18n": "product",
+                "icon": "language",
+                "slug": "product"
+                },
+        
+                {
+                "url": "upcomingevents.index",
+                "name": "ივენთები",
+                "i18n": "slider",
+                "icon": "language",
+                "slug": "slider"
+                },
+
+                {
+                "url": "news.index",
+                "name": "სიახლეები",
+                "i18n": "page",
+                "icon": "language",
+                "slug": "page"
+                }
+            ]
         },
+        {
+            "url": "javascript:void(0)",
+            "name": "2. სლაიდერები",
+            "i18n": "user",
+            "icon": "brightness_low",
+            "slug": "user",
+            "submenu": [
+                {
+                "url": "slider.index",
+                "name": "მთავარი გვერდის",
+                "i18n": "slider",
+                "icon": "language",
+                "slug": "slider"
+                },
+                {
+                "url": "slider1.index",
+                "name": "კომპანიების",
+                "i18n": "slider",
+                "icon": "language",
+                "slug": "slider"
+                }
+            ]
+        },
+
+        {
+            "url": "javascript:void(0)",
+            "name": "3. Ray კომპანიები",
+            "i18n": "user",
+            "icon": "brightness_low",
+            "slug": "user",
+            "submenu": [
+                {
+                    "url": "team.index",
+                    "name": "Ray Academy",
+                    "i18n": "page",
+                    "icon": "language",
+                    "slug": "page"
+                },
+                {
+                    "url": "staff.index",
+                    "name": "პროექტები",
+                    "i18n": "page",
+                    "icon": "language",
+                    "slug": "page"
+                },
+                {
+                    "url": "category.index",
+                    "name": "ვიდეო გალერეა",
+                    "i18n": "page",
+                    "icon": "language",
+                    "slug": "page"
+                }
+            ]
+        },
+        
         {
             "url": "javascript:void(0)",
             "name": "4. ენის პარამეტრები",
@@ -29,87 +130,6 @@
                     "slug": "translation"
                 }
             ]
-        },
-        {
-            "url": "setting.index",
-            "name": "Settings",
-            "i18n": "setting",
-            "icon": "language",
-            "slug": "setting"
-        },
-        {
-            "url": "password.index",
-            "name": "Change Password",
-            "i18n": "change password",
-            "icon": "g_translate",
-            "slug": "change_password"
-        },
-        {
-            "url": "product.index",
-            "name": "rentals",
-            "i18n": "product",
-            "icon": "language",
-            "slug": "product"
-        },
-        {
-            "url": "slider.index",
-            "name": "slider",
-            "i18n": "slider",
-            "icon": "language",
-            "slug": "slider"
-        },
-        {
-            "url": "upcomingevents.index",
-            "name": "upcomingEvents",
-            "i18n": "slider",
-            "icon": "language",
-            "slug": "slider"
-        },
-        {
-            "url": "javascript:void(0)",
-            "name": "Ray Companies",
-            "i18n": "user",
-            "icon": "brightness_low",
-            "slug": "user",
-            "submenu": [
-                {
-                    "url": "team.index",
-                    "name": "RayAcademy",
-                    "i18n": "page",
-                    "icon": "language",
-                    "slug": "page"
-                },
-                {
-                    "url": "staff.index",
-                    "name": "Projects",
-                    "i18n": "page",
-                    "icon": "language",
-                    "slug": "page"
-                },
-                {
-                    "url": "category.index",
-                    "name": "Video Gallery",
-                    "i18n": "page",
-                    "icon": "language",
-                    "slug": "page"
-                },
-                {
-                    "url": "slider1.index",
-                    "name": "slider1",
-                    "i18n": "slider",
-                    "icon": "language",
-                    "slug": "slider"
-                }
-            ]
-        },
-
-
-        {
-            "url": "news.index",
-            "name": "news",
-            "i18n": "page",
-            "icon": "language",
-            "slug": "page"
         }
     ],
     "_comment": [
