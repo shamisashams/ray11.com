@@ -2,9 +2,8 @@
  return array (
   'locales' => 
   array (
-    'ქართული' => 'ge',
     'English' => 'en',
-    'russ' => 'ru',
+    'geo' => 'ge',
   ),
   'locale_separator' => '-',
   'locale' => NULL,
