@@ -160,7 +160,7 @@
                         </small>
                         @enderror
                     </div>
-                    <div class="form-group">
+                    {{-- <div class="form-group">
                         {!! Form::label("youtube_url",__('admin.btn_link'),['class' => 'form-label']) !!}
                         {!! Form::text("youtube_url",$slider->youtube_url ?? '',['class' => 'form-control']) !!}
 
@@ -171,7 +171,7 @@
                             </div>
                         </small>
                         @enderror
-                    </div>
+                    </div> --}}
                     <div class="form-group">
                         <label class="ckbox">
                             <input type="checkbox" name="status"
