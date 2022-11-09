@@ -38,7 +38,10 @@ const { pathname } = usePage().props;
         alt=""
       />
       <div className="wrapper mb-20">
-        <Form />
+        {
+          pathname.includes("aboutus")? '' : <Form />
+        }
+
       </div>
       <div className="text-center mt-20">
         <SocialMedia />
