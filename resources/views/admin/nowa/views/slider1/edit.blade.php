@@ -122,7 +122,7 @@
                         </div>
 
 
-                        <div class="form-group">
+                        {{-- <div class="form-group">
                             <label class="form-label" for="description">@lang('admin.description')</label>
                             <textarea class="form-control" id="description-{{$locale}}" name="{{$locale}}[description]'">
                                                 {!! $slide->translate($locale)->description ?? '' !!}
@@ -134,7 +134,7 @@
                                 </div>
                             </small>
                             @enderror
-                        </div>
+                        </div> --}}
 
                     </div>
 
