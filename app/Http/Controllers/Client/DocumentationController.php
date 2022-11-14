@@ -12,7 +12,7 @@ use Inertia\Inertia;
 use Illuminate\Support\Facades\Mail;
 use App\Repositories\Eloquent\ProductRepository;
 use Illuminate\Http\Request;
-use App\Models\rateservice;
+use App\Models\Rateservice;
 use App\Models\Owneraplication;
 use App\Models\Ownerapplication;
 
@@ -150,7 +150,7 @@ class DocumentationController extends Controller
     {
 
         // dd($request->all());
-        $rateservices = rateservice::create(
+        $rateservices = Rateservice::create(
             $request->only(
                 'name',
                 // 'created_at',
