@@ -17,7 +17,6 @@ class Rateservices extends Migration
         Schema::create('rateservices', function (Blueprint $table) {
             $table->id();
             $table->string('name')->nullable();
-            // $table->date('created_at');
             $table->string('surname')->nullable();
             $table->string('phone')->nullable();
             $table->string('email')->nullable();
