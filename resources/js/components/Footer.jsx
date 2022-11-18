@@ -105,7 +105,7 @@ const { pathname } = usePage().props;
             <li className="inline-block bold sm:mx-4 mx-2">
               <Link href={route("client.contact.index")}>
                 {/* Contact */}
-                {__("client.navbar_news", sharedData)}
+                {__("client.navbar_contact", sharedData)}
                 </Link>
             </li>
           </ul>
