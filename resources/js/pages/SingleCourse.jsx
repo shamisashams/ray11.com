@@ -15,12 +15,17 @@ import { Inertia } from '@inertiajs/inertia'
 import Swal from 'sweetalert2'
 
 const SingleCourse = ({seo, courses,othercourses,success}) => {
+    const renderHTML = (rawHTML) =>
+    React.createElement("div", {
+        dangerouslySetInnerHTML: { __html: rawHTML },
+    });
+    const sharedData = usePage().props.localizations;
     if (success) {
              Swal.fire({
-                 title: 'success' ,
-                 text: 'success',
+                 title: __('client.form_success', sharedData) ,
+                 text: __('client.form_text', sharedData),
                  icon: 'success',
-                 confirmButtonText: 'Cool'
+                 confirmButtonText: __('client.form_btn', sharedData)
              })
             //  Swal.fire({
             //      title: __('client.alert_success', sharedData),
@@ -65,11 +70,7 @@ const SingleCourse = ({seo, courses,othercourses,success}) => {
         // console.log(window.pageYOffset);
 
       },);
-    const renderHTML = (rawHTML) =>
-    React.createElement("div", {
-        dangerouslySetInnerHTML: { __html: rawHTML },
-    });
-    const sharedData = usePage().props.localizations;
+
 
   const [showVideo, setShowVideo] = useState(false);
   const checks = [
