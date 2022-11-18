@@ -215,7 +215,7 @@
         <div class="col-lg-6 col-md-12">
             <div class="card">
                 <div class="card-body">
-                    @if (\Request::route()->parameters['page']->id == 2)
+                    @if (\Request::route()->parameters['page']->id == 2 || \Request::route()->parameters['page']->id == 1)
                     <div class="form-group">
                         <label class="form-label">@lang('admin.url')</label>
                         <input type="text" name="url" class="form-control" placeholder="@lang('admin.url')" value="{{$page->url ?? ''}}">

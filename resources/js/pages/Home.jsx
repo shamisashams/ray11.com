@@ -10,7 +10,7 @@ import Slider3 from "../components/Slider3";
 import VideoPopup from "../components/VideoPopup";
 import Layout from "../Layouts/Layout";
 
-const Home = ({seo,sliders, UpcomingEvent, news, slider2, links}) => {
+const Home = ({seo,sliders, UpcomingEvent, news, slider2, links, page}) => {
     const renderHTML = (rawHTML) =>
     React.createElement("div", {
         dangerouslySetInnerHTML: { __html: rawHTML },
@@ -347,7 +347,7 @@ const sharedData = usePage().props.localizations;
       <VideoPopup
         open={showVideo}
         closeVideo={() => setShowVideo(false)}
-        src="https://www.youtube.com/embed/xYrPGIJ2qoo"
+        src={(page.url?page.url : "https://www.youtube.com/embed/tl6T2nwRers")}
       />
       </Layout>
     </>
