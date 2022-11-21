@@ -73,7 +73,7 @@ const Contact = ({seo}) => {
 }
 
 {glinkedin.value ?
-                <a href={glinkedin.value} className="mx-5">
+                <a href={glinkedin.value} className="ml-5">
                     <img src="/assets/images/icons/linkedin.png" style={{width:"24px"}} alt="" />
                 </a>:
                 " "
