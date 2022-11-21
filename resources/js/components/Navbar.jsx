@@ -262,6 +262,39 @@ const { pathname } = usePage().props;
               <div className="span"></div>
             </button>
           </div>
+{arr.length > 1 ?
+   <div className="absolute right-0 -bottom-10">
+   <div className="bold">
+       {/* {currentLocale} */}
+   {/* <span className="px-1">/</span> */}
+ {
+   arr.map((e,i)=>{
+       if(locales[e] == currentLocale){
+        //    if(Object.keys(locales).length > 1){
+        //        delete locales[e]
+        //    }
+ }
+      return(
+       <Link href={locale_urls[e]}>
+       {" "}
+       {/* <img src={langFlags["en"]} alt="" /> */}
+       {locales[e]}
+       {
+        i < Object.keys(locales).length - 1 ?
+        " /"
+        : ""
+       }
+      </Link>
+      )
+   })
+ }
+
+
+   </div>
+ </div>
+ : ""
+}
+
 
         </div>
       </header>

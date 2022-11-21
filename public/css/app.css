@@ -630,9 +630,6 @@ video {
 .left-1\/2 {
   left: 50%;
 }
-.-bottom-10 {
-  bottom: -2.5rem;
-}
 .bottom-4 {
   bottom: 1rem;
 }
@@ -704,6 +701,9 @@ video {
 }
 .right-20 {
   right: 5rem;
+}
+.-bottom-10 {
+  bottom: -2.5rem;
 }
 .isolate {
   isolation: isolate;
@@ -1505,10 +1505,6 @@ video {
   padding-top: 2rem;
   padding-bottom: 2rem;
 }
-.px-1 {
-  padding-left: 0.25rem;
-  padding-right: 0.25rem;
-}
 .py-5 {
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
@@ -1552,6 +1548,10 @@ video {
 .py-40 {
   padding-top: 10rem;
   padding-bottom: 10rem;
+}
+.px-1 {
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
 }
 .pl-5 {
   padding-left: 1.25rem;

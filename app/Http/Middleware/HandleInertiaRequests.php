@@ -144,6 +144,7 @@ class HandleInertiaRequests extends Middleware
         $gyoutube = "";
         $gbehance = "";
         $gdribbble = "";
+        $glinkedin = "";
 
         $settings = Setting::with(['translations'])->get();
         foreach ($settings as $setting) {
@@ -175,6 +176,9 @@ class HandleInertiaRequests extends Middleware
                 case "dribbble":
                     $gdribbble = $setting;
                     break;
+                case "linkedin":
+                    $glinkedin = $setting;
+                    break;
             }
         }
 
@@ -188,6 +192,7 @@ class HandleInertiaRequests extends Middleware
             "gdribbble" => $gdribbble,
             "gtwitter" => $gtwitter,
             "gyoutube" => $gyoutube,
+            "glinkedin" => $glinkedin,
         ]);
     }
 }
