@@ -12,7 +12,7 @@ const Contact = ({seo}) => {
         dangerouslySetInnerHTML: { __html: rawHTML },
     });
     const sharedData = usePage().props.localizations;
-    const { errors, gphone, gemail, gaddress,  gfacebook, ginstagram, gyoutube} = usePage().props;
+    const { errors, gphone, gemail, gaddress,  gfacebook, ginstagram, gyoutube, glinkedin} = usePage().props;
   return (
     <Layout seo={seo}>
     <div className="min-h-screen relative contact">
@@ -71,6 +71,13 @@ const Contact = ({seo}) => {
     </a>:
     " "
 }
+
+{glinkedin.value ?
+                <a href={glinkedin.value}>
+                    <img src="/assets/images/icons/linkedin.png" style={{width:"24px"}} alt="" />
+                </a>:
+                " "
+            }
 
 {
 ginstagram.value ?

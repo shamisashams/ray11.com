@@ -8,9 +8,9 @@ import Form from "./Form";
 // import Pattern2 from "../assets/images/patterns/4.png";
 
 const Footer = () => {
-    const { errors, gphone, gemail, gaddress, gfacebook, ginstagram, gyoutube } = usePage().props;
+    const { errors, gphone, gemail, gaddress, gfacebook, ginstagram, gyoutube, glinkedin } = usePage().props;
 //   const { pathname } = useLocation();
-// console.log(gfacebook.value, ginstagram.value  ,gyoutube.value, 'esaa');
+// console.log(gfacebook.value, ginstagram.value  ,gyoutube.value, glinkedin.value,'esaa');
 const renderHTML = (rawHTML) =>
     React.createElement("div", {
         dangerouslySetInnerHTML: { __html: rawHTML },
@@ -51,6 +51,13 @@ const { pathname } = usePage().props;
             {gfacebook.value ?
                 <a href={gfacebook.value}>
                     <img src="/assets/images/icons/1.png" alt="" />
+                </a>:
+                " "
+            }
+
+            {glinkedin.value ?
+                <a href={glinkedin.value}>
+                    <img src="/assets/images/icons/linkedin.png" style={{width:"24px"}} alt="" />
                 </a>:
                 " "
             }

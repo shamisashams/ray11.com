@@ -15,7 +15,7 @@ const Preloader = ({ loading }) => {
             }
         }, 40);
     }, [counter]);
-    console.log(counter);
+    // console.log(counter);
 
     return (
         <div
