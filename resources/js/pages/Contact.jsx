@@ -66,14 +66,14 @@ const Contact = ({seo}) => {
             <div className="flex items-center justify-center">
 
 {gfacebook.value ?
-    <a href={gfacebook.value}>
+    <a href={gfacebook.value} target="_blank">
         <img src="/assets/images/icons/1.png" alt="" />
     </a>:
     " "
 }
 
 {glinkedin.value ?
-                <a href={glinkedin.value} className="ml-5">
+                <a href={glinkedin.value} className="ml-5" target="_blank">
                     <img src="/assets/images/icons/linkedin.png" style={{width:"24px"}} alt="" />
                 </a>:
                 " "
@@ -81,7 +81,7 @@ const Contact = ({seo}) => {
 
 {
 ginstagram.value ?
-        <a href={ginstagram.value} className="mx-5">
+        <a href={ginstagram.value} className="mx-5" target="_blank">
             <img src="/assets/images/icons/2.png" alt="" />
         </a>
  :
@@ -90,7 +90,7 @@ ginstagram.value ?
 
 {
     gyoutube.value ?
-<a href="#">
+<a href="#" target="_blank">
 <img src="/assets/images/icons/3.png" alt="" />
 </a>
 :
