@@ -99,7 +99,7 @@ const sharedData = usePage().props.localizations;
                {__("client.home_slider1_text", sharedData)}
             </p>
             <div className="flex justify-start items-center mt-10 mb-8">
-              <Link href="/about">
+              <Link href={route('client.about.index')}>
                 <button className="px-8 h-10 text-custom-dark bg-custom-yellow bold rounded-full transition-all duration-300 hover:bg-white">
                   {/* About us */}
                   {__("client.home_aboutus_btn", sharedData)}
