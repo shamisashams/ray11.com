@@ -15,6 +15,12 @@ import {
 import { Link, usePage } from "@inertiajs/inertia-react";
 
 const Slider1 = ({slidedata}) => {
+
+    const renderHTML = (rawHTML) =>
+        React.createElement("p", {
+            dangerouslySetInnerHTML: { __html: rawHTML },
+        });
+
   const prevRef = useRef(null);
   const nextRef = useRef(null);
   const data = [
@@ -72,7 +78,7 @@ const Slider1 = ({slidedata}) => {
                   <div className="sliderTitle bold">{item.title}</div>
                   <p className="opacity-30 my-6 paragraph">
                     {/* {item.short_description} */}
-                    {item.description}
+                    {renderHTML(item.description)}
                     </p>
                     <a href={item.reddirect_url?item.reddirect_url: "/"} target="_blank">
                   <button className="flex items-center justify-center border border-solid border-custom-yellow bold text-custom-yellow sm:h-12 h-10 sm:px-7 px-4 rounded-full transition-all duration-300 hover:text-white hover:border-white mx-auto mr-0 sm:text-base text-sm">

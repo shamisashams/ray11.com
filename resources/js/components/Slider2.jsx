@@ -13,7 +13,7 @@ import { Link, usePage} from '@inertiajs/inertia-react'
 
 const Slider2 = ({data}) => {
     const renderHTML = (rawHTML) =>
-    React.createElement("div", {
+    React.createElement("p", {
         dangerouslySetInnerHTML: { __html: rawHTML },
     });
 const sharedData = usePage().props.localizations;
@@ -84,8 +84,8 @@ const sharedData = usePage().props.localizations;
                       <MdOutlineLocationOn className="inline-block mr-1 mb-1" />
                       {item.locations}
                     </div>
-                    <div className="nun-bold mb-2 mt-1"># {item.title}</div>
-                    <p className="mb-2 ">{item.description}</p>
+                    <div className="nun-bold mb-2 mt-1">{item.title}</div>
+                    <p className="mb-2 ">{renderHTML(item.description)}</p>
                     <a href={item.reddirect_url ?item.reddirect_url: "/" } target="_blank" className="bold">
                       Learn more{" "}
                       <HiArrowNarrowRight className="inline-block w-6 h-6 ml-1" />
