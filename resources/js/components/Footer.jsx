@@ -103,6 +103,12 @@ const { pathname } = usePage().props;
 {__("client.navbar_about", sharedData)}
                 </Link>
             </li>
+              <li className="inline-block bold sm:mx-4 mx-2">
+                  <Link href={route("client.rental.index")}>
+                      {/* About Ray 11 */}
+                      {__("client.navbar_rental", sharedData)}
+                  </Link>
+              </li>
             <li className="inline-block bold sm:mx-4 mx-2">
               <Link href={route("client.news.index")}>
                 {/* News */}
