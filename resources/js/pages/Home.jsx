@@ -267,7 +267,7 @@ const sharedData = usePage().props.localizations;
         <Slider3 data={slider2} links={links} />
       </section>
       <section className="py-20 wrapper group relative flex items-center justify-start">
-        <img className="w-1/3" src={images[1]} alt="" />
+        <img className="w-1/3" src="/assets/images/home/6.png" alt="" />
         <div className="xl:max-w-md max-w-sm bold xl:text-6xl sm:text-4xl text-2xl leading-tight text-right">
           <span className="opacity-10 group-hover:opacity-100 transition-all duration-500">
             {/* Professional Technics for Rent */}

@@ -21,7 +21,7 @@ class PageSectionSeeder extends Seeder
 
             [
                 'key' => 'home',
-                "count" => 2,
+                "count" => 1,
             ],
             [
                 'key' => 'aboutus',
