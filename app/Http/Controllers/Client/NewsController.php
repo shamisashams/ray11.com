@@ -15,7 +15,17 @@ class NewsController extends Controller
     {
         // $news = News::where("status", 1)->with(['file', 'translations'])->paginate(3);
         //        dd(1);
-        $page = Page::where('key', 'home')->firstOrFail();
+        $page = Page::with(['sections.file'])->where('key', 'home')->firstOrFail();
+
+        $images = [];
+        foreach ($page->sections as $sections) {
+            if ($sections->file) {
+                $images[] = asset($sections->file->getFileUrlAttribute());
+            } else {
+                $images[] = null;
+            }
+        }
+
         $news = News::with(['file', 'translations', 'latestImage'])->paginate(8);
 
 
@@ -42,6 +52,7 @@ class NewsController extends Controller
             'News',
             [
                 // "product" => Product::with('latestImage')->where('category_id', ('7'))->paginate(10),
+                "images" => $images,
                 "news" => $news,
                 // "product" => Product::with(['latestImage', 'translations'])->where("category_id", 1)->paginate(10),
                 "page" => $page,
