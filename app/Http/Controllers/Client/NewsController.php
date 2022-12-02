@@ -15,7 +15,7 @@ class NewsController extends Controller
     {
         // $news = News::where("status", 1)->with(['file', 'translations'])->paginate(3);
         //        dd(1);
-        $page = Page::with(['sections.file'])->where('key', 'home')->firstOrFail();
+        $page = Page::with(['sections.file'])->where('key', 'news')->firstOrFail();
 
         $images = [];
         foreach ($page->sections as $sections) {

@@ -48,7 +48,9 @@ class PageSectionSeeder extends Seeder
             [
                 'key' => 'singleproduct'
             ],
-
+            [
+                'key' => 'news'
+            ],
         ];
 
         $in = [];
