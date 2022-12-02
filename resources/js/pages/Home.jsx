@@ -10,7 +10,7 @@ import Slider3 from "../components/Slider3";
 import VideoPopup from "../components/VideoPopup";
 import Layout from "../Layouts/Layout";
 
-const Home = ({seo,sliders, UpcomingEvent, news, slider2, links, page}) => {
+const Home = ({seo,sliders, UpcomingEvent, news, slider2, links, page, images}) => {
     const renderHTML = (rawHTML) =>
     React.createElement("div", {
         dangerouslySetInnerHTML: { __html: rawHTML },
@@ -214,7 +214,7 @@ const sharedData = usePage().props.localizations;
           </Link>
         </div>
         <div className="relative w-fit lg:mx-5 my-10 ">
-          <img src="/assets/images/home/3.png" alt="" />
+          <img src={images[0]} alt="" />
           <img
             className="-z-10 absolute -right-10 top-1/2 -translate-y-1/2 max-w-none"
             src="/assets/images/patterns/2.png"

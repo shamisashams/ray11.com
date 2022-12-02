@@ -6,7 +6,7 @@ import { newsGrid } from "../components/Data";
 import { Link, usePage } from '@inertiajs/inertia-react'
 import Layout from "../Layouts/Layout";
 
-const News = ({seo,news}) => {
+const News = ({seo,news,images}) => {
     let links = function (links) {
         let rows = [];
         {
@@ -69,7 +69,7 @@ const News = ({seo,news}) => {
       <img className="-z-10 absolute top-0 right-0" src="/assets/images/patterns/1.png" alt="" />
       <div className="wrapper">
         <div className="flex justify-start items-center mb-10 flex-col md:flex-row ">
-          <img src="/assets/images/other/2.png" alt="" />
+          <img src={images[0]} alt="" />
           <p className="opacity-50 md:max-w-lg md:ml-5">
             {/* From banking and insurance to wealth management and on securities
             distribution, we dedicated financial services them the teams serve

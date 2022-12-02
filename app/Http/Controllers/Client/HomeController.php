@@ -26,7 +26,7 @@ class HomeController extends Controller
     {
         // $portfolio = Portfolio::where("status", 0)->with(['files', 'translations', 'latestImage'])->paginate(6);
 
-        $page = Page::where('key', 'home')->firstOrFail();
+        $page = Page::with(['sections.file'])->where('key', 'home')->firstOrFail();
 
         $images = [];
         foreach ($page->sections as $sections) {
