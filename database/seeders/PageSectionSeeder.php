@@ -20,7 +20,8 @@ class PageSectionSeeder extends Seeder
         $pages = [
 
             [
-                'key' => 'home'
+                'key' => 'home',
+                "count" => 2,
             ],
             [
                 'key' => 'aboutus',
