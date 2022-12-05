@@ -2147,6 +2147,10 @@ img {
     right: 13rem;
   }
 
+  .sm\:bottom-4 {
+    bottom: 1rem;
+  }
+
   .sm\:mx-4 {
     margin-left: 1rem;
     margin-right: 1rem;
@@ -2277,6 +2281,10 @@ img {
 
   .sm\:rounded-xl {
     border-radius: 0.75rem;
+  }
+
+  .sm\:p-5 {
+    padding: 1.25rem;
   }
 
   .sm\:px-6 {

@@ -7,7 +7,7 @@ import "aos/dist/aos.css";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import setSeoData from "./SetSeoData";
-// import CursorFollower from "../components/CursorFollower";
+import CursorFollower from "../components/CursorFollower";
 // import {Fragment} from "react";
 // import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Aos from "aos";
@@ -32,15 +32,6 @@ export default function Layout({ children, seo = null }) {
 
     const { pathname } = usePage().props;
 
-    // const [loading, setLoading] = useState(pathname == route("client.home.index") ? true : false);
-    // if (pathname == route("client.home.index")) {
-    //     Inertia.on('finish',
-    //         setTimeout(() => {
-    //             setLoading(false);
-    //         }, 500)
-    //     )
-    // }
-
     if (seo) {
         setSeoData(seo);
     }
@@ -55,7 +46,7 @@ export default function Layout({ children, seo = null }) {
         <>
             {/*<Router>*/}
             {/*<Fragment>*/}
-            {/* <CursorFollower /> */}
+            <CursorFollower />
             <Navbar />
             {children}
             <Footer />
