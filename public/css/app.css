@@ -633,11 +633,8 @@ video {
 .-bottom-10 {
   bottom: -2.5rem;
 }
-.bottom-4 {
-  bottom: 1rem;
-}
-.right-8 {
-  right: 2rem;
+.bottom-0 {
+  bottom: 0px;
 }
 .bottom-3 {
   bottom: 0.75rem;
@@ -647,6 +644,12 @@ video {
 }
 .right-3 {
   right: 0.75rem;
+}
+.bottom-4 {
+  bottom: 1rem;
+}
+.right-8 {
+  right: 2rem;
 }
 .top-10 {
   top: 2.5rem;
@@ -692,9 +695,6 @@ video {
 }
 .-right-0 {
   right: -0px;
-}
-.bottom-0 {
-  bottom: 0px;
 }
 .left-1 {
   left: 0.25rem;
@@ -2139,16 +2139,16 @@ img {
 
 @media (min-width: 640px) {
 
+  .sm\:bottom-4 {
+    bottom: 1rem;
+  }
+
   .sm\:right-16 {
     right: 4rem;
   }
 
   .sm\:right-52 {
     right: 13rem;
-  }
-
-  .sm\:bottom-4 {
-    bottom: 1rem;
   }
 
   .sm\:mx-4 {

@@ -101,6 +101,7 @@ class RayController extends Controller
             "courses" => Team::with("files", "translations")->where('id', $course)->first(),
             "othercourses" => Team::with("files", "translations")->where("id", "!=", $course)->inRandomOrder()->limit(3)->get(),
             // "category" => Category::with('translations')->get(),
+            'pathname' => 'single-course',
             "sliders" => $sliders->get(), "page" => $page, "seo" => [
                 "title" => $page->meta_title,
                 "description" => $page->meta_description,

@@ -49,6 +49,7 @@ class ProductController extends Controller
             'products' => $products,
             'images' => $images,
             'page' => $page,
+
             "seo" => [
                 "title" => $page->meta_title,
                 "description" => $page->meta_description,
@@ -87,6 +88,7 @@ class ProductController extends Controller
         return Inertia::render('SingleRental', [
             'product' => $product,
             'product_images' => $productImages,
+            'pathname' => 'single-rental',
             "seo" => [
                 "title" => $product->meta_title,
                 "description" => $product->meta_description,

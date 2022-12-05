@@ -42,6 +42,7 @@ const Navbar = () => {
     const [menu, setMenu] = useState(false);
     //   const { pathname } = useLocation();
     const { pathname } = usePage().props;
+    console.log(pathname);
     let dark = false;
     let logoImg = "/assets/images/logo/1.png";
 
@@ -57,20 +58,20 @@ const Navbar = () => {
     if (pathname === route("client.raycrypto")) {
         logoImg = "/assets/images/logo/5.png";
     }
-    if (pathname === "/single-course") {
+    if (pathname === "single-course") {
         logoImg = "/assets/images/logo/7.png";
     }
     if (
         pathname === route("client.rental.index") ||
-        pathname === "/single-rental" ||
+        pathname === "single-rental" ||
         pathname === route("client.contact.index")
     ) {
         logoImg = "/assets/images/logo/8.png";
     }
     if (
-        pathname === "/single-course" ||
+        pathname === "single-course" ||
         pathname === route("client.rental.index") ||
-        pathname === "/single-rental"
+        pathname === "single-rental"
     ) {
         dark = true;
     }
