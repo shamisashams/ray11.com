@@ -161,7 +161,7 @@
                 <input type="file" name='logo' class="form-control" onchange="readURL(this);" value={{$slide != null?$slide->logo: null }}>
             </div>
             {{-- @dd($slide) --}}
-            <img id="blah" src={{isset($slide)&&$slide != null? $links . "/" . $slide->logo : "#"}} alt="" style={{$slide != null? "width:90px; height:70px" : ""}} />
+            <img id="blah" src="{{isset($slide)&&$slide != null? $links . '/' . $slide->logo : '#'}}" alt="" style="{{$slide != null? 'width:90px; height:70px' : ''}}" />
 
             <div class="form-group">
                 {!! Form::label("reddirect_url",__('admin.btn_reddirect_url'),['class' => 'form-label']) !!}
