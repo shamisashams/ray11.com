@@ -33,9 +33,10 @@
 </div>
 </div> --}}
 <!-- /breadcrumb -->
-<input name="old-images[]" id="old_images" hidden disabled value="{{$slider->files}}">
+<input name="old-images[]" id="old_images" hidden disabled value="{{$slide->files}}">
+
 <!-- row -->
-{!! Form::model($slider,['url' => $url, 'method' => $method,'files' => true]) !!}
+{!! Form::model($slide,['url' => $url, 'method' => $method,'files' => true]) !!}
 <div class="row">
     <div class="col-lg-6 col-md-12">
         <div class="card">
@@ -184,7 +185,7 @@
             {{-- @dd($slider) --}}
             <div class="form-group mb-0 mt-3 justify-content-end">
                 <div>
-                    {!! Form::submit($slider->created_at ? __('admin.update') : __('admin.create'),['class' => 'btn btn-primary']) !!}
+                    {!! Form::submit($slide->created_at ? __('admin.update') : __('admin.create'),['class' => 'btn btn-primary']) !!}
                 </div>
             </div>
 
