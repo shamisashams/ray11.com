@@ -359,7 +359,7 @@ img {
         overflow: hidden;
     }
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 640px) {
     .heroSlider .contentContainer {
         padding: 18px;
         padding-left: 50px;
@@ -376,12 +376,15 @@ img {
     }
     .heroSlider .sliderImg {
         height: 360px;
+        width: 50%;
+        flex-shrink: 0;
     }
     .heroSlider .sliderImg .img {
         border-top-left-radius: 54px;
     }
     .swiper-pagination-fraction {
-        right: 130px;
+        right: 90px;
+        bottom: 2px !important;
     }
 }
 

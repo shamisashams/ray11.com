@@ -7,12 +7,13 @@ import "aos/dist/aos.css";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import setSeoData from "./SetSeoData";
-// import CursorFollower from "../components/CursorFollower";
+import CursorFollower from "../components/CursorFollower";
 // import {Fragment} from "react";
 // import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Aos from "aos";
 import { Route } from "react-router-dom";
 import Preloader from "../components/Preloader";
+import ScrollToTop from "../components/ScrollToTop";
 
 export default function Layout({ children, seo = null }) {
     const [loading, setLoading] = useState(true);
@@ -32,15 +33,6 @@ export default function Layout({ children, seo = null }) {
 
     const { pathname } = usePage().props;
 
-    // const [loading, setLoading] = useState(pathname == route("client.home.index") ? true : false);
-    // if (pathname == route("client.home.index")) {
-    //     Inertia.on('finish',
-    //         setTimeout(() => {
-    //             setLoading(false);
-    //         }, 500)
-    //     )
-    // }
-
     if (seo) {
         setSeoData(seo);
     }
@@ -52,16 +44,16 @@ export default function Layout({ children, seo = null }) {
     const { currentLocale } = usePage().props;
 
     return (
-        <>
+        <ScrollToTop>
             {/*<Router>*/}
             {/*<Fragment>*/}
-            {/* <CursorFollower /> */}
+            <CursorFollower />
             <Navbar />
             {children}
             <Footer />
             {/*</Fragment>*/}
             {/*</Router>*/}
             <Preloader loading={loading} />
-        </>
+        </ScrollToTop>
     );
 }

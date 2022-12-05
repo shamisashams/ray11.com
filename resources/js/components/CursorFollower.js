@@ -7,11 +7,14 @@ const CursorFollower = () => {
             color="255,255,255"
             innerSize={10}
             outerSize={45}
-            // innerScale={7}
-            outerScale={2}
+            innerScale={7}
+            outerScale={0.5}
             hasBlendMode={true}
             innerStyle={{
                 mixBlendMode: "difference",
+            }}
+            outerStyle={{
+                backgroundColor: "rgba(248,212,50, 0.3)",
             }}
             clickables={[
                 "a",
