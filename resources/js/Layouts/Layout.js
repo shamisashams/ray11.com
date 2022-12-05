@@ -13,6 +13,7 @@ import CursorFollower from "../components/CursorFollower";
 import Aos from "aos";
 import { Route } from "react-router-dom";
 import Preloader from "../components/Preloader";
+import ScrollToTop from "../components/ScrollToTop";
 
 export default function Layout({ children, seo = null }) {
     const [loading, setLoading] = useState(true);
@@ -43,7 +44,7 @@ export default function Layout({ children, seo = null }) {
     const { currentLocale } = usePage().props;
 
     return (
-        <>
+        <ScrollToTop>
             {/*<Router>*/}
             {/*<Fragment>*/}
             <CursorFollower />
@@ -53,6 +54,6 @@ export default function Layout({ children, seo = null }) {
             {/*</Fragment>*/}
             {/*</Router>*/}
             <Preloader loading={loading} />
-        </>
+        </ScrollToTop>
     );
 }
