@@ -56,7 +56,7 @@ const Navbar = () => {
         logoImg = "/assets/images/logo/4.png";
     }
     if (pathname === route("client.raycrypto")) {
-        logoImg = "/assets/images/logo/5.png";
+        logoImg = "/assets/images/logo/6.png";
     }
     if (pathname === "single-course") {
         logoImg = "/assets/images/logo/7.png";

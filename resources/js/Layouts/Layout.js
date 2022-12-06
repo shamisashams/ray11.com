@@ -45,14 +45,10 @@ export default function Layout({ children, seo = null }) {
 
     return (
         <ScrollToTop>
-            {/*<Router>*/}
-            {/*<Fragment>*/}
-            <CursorFollower />
+            {/* <CursorFollower /> */}
             <Navbar />
             {children}
             <Footer />
-            {/*</Fragment>*/}
-            {/*</Router>*/}
             <Preloader loading={loading} />
         </ScrollToTop>
     );
