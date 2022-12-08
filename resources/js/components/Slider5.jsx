@@ -86,6 +86,7 @@ const Slider5 = ({data}) => {
                         } alt="" />
                   </div>
                 </div>
+
               </SwiperSlide>
             );
           })}

@@ -82,6 +82,7 @@ const RayAcademy = ({seo,courses}) => {
         </div>
       </section>
       <section>
+
         <Slider5 data={courses}/>
       </section>
       <section className="wrapper flex items-start justify-between lg:py-24 py-20 flex-col lg:flex-row">
