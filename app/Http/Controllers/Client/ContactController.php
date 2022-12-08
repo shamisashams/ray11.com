@@ -62,8 +62,13 @@ class ContactController extends Controller
         }
 
 
-        $team = Teamb::with(['translation','latestImage'])->paginate(1);
+        $team['data'] = [];
+        $team['links'] = [];
+        $data = Teamb::with(['translation','latestImage'])->paginate(1);
 
+        if ($data){
+            $team = $data;
+        }
         //dd($team);
 
         return Inertia::render('Team', ["page" => $page,
