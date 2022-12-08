@@ -94,6 +94,10 @@ const Navbar = () => {
             link: route("client.news.index"),
         },
         {
+            text: __("client.navbar_team", sharedData),
+            link: route("client.team.index"),
+        },
+        {
             text: __("client.navbar_contact", sharedData),
             link: route("client.contact.index"),
         },
@@ -302,7 +306,7 @@ const Navbar = () => {
                                         //    }
                                     }
                                     return (
-                                        <Link href={locale_urls[e]}>
+                                        <Link key={i} href={locale_urls[e]}>
                                             {" "}
                                             {/* <img src={langFlags["en"]} alt="" /> */}
                                             {locales[e]}

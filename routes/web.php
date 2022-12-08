@@ -150,6 +150,7 @@ Route::prefix('{locale?}')
             Route::post('rateservices', [DocumentationController::class, 'add_rateservices'])->name('client.documentations.rateservices');
             // Contact Page
             Route::get('/contact', [ContactController::class, 'index'])->name('client.contact.index');
+            Route::get('/team', [ContactController::class, 'team'])->name('client.team.index');
             // Route::post('/contact-us', [ContactController::class, 'mail'])->name('client.contact.mail');
             // contact us from navbar
             Route::post('/contactus', [ContactController::class, 'ContactMail'])->name('client.contact.contactmail');
