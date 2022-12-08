@@ -24,6 +24,7 @@ const RayCrypto = ({seo,project,videogallery,content}) => {
         dangerouslySetInnerHTML: { __html: rawHTML },
     });
     const sharedData = usePage().props.localizations;
+    const {images} = usePage().props;
 
   const nftGrid = [
     {
@@ -243,7 +244,7 @@ const RayCrypto = ({seo,project,videogallery,content}) => {
         <div className="w-fit h-fit relative mx-auto p-5">
           <div className="w-14 h-14 absolute -top-0 -left-0 border-l-4 border-t-4 border-solid border-custom-purple"></div>
           <div className="w-14 h-14 absolute -bottom-0 -right-0 border-r-4 border-b-4 border-solid border-custom-purple"></div>
-          <img src={"/assets/images/raypages/3.png"} alt="" />
+          <img src={images[0]} alt="" />
         </div>
       </section>
     </Layout>
