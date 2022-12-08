@@ -43,7 +43,8 @@ class PageSectionSeeder extends Seeder
                 'key' => 'rayproduction'
             ],
             [
-                'key' => 'raycrypto'
+                'key' => 'raycrypto',
+                'count' => 2
             ],
             [
                 'key' => 'singleproduct'

@@ -14,6 +14,9 @@ const RayProduction = ({ seo, project, videogallery, content }) => {
             dangerouslySetInnerHTML: { __html: rawHTML },
         });
     const sharedData = usePage().props.localizations;
+
+    const {team} = usePage().props;
+
     return (
         <Layout seo={seo}>
             <section className="relative pt-40 pb-12">
@@ -177,7 +180,7 @@ const RayProduction = ({ seo, project, videogallery, content }) => {
                     color="#7261BD"
                     title={__("client.team", sharedData)}
                 >
-                    <Slider6 />
+                    <Slider6 data={team} />
                 </RaySection>
             </section>
         </Layout>

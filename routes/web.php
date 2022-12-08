@@ -84,6 +84,10 @@ Route::prefix('{locale?}')
                 Route::get('team/{team}/destroy', [\App\Http\Controllers\Admin\TeamController::class, 'destroy'])->name('team.destroy');
 
 
+                Route::resource('teamb', \App\Http\Controllers\Admin\TeambController::class);
+                Route::get('teamb/{teamb}/destroy', [\App\Http\Controllers\Admin\TeambController::class, 'destroy'])->name('teamb.destroy');
+
+
 
                 // Product
                 Route::resource('product', \App\Http\Controllers\Admin\ProductController::class);

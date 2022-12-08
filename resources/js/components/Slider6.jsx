@@ -32,12 +32,12 @@ const Slider6 = ({ data }) => {
                 },
             }}
         >
-            {team.map((item, index) => {
+            {data.map((item, index) => {
                 return (
                     <SwiperSlide className="pb-10" key={index}>
                         <TeamBox
-                            img={item.img}
-                            name={item.name}
+                            img={item.latest_image? item.latest_image.full_url:null}
+                            name={item.name + ' ' + item.surname}
                             position={item.position}
                         />
                     </SwiperSlide>

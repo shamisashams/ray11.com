@@ -45,9 +45,9 @@ class TranslationRequest extends FormRequest
             'key' => 'nullable|string|max:255',
         ];
 
-        if ($this->method !== 'GET') {
+        /*if ($this->method !== 'GET') {
             $data ['text.' . $defaultLanguage->locale] = 'required|string';
-        }
+        }*/
         return $data;
     }
 }

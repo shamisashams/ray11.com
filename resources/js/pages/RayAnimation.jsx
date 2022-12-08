@@ -15,6 +15,9 @@ import { Link, usePage } from "@inertiajs/inertia-react";
 import Slider6 from "../components/Slider6";
 
 const RayAnimation = ({ seo, project, videogallery, content }) => {
+
+    const {team} = usePage().props;
+
     const renderHTML = (rawHTML) =>
         React.createElement("div", {
             dangerouslySetInnerHTML: { __html: rawHTML },
@@ -197,7 +200,7 @@ const RayAnimation = ({ seo, project, videogallery, content }) => {
                     color="#7261BD"
                     title={__("client.team", sharedData)}
                 >
-                    <Slider6 />
+                    <Slider6 data={team} />
                 </RaySection>
             </section>
             <VideoPopup

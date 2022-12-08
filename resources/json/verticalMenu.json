@@ -50,6 +50,13 @@
                 "i18n": "page",
                 "icon": "language",
                 "slug": "page"
+                },
+                {
+                    "url": "teamb.index",
+                    "name": "გუნდი",
+                    "i18n": "teamb",
+                    "icon": "teamb",
+                    "slug": "teamb"
                 }
             ]
         },
