@@ -81,7 +81,9 @@ const RayAcademy = ({ seo, courses }) => {
                     </div>
                 </div>
             </section>
-            <section>{/* <Slider5 data={courses} /> */}</section>
+            <section>
+                <Slider5 data={courses} />
+            </section>
             <section className="my-20">
                 <div className="bold text-2xl text-center mb-10">
                     {/* Academy FAQ's */}
