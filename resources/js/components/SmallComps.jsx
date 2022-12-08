@@ -45,7 +45,7 @@ export const Question = (props) => {
 
 export const TeamBox = (props) => {
     return (
-        <Link href={props.link} className="text-center">
+        <div className="text-center">
             <div className="sm:h-72 h-44 w-full mb-3">
                 <img
                     className="w-full h-full object-cover "
@@ -55,6 +55,6 @@ export const TeamBox = (props) => {
             </div>
             <div className="sm:text-lg mb-2">{props.name}</div>
             <div className="bold">{props.position}</div>
-        </Link>
+        </div>
     );
 };

@@ -41,7 +41,6 @@ const Team = ({ seo }) => {
                         return (
                             <TeamBox
                                 key={index}
-                                link={item.link}
                                 img={item.img}
                                 name={item.name}
                                 position={item.position}
