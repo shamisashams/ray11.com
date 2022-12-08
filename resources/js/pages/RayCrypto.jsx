@@ -54,7 +54,7 @@ const RayCrypto = ({ seo, project, videogallery, content }) => {
                             />
                             <span className="relative">
                                 {/* Ray crypto */}
-                                {__("client_raycrypto", sharedData)}
+                                {__("client.raycrypto", sharedData)}
                             </span>
                         </div>
                         <p className="opacity-30 ">
