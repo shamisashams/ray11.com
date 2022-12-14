@@ -22,7 +22,8 @@ class Slider extends Model
     protected $fillable = [
         'status',
         'youtube_url',
-        'reddirect_url'
+        'reddirect_url',
+        'video'
     ];
 
 

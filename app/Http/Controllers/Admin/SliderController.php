@@ -77,6 +77,7 @@ class SliderController extends Controller
     {
         $saveData = Arr::except($request->except('_token'), []);
         $saveData['status'] = isset($saveData['status']) && (bool)$saveData['status'];
+        $saveData['video'] = isset($saveData['video']) && (bool)$saveData['video'];
         $slider = $this->slideRepository->create($saveData);
 
         // Save Files
@@ -141,6 +142,7 @@ class SliderController extends Controller
     {
         $saveData = Arr::except($request->except('_token'), []);
         $saveData['status'] = isset($saveData['status']) && (bool)$saveData['status'];
+        $saveData['video'] = isset($saveData['video']) && (bool)$saveData['video'];
 
         $this->slideRepository->update($slider->id, $saveData);
 

@@ -174,6 +174,14 @@
                     </div> --}}
                     <div class="form-group">
                         <label class="ckbox">
+                            <input type="checkbox" name="video"
+                                   value="true" {{$slider->video ? 'checked' : ''}}>
+                            <span>{{__('admin.video')}}</span>
+                        </label>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="ckbox">
                             <input type="checkbox" name="status"
                                    value="true" {{$slider->status ? 'checked' : ''}}>
                             <span>{{__('admin.status')}}</span>
