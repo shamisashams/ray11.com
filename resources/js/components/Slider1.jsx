@@ -57,21 +57,40 @@ const Slider1 = ({ slidedata }) => {
                     return (
                         <SwiperSlide className="sm:p-5 " key={index}>
                             <div className="flex items-center justify-center ">
-                                <div className="sliderImg">
-                                    <div className="img">
-                                        <img
-                                            className="w-full h-full object-cover"
-                                            src={
-                                                item.file != null && item.file
-                                                    ? "/" +
-                                                      item.file.path +
-                                                      "/" +
-                                                      item.file.title
-                                                    : null
-                                            }
-                                            alt=""
-                                        />
-                                    </div>
+                                <div className="sliderImg ">
+                                    {item.video ? (
+                                        <div className="img">
+                                            <video
+                                                className="w-full h-full object-cover"
+                                                width="100%"
+                                                height="100%"
+                                                muted
+                                                loop
+                                                autoPlay
+                                            >
+                                                <source
+                                                    src="/assets/video/1.mp4"
+                                                    type="video/mp4"
+                                                />
+                                            </video>
+                                        </div>
+                                    ) : (
+                                        <div className="img">
+                                            <img
+                                                className="w-full h-full object-cover"
+                                                src={
+                                                    item.file != null &&
+                                                    item.file
+                                                        ? "/" +
+                                                          item.file.path +
+                                                          "/" +
+                                                          item.file.title
+                                                        : null
+                                                }
+                                                alt=""
+                                            />
+                                        </div>
+                                    )}
                                 </div>
                                 <div className="contentContainer text-right">
                                     <div className="sliderTitle bold">
