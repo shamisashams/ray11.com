@@ -10,6 +10,9 @@ import { Link, usePage } from "@inertiajs/inertia-react";
 import Slider6 from "../components/Slider6";
 
 const RayAcademy = ({ seo, courses }) => {
+
+    const {team} = usePage().props;
+
     const renderHTML = (rawHTML) =>
         React.createElement("div", {
             dangerouslySetInnerHTML: { __html: rawHTML },
@@ -89,7 +92,7 @@ const RayAcademy = ({ seo, courses }) => {
                     {/* Academy FAQ's */}
                     {__("client.meet_ourteam", sharedData)}
                 </div>
-                <Slider6 />
+                <Slider6 data={team} />
             </section>
             <section className="wrapper flex items-start justify-between lg:py-24 py-20 flex-col lg:flex-row">
                 <img

@@ -11,6 +11,7 @@ use App\Models\Portfolio;
 use App\Models\Staff;
 use App\Models\Content;
 use App\Models\Slider;
+use App\Models\Teamb;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
@@ -40,7 +41,7 @@ class RayController extends Controller
         //        dd($page->file);
         //        dd(App::getLocale());
         // $products = app(ProductRepository::class)->getPopularProducts();
-
+        $team = Teamb::with(['translation','latestImage'])->where('company','academy')->orderBy('pos')->get();
 
         //dd($products);
         // $query =  Product::select('products.*', 'categories.slug')
@@ -50,7 +51,7 @@ class RayController extends Controller
 
         return Inertia::render('RayAcademy', [
             "courses" => Team::with("files", "translations")->get(),
-            // "category" => Category::with('translations')->get(),
+            "team" => $team,
             "sliders" => $sliders->get(), "page" => $page, "seo" => [
                 "title" => $page->meta_title,
                 "description" => $page->meta_description,
@@ -141,6 +142,7 @@ class RayController extends Controller
         // $products = app(ProductRepository::class)->getPopularProducts();
 
 
+        $team = Teamb::with(['translation','latestImage'])->where('company','production')->orderBy('pos')->get();
         //dd($products);
         // $query =  Product::select('products.*', 'categories.slug')
         //     ->leftJoin('categories', 'categories.id', '=', 'products.category_id')
@@ -148,7 +150,7 @@ class RayController extends Controller
         //     ->with(['latestImage', 'translations'])->paginate(6);
 
         return Inertia::render('RayProduction', [
-            // "category" => Category::with('translations')->get(),
+            "team" => $team,
             "project" => Staff::with('translations', 'files')->where("company_id", 1)->get(),
             "content" => Content::with('translation', 'files')->where("company_id", 1)->get(),
             "videogallery" => Category::with('translations', 'files')->where("company_id", 1)->get(),
@@ -184,9 +186,11 @@ class RayController extends Controller
             }
         }
 
+        $team = Teamb::with(['translation','latestImage'])->where('company','animation')->orderBy('pos')->get();
+
         $sliders = Slider::query()->where("status", 1)->with(['file', 'translations']);
         return Inertia::render('RayAnimation', [
-            // "category" => Category::with('translations')->get(),
+            "team" => $team,
             "project" => Staff::with('translations', 'files')->where("company_id", 2)->get(),
             "content" => Content::with('translation', 'files')->where("company_id", 2)->get(),
             "videogallery" => Category::with('translations', 'files')->where('company_id', 2)->get(),
@@ -222,9 +226,11 @@ class RayController extends Controller
             }
         }
 
+        $team = Teamb::with(['translation','latestImage'])->where('company','crypto')->orderBy('pos')->get();
+
         $sliders = Slider::query()->where("status", 1)->with(['file', 'translations']);
         return Inertia::render('RayCrypto', [
-            // "category" => Category::with('translations')->get(),
+            "team" => $team,
             "project" => Staff::with('translations', 'files')->where("company_id", 3)->get(),
             "content" => Content::with('translation', 'files')->where("company_id", 3)->get(),
             "videogallery" => Category::with('translations', 'files')->where("company_id", 3)->get(),

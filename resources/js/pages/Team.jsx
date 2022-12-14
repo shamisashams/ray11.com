@@ -2,10 +2,36 @@ import React from "react";
 import Layout from "../Layouts/Layout";
 import { Link, usePage } from "@inertiajs/inertia-react";
 import { FiArrowDownRight } from "react-icons/fi";
-import { team } from "../components/Data";
+//import { team } from "../components/Data";
 import { TeamBox } from "../components/SmallComps";
 
 const Team = ({ seo }) => {
+
+    const {team} = usePage().props;
+
+    let links = function (links) {
+        let rows = [];
+        {
+            links.map(function (item, index) {
+                if (index > 0 && index < links.length - 1) {
+                    rows.push(
+                        <Link
+                            href={item.url}
+                            className={
+                                item.active
+                                    ? "text-decoration-line: underline bold mx-2 "
+                                    : "bold mx-2"
+                            }
+                        >
+                            <span style={{ padding: "5px" }}>{item.label}</span>
+                        </Link>
+                    );
+                }
+            });
+        }
+        return <div className="nums"> {rows.length > 1 ? rows : null} </div>;
+    };
+
     return (
         <Layout seo={seo}>
             <section className="wrapper lg:pt-20 pt-32">
@@ -37,22 +63,23 @@ const Team = ({ seo }) => {
                     />
                 </div>
                 <div className="grid sm:gap-x-5 gap-x-3 gap-y-10 xl:grid-cols-5 lg:grid-cols-4 sm:grid-cols-3 grid-cols-2 mb-20">
-                    {team.map((item, index) => {
+                    {team.data.map((item, index) => {
                         return (
                             <TeamBox
                                 key={index}
-                                img={item.img}
-                                name={item.name}
+                                img={item.latest_image ? item.latest_image.full_url:null}
+                                name={item.name + ' ' + item.surname}
                                 position={item.position}
                             />
                         );
                     })}
                 </div>
                 <div className="text-center border-custom-dark py-5">
-                    <button className="bold mx-2">1</button>
+                    {/*<button className="bold mx-2">1</button>
                     <button className="bold mx-2 opacity-50">2</button>
                     <button className="bold mx-2 opacity-50">3</button>
-                    <button className="bold mx-2 opacity-50">4</button>
+                    <button className="bold mx-2 opacity-50">4</button>*/}
+                    {links(team.links)}
                 </div>
             </section>
         </Layout>

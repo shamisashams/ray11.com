@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Mail\ContactEmail;
 use App\Models\Page;
 use App\Models\Setting;
+use App\Models\Teamb;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Inertia\Inertia;
@@ -44,7 +45,7 @@ class ContactController extends Controller
             'og_description' => $page->meta_og_description
         ]);
 
-       
+
     }
 
     public function team()
@@ -61,9 +62,18 @@ class ContactController extends Controller
         }
 
 
-        
-        
-        return Inertia::render('Team', ["page" => $page, "seo" => [
+        $team['data'] = [];
+        $team['links'] = [];
+        $data = Teamb::with(['translation','latestImage'])->paginate(1);
+
+        if ($data){
+            $team = $data;
+        }
+        //dd($team);
+
+        return Inertia::render('Team', ["page" => $page,
+            'team' => $team,
+            "seo" => [
             "title" => $page->meta_title,
             "description" => $page->meta_description,
             "keywords" => $page->meta_keyword,

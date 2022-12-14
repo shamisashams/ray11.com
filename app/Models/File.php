@@ -54,6 +54,10 @@ class File extends Model
         'type'
     ];
 
+    protected $appends = [
+        'full_url'
+    ];
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\MorphTo
      */
@@ -70,5 +74,10 @@ class File extends Model
     public function getFileUrlAttribute(): string
     {
         return $this->path . '/' . $this->title;
+    }
+
+    public function getFullUrlAttribute(): string
+    {
+        return asset($this->path . '/' . $this->title);
     }
 }
