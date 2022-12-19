@@ -1453,10 +1453,6 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(248 213 50 / var(--tw-bg-opacity));
 }
-.bg-black {
-  --tw-bg-opacity: 1;
-  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
-}
 .bg-gradient-to-b {
   background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
 }
@@ -2181,10 +2177,6 @@ img {
     right: 13rem;
   }
 
-  .sm\:m-0 {
-    margin: 0px;
-  }
-
   .sm\:mx-4 {
     margin-left: 1rem;
     margin-right: 1rem;
@@ -2332,10 +2324,6 @@ img {
 
   .sm\:p-5 {
     padding: 1.25rem;
-  }
-
-  .sm\:p-0 {
-    padding: 0px;
   }
 
   .sm\:px-6 {

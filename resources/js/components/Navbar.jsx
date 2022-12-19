@@ -306,14 +306,14 @@ const Navbar = () => {
                                         //    }
                                     }
                                     return (
-                                        <Link key={i} href={locale_urls[e]}>
+                                        <a key={i} href={locale_urls[e]}>
                                             {" "}
                                             {/* <img src={langFlags["en"]} alt="" /> */}
                                             {locales[e]}
                                             {i < Object.keys(locales).length - 1
                                                 ? " /"
                                                 : ""}
-                                        </Link>
+                                        </a>
                                     );
                                 })}
                             </div>
