@@ -116,7 +116,7 @@ const Contact = ({ seo }) => {
                                 )}
 
                                 {gyoutube.value ? (
-                                    <a href="#" target="_blank">
+                                    <a href={gyoutube.value} target="_blank">
                                         <img
                                             src="/assets/images/icons/3.png"
                                             alt=""
