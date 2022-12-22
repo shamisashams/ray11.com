@@ -64,7 +64,7 @@ class ContactController extends Controller
 
         $team['data'] = [];
         $team['links'] = [];
-        $data = Teamb::with(['translation','latestImage'])->paginate(1);
+        $data = Teamb::with(['translation','latestImage'])->paginate(5);
 
         if ($data){
             $team = $data;
