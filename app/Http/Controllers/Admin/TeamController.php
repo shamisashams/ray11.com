@@ -193,7 +193,7 @@ class TeamController extends Controller
         if (!$this->teamRepository->delete($code)) {
             return redirect(locale_route('staff.index', $code))->with('danger', __('admin.not_delete_message'));
         }
-        return redirect(locale_route('staff.index'))->with('success', __('admin.delete_message'));
+        return redirect(locale_route('team.index'))->with('success', __('admin.delete_message'));
     }
 
 
