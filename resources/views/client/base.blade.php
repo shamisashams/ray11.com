@@ -45,6 +45,10 @@
             return translation;
 
         }
+
+        String.prototype.newLineToBr = function () {
+            return this.replace(/(?:\r\n|\r|\n)/g, '<br>');
+        };
     </script>
 </head>
 <body>

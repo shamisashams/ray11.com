@@ -7,7 +7,9 @@ import { TeamBox } from "../components/SmallComps";
 
 const Team = ({ seo }) => {
 
-    const {team} = usePage().props;
+    const renderHTML = (rawHTML) => React.createElement("p", { dangerouslySetInnerHTML: { __html: rawHTML } });
+
+    const {team, localizations} = usePage().props;
 
     let links = function (links) {
         let rows = [];
@@ -44,16 +46,10 @@ const Team = ({ seo }) => {
                     <div>
                         <div className="md:text-4xl text-2xl whitespace-nowrap mb-6 md:pl-10 mr-10">
                             <FiArrowDownRight className="md:text-7xl text-4xl inline-block " />{" "}
-                            Meet our Team
+                            {__('client.team_header', localizations)}
                         </div>
                         <p className="opacity-50 max-w-md">
-                            From banking and insurance to wealth management and
-                            on securities distribution, we dedicated financial
-                            services them the teams serve all major sectors. of
-                            the industry. From banking and insurance to wealth
-                            management and on securities distribution, we
-                            dedicated financial services them the teams serve
-                            all major sectors. of the industry.
+                            {renderHTML(__('client.team_text',localizations).newLineToBr())}
                         </p>
                     </div>
                     <img
