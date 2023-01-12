@@ -247,7 +247,7 @@ const About = ({ seo, images, page }) => {
             >
                 <img
                     className="max-h-screen"
-                    src="/assets/images/other/8.png"
+                    src={images[7]}
                     alt=""
                 />
                 <img

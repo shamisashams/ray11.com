@@ -6,7 +6,7 @@ use Illuminate\Database\Seeder;
 use App\Models\PageSection;
 use App\Models\Page;
 
-class PageSectionSeeder extends Seeder
+class PageSectionSeeder2 extends Seeder
 {
     /**
      * Run the database seeds.
