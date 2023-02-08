@@ -168,14 +168,22 @@
                     ?>
                     <div class="form-group">
                         <label class="form-label">@lang('admin.company')</label>
-                        <select class="form-control" name="company">
 
-                            <option value=""></option>
+
+                        <?php
+                        $sel = explode(',',$team->company);
+                        ?>
+
+
                             @foreach($companies as $company)
-                                <option value="{{$company}}" {{$team->company == $company ? 'selected':''}}>{{$company}}</option>
-                            @endforeach]
+                                <div class="form-group">
+                                    <label class="ckbox"><input name="company[]" {{in_array($company,$sel)?'checked':''}} value="{{$company}}" type="checkbox"><span>{{$company}}</span></label>
+                                </div>
 
-                        </select>
+
+                            @endforeach
+
+
                         @error($locale.'.pos')
                         <small class="text-danger">
                             <div class="error">

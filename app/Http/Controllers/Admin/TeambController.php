@@ -113,6 +113,8 @@ class TeambController extends Controller
         $saveData['status'] = isset($saveData['status']) && (bool)$saveData['status'];
         $saveData['pos'] = $saveData['pos'] ?? (int)$saveData['pos'];
 
+        $saveData['company'] = implode(',',$saveData['company']);
+
         $customer = $this->teambRepository->create($saveData);
 
 
@@ -180,7 +182,7 @@ class TeambController extends Controller
      */
     public function update(Request $request, string $locale, Teamb $teamb)
     {
-        //dd($request->all());
+       // dd($request->all());
         $request->validate([
             'company' => 'required'
         ]);
@@ -189,11 +191,13 @@ class TeambController extends Controller
         $saveData['status'] = isset($saveData['status']) && (bool)$saveData['status'];
         $saveData['pos'] = $saveData['pos'] ?? (int)$saveData['pos'];
 
+        $saveData['company'] = implode(',',$saveData['company']);
 
-        //dd($staff->id);
 
-        if ($this->teambRepository->update($teamb->id, $saveData)) {
-        }
+        //dd($saveData);
+
+        $this->teambRepository->update($teamb->id, $saveData);
+
 
         $this->teambRepository->saveFiles($teamb->id, $request);
 

@@ -41,7 +41,7 @@ class RayController extends Controller
         //        dd($page->file);
         //        dd(App::getLocale());
         // $products = app(ProductRepository::class)->getPopularProducts();
-        $team = Teamb::with(['translation','latestImage'])->where('company','academy')->orderBy('pos')->get();
+        $team = Teamb::with(['translation','latestImage'])->whereRaw("find_in_set(?, company)", ['academy'])->orderBy('pos')->get();
 
         //dd($products);
         // $query =  Product::select('products.*', 'categories.slug')
@@ -142,7 +142,7 @@ class RayController extends Controller
         // $products = app(ProductRepository::class)->getPopularProducts();
 
 
-        $team = Teamb::with(['translation','latestImage'])->where('company','production')->orderBy('pos')->get();
+        $team = Teamb::with(['translation','latestImage'])->whereRaw("find_in_set(?, company)", ['production'])->orderBy('pos')->get();
         //dd($products);
         // $query =  Product::select('products.*', 'categories.slug')
         //     ->leftJoin('categories', 'categories.id', '=', 'products.category_id')
@@ -186,7 +186,7 @@ class RayController extends Controller
             }
         }
 
-        $team = Teamb::with(['translation','latestImage'])->where('company','animation')->orderBy('pos')->get();
+        $team = Teamb::with(['translation','latestImage'])->whereRaw("find_in_set(?, company)", ['animation'])->orderBy('pos')->get();
 
         $sliders = Slider::query()->where("status", 1)->with(['file', 'translations']);
         return Inertia::render('RayAnimation', [
@@ -226,7 +226,7 @@ class RayController extends Controller
             }
         }
 
-        $team = Teamb::with(['translation','latestImage'])->where('company','crypto')->orderBy('pos')->get();
+        $team = Teamb::with(['translation','latestImage'])->whereRaw("find_in_set(?, company)", ['crypto'])->orderBy('pos')->get();
 
         $sliders = Slider::query()->where("status", 1)->with(['file', 'translations']);
         return Inertia::render('RayCrypto', [
