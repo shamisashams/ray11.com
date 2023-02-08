@@ -84,7 +84,7 @@ const Rental = ({seo, products}) => {
               {" "}
               {/* The driving force of all speeches, we believe that creation should
               be the point around which any communication strategy revolves. */}
-              {__("client.rental_text", sharedData)}
+              {/*{__("client.rental_text", sharedData)}*/}
             </p>
           </div>
         </div>
