@@ -182,6 +182,18 @@
                     </div>
 
                     <div class="form-group">
+                        <label class="form-label">@lang('admin.position')</label>
+                        <input class="form-control" type="number" name="position" value="{{$slider->position}}">
+                        @error('position')
+                        <small class="text-danger">
+                            <div class="error">
+                                {{$message}}
+                            </div>
+                        </small>
+                        @enderror
+                    </div>
+
+                    <div class="form-group">
                         <label class="ckbox">
                             <input type="checkbox" name="status"
                                    value="true" {{$slider->status ? 'checked' : ''}}>

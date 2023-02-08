@@ -26,7 +26,7 @@ class NewsController extends Controller
             }
         }
 
-        $news = News::with(['file', 'translations', 'latestImage'])->paginate(8);
+        $news = News::with(['file', 'translations', 'latestImage'])->orderBy('created_at','desc')->paginate(8);
 
 
         // return Inertia::render('News', ["seo" => [

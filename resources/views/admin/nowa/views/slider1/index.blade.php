@@ -41,6 +41,7 @@
                                 <tr>
                                     <th>@lang('admin.id')</th>
                                     <th>@lang('admin.status')</th>
+                                    <th>@lang('admin.position')</th>
                                     <th>@lang('admin.title')</th>
                                     <th>@lang('admin.actions')</th>
                                 </tr>
@@ -77,7 +78,9 @@
                                                     <span class="red-text">@lang('admin.not_active')</span>
                                                 @endif
                                             </td>
-
+                                            <td>
+                                                {{$slider->position}}
+                                            </td>
                                             <td>
                                                 <div class="panel panel-primary tabs-style-2">
                                                     <div class=" tab-menu-heading">

@@ -23,7 +23,8 @@ class Slider extends Model
         'status',
         'youtube_url',
         'reddirect_url',
-        'video'
+        'video',
+        'position'
     ];
 
 

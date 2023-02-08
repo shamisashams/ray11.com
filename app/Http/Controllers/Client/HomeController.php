@@ -37,7 +37,7 @@ class HomeController extends Controller
             }
         }
 
-        $sliders = Slider::query()->where("status", 1)->with(['file', 'translations']);
+        $sliders = Slider::query()->where("status", 1)->with(['file', 'translations'])->orderBy('position')->get();
         //        dd($page->file);
         //        dd(App::getLocale());
         // $products = app(ProductRepository::class)->getPopularProducts();
@@ -54,8 +54,8 @@ class HomeController extends Controller
             "links" => asset('storage/images/slider2logo'),
             "news" => News::with('translations', 'file')->orderBy('created_at', 'desc')->limit(3)->get(),
             "UpcomingEvent" => UpcomingEvent::with(['file', 'translations'])->get(),
-            "slider2" => Slider2::with('translations', 'file')->get(),
-            "sliders" => $sliders->get(), "page" => $page, "seo" => [
+            "slider2" => Slider2::with('translations', 'file')->orderBy('position')->get(),
+            "sliders" => $sliders, "page" => $page, "seo" => [
                 "title" => $page->meta_title,
                 "description" => $page->meta_description,
                 "keywords" => $page->meta_keyword,

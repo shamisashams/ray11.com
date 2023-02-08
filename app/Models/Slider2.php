@@ -20,7 +20,8 @@ class Slider2 extends Model
         'status',
         'logo',
         // 'youtube_url',
-        'reddirect_url'
+        'reddirect_url',
+        'position'
     ];
 
 
